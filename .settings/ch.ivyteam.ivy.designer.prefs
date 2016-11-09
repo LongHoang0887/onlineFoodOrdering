@@ -1,0 +1,4 @@
+ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_DATA_CLASS=online.food.ordering.Data
+ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_NAMESPACE=online.food.ordering
+ch.ivyteam.ivy.project.preferences\:PROJECT_VERSION=63000
+eclipse.preferences.version=1
