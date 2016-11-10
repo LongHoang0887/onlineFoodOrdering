@@ -11,13 +11,7 @@ name String #field
 name PERSISTENT #fieldModifier
 price Integer #field
 price PERSISTENT #fieldModifier
-notice String #field
-notice PERSISTENT #fieldModifier
-optional String #field
-optional PERSISTENT #fieldModifier
-personName String #field
-personName PERSISTENT #fieldModifier
-orderId Integer #field
-orderId PERSISTENT #fieldModifier
 createdDate java.util.Date #field
 createdDate PERSISTENT #fieldModifier
+restaurantId Integer #field
+restaurantId PERSISTENT #fieldModifier

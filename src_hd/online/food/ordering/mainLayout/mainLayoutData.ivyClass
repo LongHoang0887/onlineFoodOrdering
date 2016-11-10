@@ -1,6 +1,6 @@
 mainLayoutData #class
 online.food.ordering.mainLayout #namespace
-orderingList java.util.List<online.food.ordering.Ordering> #field
-orderingList PERSISTENT #fieldModifier
-selectedOrder online.food.ordering.Ordering #field
-selectedOrder PERSISTENT #fieldModifier
+restaurantList java.util.List<online.food.ordering.Restaurant> #field
+restaurantList PERSISTENT #fieldModifier
+selectedRestaurant online.food.ordering.Restaurant #field
+selectedRestaurant PERSISTENT #fieldModifier

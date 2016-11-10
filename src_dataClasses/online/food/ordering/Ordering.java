@@ -9,7 +9,7 @@ package online.food.ordering;
 public class Ordering extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3351406073786018607L;
+  private static final long serialVersionUID = -186847857568896906L;
 
   /**
    * Identifier
@@ -36,104 +36,104 @@ public class Ordering extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     id = _id;
   }
 
-  private java.lang.String restaurantName;
+  private java.lang.Integer restaurantId;
 
   /**
-   * Gets the field restaurantName.
-   * @return the value of the field restaurantName; may be null.
+   * Gets the field restaurantId.
+   * @return the value of the field restaurantId; may be null.
    */
-  public java.lang.String getRestaurantName()
+  public java.lang.Integer getRestaurantId()
   {
-    return restaurantName;
+    return restaurantId;
   }
 
   /**
-   * Sets the field restaurantName.
-   * @param _restaurantName the new value of the field restaurantName.
+   * Sets the field restaurantId.
+   * @param _restaurantId the new value of the field restaurantId.
    */
-  public void setRestaurantName(java.lang.String _restaurantName)
+  public void setRestaurantId(java.lang.Integer _restaurantId)
   {
-    restaurantName = _restaurantName;
+    restaurantId = _restaurantId;
   }
 
-  private java.util.Date createdDate;
+  private java.lang.Integer foodId;
 
   /**
-   * Gets the field createdDate.
-   * @return the value of the field createdDate; may be null.
+   * Gets the field foodId.
+   * @return the value of the field foodId; may be null.
    */
-  public java.util.Date getCreatedDate()
+  public java.lang.Integer getFoodId()
   {
-    return createdDate;
-  }
-
-  /**
-   * Sets the field createdDate.
-   * @param _createdDate the new value of the field createdDate.
-   */
-  public void setCreatedDate(java.util.Date _createdDate)
-  {
-    createdDate = _createdDate;
-  }
-
-  private java.lang.String website;
-
-  /**
-   * Gets the field website.
-   * @return the value of the field website; may be null.
-   */
-  public java.lang.String getWebsite()
-  {
-    return website;
+    return foodId;
   }
 
   /**
-   * Sets the field website.
-   * @param _website the new value of the field website.
+   * Sets the field foodId.
+   * @param _foodId the new value of the field foodId.
    */
-  public void setWebsite(java.lang.String _website)
+  public void setFoodId(java.lang.Integer _foodId)
   {
-    website = _website;
+    foodId = _foodId;
   }
 
-  private java.lang.String phone;
+  private java.lang.String optional;
 
   /**
-   * Gets the field phone.
-   * @return the value of the field phone; may be null.
+   * Gets the field optional.
+   * @return the value of the field optional; may be null.
    */
-  public java.lang.String getPhone()
+  public java.lang.String getOptional()
   {
-    return phone;
-  }
-
-  /**
-   * Sets the field phone.
-   * @param _phone the new value of the field phone.
-   */
-  public void setPhone(java.lang.String _phone)
-  {
-    phone = _phone;
-  }
-
-  private java.lang.Boolean outOfFood;
-
-  /**
-   * Gets the field outOfFood.
-   * @return the value of the field outOfFood; may be null.
-   */
-  public java.lang.Boolean getOutOfFood()
-  {
-    return outOfFood;
+    return optional;
   }
 
   /**
-   * Sets the field outOfFood.
-   * @param _outOfFood the new value of the field outOfFood.
+   * Sets the field optional.
+   * @param _optional the new value of the field optional.
    */
-  public void setOutOfFood(java.lang.Boolean _outOfFood)
+  public void setOptional(java.lang.String _optional)
   {
-    outOfFood = _outOfFood;
+    optional = _optional;
+  }
+
+  private java.lang.String notice;
+
+  /**
+   * Gets the field notice.
+   * @return the value of the field notice; may be null.
+   */
+  public java.lang.String getNotice()
+  {
+    return notice;
+  }
+
+  /**
+   * Sets the field notice.
+   * @param _notice the new value of the field notice.
+   */
+  public void setNotice(java.lang.String _notice)
+  {
+    notice = _notice;
+  }
+
+  private java.lang.String personName;
+
+  /**
+   * Gets the field personName.
+   * @return the value of the field personName; may be null.
+   */
+  public java.lang.String getPersonName()
+  {
+    return personName;
+  }
+
+  /**
+   * Sets the field personName.
+   * @param _personName the new value of the field personName.
+   */
+  public void setPersonName(java.lang.String _personName)
+  {
+    personName = _personName;
   }
 
 }

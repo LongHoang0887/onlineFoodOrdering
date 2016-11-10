@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 15:32:00 ICT 2016]
+[>Created: Thu Nov 10 17:49:06 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -70,27 +70,28 @@ ms0 f6 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
 ' #txt
-ms0 f6 actionCode 'import serviceImpl.OrderingServiceImpl;
-import online.food.ordering.Ordering;
+ms0 f6 actionCode 'import serviceImpl.RestaurantServiceImpl;
+import service.RestaurantService;
+import online.food.ordering.Restaurant;
 
-OrderingServiceImpl service = new OrderingServiceImpl();
-in.orderingList = service.getAllOrdering();' #txt
+RestaurantService service = new RestaurantServiceImpl();
+in.restaurantList = service.getAllRestaurant();' #txt
 ms0 f6 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>Load Ordering List</name>
-        <nameStyle>18,7
+        <name>Load Restaurant List</name>
+        <nameStyle>20,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-ms0 f6 168 42 112 44 -51 -8 #rect
+ms0 f6 160 42 128 44 -57 -8 #rect
 ms0 f6 @|StepIcon #fIcon
 ms0 f7 expr out #txt
-ms0 f7 109 64 168 64 #arcP
+ms0 f7 109 64 160 64 #arcP
 ms0 f2 expr out #txt
-ms0 f2 280 64 419 64 #arcP
+ms0 f2 288 64 419 64 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect

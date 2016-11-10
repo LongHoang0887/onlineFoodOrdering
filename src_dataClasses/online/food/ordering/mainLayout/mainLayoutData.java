@@ -7,46 +7,46 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -2044628805140977461L;
+  private static final long serialVersionUID = 3372826009636697555L;
 
-  private java.util.List<online.food.ordering.Ordering> orderingList;
+  private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
   /**
-   * Gets the field orderingList.
-   * @return the value of the field orderingList; may be null.
+   * Gets the field restaurantList.
+   * @return the value of the field restaurantList; may be null.
    */
-  public java.util.List<online.food.ordering.Ordering> getOrderingList()
+  public java.util.List<online.food.ordering.Restaurant> getRestaurantList()
   {
-    return orderingList;
+    return restaurantList;
   }
 
   /**
-   * Sets the field orderingList.
-   * @param _orderingList the new value of the field orderingList.
+   * Sets the field restaurantList.
+   * @param _restaurantList the new value of the field restaurantList.
    */
-  public void setOrderingList(java.util.List<online.food.ordering.Ordering> _orderingList)
+  public void setRestaurantList(java.util.List<online.food.ordering.Restaurant> _restaurantList)
   {
-    orderingList = _orderingList;
+    restaurantList = _restaurantList;
   }
 
-  private online.food.ordering.Ordering selectedOrder;
+  private online.food.ordering.Restaurant selectedRestaurant;
 
   /**
-   * Gets the field selectedOrder.
-   * @return the value of the field selectedOrder; may be null.
+   * Gets the field selectedRestaurant.
+   * @return the value of the field selectedRestaurant; may be null.
    */
-  public online.food.ordering.Ordering getSelectedOrder()
+  public online.food.ordering.Restaurant getSelectedRestaurant()
   {
-    return selectedOrder;
+    return selectedRestaurant;
   }
 
   /**
-   * Sets the field selectedOrder.
-   * @param _selectedOrder the new value of the field selectedOrder.
+   * Sets the field selectedRestaurant.
+   * @param _selectedRestaurant the new value of the field selectedRestaurant.
    */
-  public void setSelectedOrder(online.food.ordering.Ordering _selectedOrder)
+  public void setSelectedRestaurant(online.food.ordering.Restaurant _selectedRestaurant)
   {
-    selectedOrder = _selectedOrder;
+    selectedRestaurant = _selectedRestaurant;
   }
 
 }

@@ -18,13 +18,13 @@
 					</f:facet>
 
 					<p:outputLabel value="Restaurant (*)" />
-					<p:inputText value="#{data.ordering.restaurantName}" required="true" requiredMessage="Restaurant name could not be blank"/>
+					<p:inputText value="#{data.restaurant.restaurantName}" required="true" requiredMessage="Restaurant name could not be blank"/>
 					<p:outputLabel value="Website" />
-					<p:inputText value="#{data.ordering.website}" />
+					<p:inputText value="#{data.restaurant.website}" />
 					<p:outputLabel value="Phone" />
-					<p:inputText value="#{data.ordering.phone}" />
+					<p:inputText value="#{data.restaurant.phone}" />
 
-					<p:selectBooleanCheckbox value="#{data.ordering.outOfFood}" itemLabel="Order out of food list"/>
+					<p:selectBooleanCheckbox value="#{data.restaurant.outOfFood}" itemLabel="Order out of food list"/>
 			</h:panelGrid>
 			
 			<h:panelGrid columns="3" >
@@ -52,7 +52,7 @@
 				    </p:column>
 				</p:dataTable>
 
-				<p:commandButton actionListener="#{logic.save}" value="Save" update="form" icon="ui-icon-check" disabled="#{data.isEnableSaveBtn}" />
+				<p:commandButton actionListener="#{logic.save}" value="Save" update="form" icon="ui-icon-check" process="@this" disabled="#{data.isEnableSaveBtn}" />
 				<br />
 				<p:commandButton actionListener="#{logic.close}" value="Close" update="form" icon="ui-icon-check"/>
 				

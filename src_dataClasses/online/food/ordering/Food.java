@@ -9,7 +9,7 @@ package online.food.ordering;
 public class Food extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -845334105300065792L;
+  private static final long serialVersionUID = 3394500222174892245L;
 
   /**
    * Identifier
@@ -76,86 +76,6 @@ public class Food extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     price = _price;
   }
 
-  private java.lang.String notice;
-
-  /**
-   * Gets the field notice.
-   * @return the value of the field notice; may be null.
-   */
-  public java.lang.String getNotice()
-  {
-    return notice;
-  }
-
-  /**
-   * Sets the field notice.
-   * @param _notice the new value of the field notice.
-   */
-  public void setNotice(java.lang.String _notice)
-  {
-    notice = _notice;
-  }
-
-  private java.lang.String optional;
-
-  /**
-   * Gets the field optional.
-   * @return the value of the field optional; may be null.
-   */
-  public java.lang.String getOptional()
-  {
-    return optional;
-  }
-
-  /**
-   * Sets the field optional.
-   * @param _optional the new value of the field optional.
-   */
-  public void setOptional(java.lang.String _optional)
-  {
-    optional = _optional;
-  }
-
-  private java.lang.String personName;
-
-  /**
-   * Gets the field personName.
-   * @return the value of the field personName; may be null.
-   */
-  public java.lang.String getPersonName()
-  {
-    return personName;
-  }
-
-  /**
-   * Sets the field personName.
-   * @param _personName the new value of the field personName.
-   */
-  public void setPersonName(java.lang.String _personName)
-  {
-    personName = _personName;
-  }
-
-  private java.lang.Integer orderId;
-
-  /**
-   * Gets the field orderId.
-   * @return the value of the field orderId; may be null.
-   */
-  public java.lang.Integer getOrderId()
-  {
-    return orderId;
-  }
-
-  /**
-   * Sets the field orderId.
-   * @param _orderId the new value of the field orderId.
-   */
-  public void setOrderId(java.lang.Integer _orderId)
-  {
-    orderId = _orderId;
-  }
-
   private java.util.Date createdDate;
 
   /**
@@ -174,6 +94,26 @@ public class Food extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setCreatedDate(java.util.Date _createdDate)
   {
     createdDate = _createdDate;
+  }
+
+  private java.lang.Integer restaurantId;
+
+  /**
+   * Gets the field restaurantId.
+   * @return the value of the field restaurantId; may be null.
+   */
+  public java.lang.Integer getRestaurantId()
+  {
+    return restaurantId;
+  }
+
+  /**
+   * Sets the field restaurantId.
+   * @param _restaurantId the new value of the field restaurantId.
+   */
+  public void setRestaurantId(java.lang.Integer _restaurantId)
+  {
+    restaurantId = _restaurantId;
   }
 
 }

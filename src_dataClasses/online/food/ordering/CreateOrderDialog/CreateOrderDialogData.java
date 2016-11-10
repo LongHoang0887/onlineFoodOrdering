@@ -7,7 +7,7 @@ package online.food.ordering.CreateOrderDialog;
 public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 2149140497224682944L;
+  private static final long serialVersionUID = -4545283856117469440L;
 
   private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> foods;
 
@@ -29,24 +29,24 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
     foods = _foods;
   }
 
-  private online.food.ordering.Ordering ordering;
+  private online.food.ordering.Restaurant restaurant;
 
   /**
-   * Gets the field ordering.
-   * @return the value of the field ordering; may be null.
+   * Gets the field restaurant.
+   * @return the value of the field restaurant; may be null.
    */
-  public online.food.ordering.Ordering getOrdering()
+  public online.food.ordering.Restaurant getRestaurant()
   {
-    return ordering;
+    return restaurant;
   }
 
   /**
-   * Sets the field ordering.
-   * @param _ordering the new value of the field ordering.
+   * Sets the field restaurant.
+   * @param _restaurant the new value of the field restaurant.
    */
-  public void setOrdering(online.food.ordering.Ordering _ordering)
+  public void setRestaurant(online.food.ordering.Restaurant _restaurant)
   {
-    ordering = _ordering;
+    restaurant = _restaurant;
   }
 
   private online.food.ordering.Food selectedFood;
@@ -109,24 +109,24 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
     price = _price;
   }
 
-  private java.lang.Integer orderId;
+  private java.lang.Integer restaurantId;
 
   /**
-   * Gets the field orderId.
-   * @return the value of the field orderId; may be null.
+   * Gets the field restaurantId.
+   * @return the value of the field restaurantId; may be null.
    */
-  public java.lang.Integer getOrderId()
+  public java.lang.Integer getRestaurantId()
   {
-    return orderId;
+    return restaurantId;
   }
 
   /**
-   * Sets the field orderId.
-   * @param _orderId the new value of the field orderId.
+   * Sets the field restaurantId.
+   * @param _restaurantId the new value of the field restaurantId.
    */
-  public void setOrderId(java.lang.Integer _orderId)
+  public void setRestaurantId(java.lang.Integer _restaurantId)
   {
-    orderId = _orderId;
+    restaurantId = _restaurantId;
   }
 
   private java.lang.Boolean isEnableSaveBtn;

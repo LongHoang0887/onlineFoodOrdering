@@ -20,8 +20,6 @@ public class FoodServiceImpl implements FoodService {
 		if (foods != null && foods.size() > 0) {
 			for (Food food: foods) {
 				food.setCreatedDate(new Date());
-				food.setPersonName(Ivy.session().getSessionUserName());
-
 				Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(food);
 			}
 		}

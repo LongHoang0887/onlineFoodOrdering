@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 15:57:47 ICT 2016]
+[>Created: Thu Nov 10 18:05:48 ICT 2016]
 158489E6E55BBC40 3.18 #module
 >Proto >Proto Collection #zClass
 Cs0 CreateOrderDialogProcess Big #zClass
@@ -145,14 +145,14 @@ Cs0 f14 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData
 ' #txt
 Cs0 f14 actionTable 'out=in;
 ' #txt
-Cs0 f14 actionCode 'import online.food.ordering.Ordering;
+Cs0 f14 actionCode 'import online.food.ordering.Restaurant;
 import online.food.ordering.Food;
 import java.util.ArrayList;
 
 in.foods = new ArrayList<Food>();
 in.price = 0;
 in.isEnableSaveBtn = true;
-in.ordering = new Ordering();' #txt
+in.restaurant = new Restaurant();' #txt
 Cs0 f14 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -266,46 +266,44 @@ Cs0 f30 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData
 ' #txt
 Cs0 f30 actionTable 'out=in;
 ' #txt
-Cs0 f30 actionCode 'import serviceImpl.OrderingServiceImpl;
-import service.OrderingService;
+Cs0 f30 actionCode 'import serviceImpl.RestaurantServiceImpl;
+import service.RestaurantService;
 
-OrderingService service = new OrderingServiceImpl();
+RestaurantService service = new RestaurantServiceImpl();
 
-ivy.log.info(in.ordering);
-
-in.orderId = service.saveOrdering(in.ordering);' #txt
+in.restaurantId = service.saveRestaurant(in.restaurant);' #txt
 Cs0 f30 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f30 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>save ordering
+        <name>save Restaurant
 to DB</name>
-        <nameStyle>14,7
+        <nameStyle>16,7
 5,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Cs0 f30 168 722 112 44 -37 -16 #rect
+Cs0 f30 160 722 128 44 -42 -16 #rect
 Cs0 f30 @|StepIcon #fIcon
 Cs0 f31 expr out #txt
-Cs0 f31 109 744 168 744 #arcP
+Cs0 f31 109 744 160 744 #arcP
 Cs0 f32 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f32 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>whether orderId &gt; 0
+        <name>whether restaurantId &gt; 0
 or not</name>
-        <nameStyle>20,7
+        <nameStyle>25,7
 6,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Cs0 f32 352 728 32 32 -53 18 #rect
+Cs0 f32 352 728 32 32 -66 18 #rect
 Cs0 f32 @|AlternativeIcon #fIcon
 Cs0 f33 expr out #txt
-Cs0 f33 280 744 352 744 #arcP
+Cs0 f33 288 744 352 744 #arcP
 Cs0 f34 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
 ' #txt
 Cs0 f34 actionTable 'out=in;
@@ -342,24 +340,24 @@ Cs0 f37 actionTable 'out=in;
 Cs0 f37 actionCode 'import online.food.ordering.Food;
 
 for (Food food : in.foods) {
-	food.setOrderId(in.orderId);
+	food.setRestaurantId(in.restaurantId);
 }' #txt
 Cs0 f37 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f37 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>Assign orderid
+        <name>Assign restaurantId
 to foods list</name>
-        <nameStyle>15,7
+        <nameStyle>20,7
 13,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Cs0 f37 448 666 128 44 -40 -16 #rect
+Cs0 f37 448 666 128 44 -46 -16 #rect
 Cs0 f37 @|StepIcon #fIcon
 Cs0 f38 expr in #txt
-Cs0 f38 outCond 'in.orderId > 0' #txt
+Cs0 f38 outCond 'in.restaurantId > 0' #txt
 Cs0 f38 368 728 448 688 #arcP
 Cs0 f38 1 368 688 #addKink
 Cs0 f38 1 0.18201377131125981 0 0 #arcLabel
@@ -369,14 +367,14 @@ Cs0 f39 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData
 ' #txt
 Cs0 f39 actionTable 'out=in;
 ' #txt
-Cs0 f39 actionCode 'import online.food.ordering.Ordering;
+Cs0 f39 actionCode 'import online.food.ordering.Restaurant;
 import online.food.ordering.Food;
 import java.util.ArrayList;
 
 in.foods = new ArrayList<Food>();
 in.price = 0;
 in.isEnableSaveBtn = true;
-in.ordering = new Ordering();' #txt
+in.restaurant = new Restaurant();' #txt
 Cs0 f39 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f39 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
