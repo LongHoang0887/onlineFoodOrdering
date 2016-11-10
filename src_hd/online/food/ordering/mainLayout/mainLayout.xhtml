@@ -10,7 +10,7 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">mainLayout</ui:define>
 		<ui:define name="content">
-			<p:layout style="min-height:700px;">
+			<p:layout style="height:600px;">
 				<p:layoutUnit position="west" size="200">
 					<div>
 						<p:button value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;"/>
@@ -45,6 +45,69 @@
 						<p:button value="Delete" />
 						<p:button value="Purchase" />
 					</div>
+					<div class="info-summary">
+						<p:panelGrid columns="3" layout="grid" style="border: none;">            
+						    <h:outputText>
+						    	<h:outputLabel value="Restaurant:" /> Smoothies 142
+						    </h:outputText>
+						    <h:outputText>
+						    	<h:outputLabel value="Website:" /> http://sinhto142.com
+						    </h:outputText>
+						    <h:outputText>
+						    	<h:outputLabel value="Phone:" /> 19001080
+						    </h:outputText>
+						    <h:outputText>
+						    	<h:outputLabel value="Created date:" /> 23/03/2016 11:10
+						    </h:outputText> 
+						    <h:outputText>
+						    	<h:outputLabel value="Total:" /> 250.000 vnd
+						    </h:outputText>
+						</p:panelGrid>
+						<p:panelGrid styleClass="order-detail-list">
+							<p:row>
+								<p:column styleClass="order-food" rowspan="2">
+									<span>Banana <br></br> 4 units</span>
+								</p:column>
+								<p:column>Price: 35.000</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Whose: Xon Mai, Trung Do, Trung Ly, Duong Nguyen</p:column>
+							</p:row>
+							
+							<p:row>
+								<p:column styleClass="order-food" rowspan="2">
+									<span>Strawberry <br></br> 1 unit</span>
+								</p:column>
+								<p:column>Price: 30.000</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Whose: Phong Pham</p:column>
+							</p:row>
+							
+							<p:row>
+								<p:column styleClass="order-food" rowspan="2">
+									<span>Banana <br></br> 4 units</span>
+								</p:column>
+								<p:column>Price: 35.000</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Whose: Xon Mai, Trung Do, Trung Ly, Duong Nguyen</p:column>
+							</p:row>
+							
+							<p:row>
+								<p:column styleClass="order-food" rowspan="2">
+									<span>Strawberry <br></br> 1 unit</span>
+								</p:column>
+								<p:column>Price: 30.000</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Whose: Phong Pham</p:column>
+							</p:row>
+						</p:panelGrid>
+					</div>
+					
+						
+					
 				</p:layoutUnit>
 			</p:layout>
 		</ui:define>		

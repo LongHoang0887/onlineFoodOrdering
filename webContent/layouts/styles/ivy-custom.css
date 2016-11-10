@@ -10,16 +10,46 @@
 
 .order-ticket-list {
 	width:100%; 
-	text-align: left; 
+	text-align: left;	
 }
 
 .right-layout .header {
 	border: 2px solid gray; 
 	height: 50px; 
 	line-height: 50px; 
-	padding: 5px 10px;
+	padding: 5px;
 }
 
 .right-layout .header button {
 	float: right;
+	height: 100%;
+	font-size: 14px;
+}
+
+.right-layout .order-detail-list {
+	width: 100%;
+	border: none;
+	margin-top: 10px;
+	border-top: 2px black dashed;
+}
+
+.right-layout .order-detail-list tr {
+	height: 50px;
+}
+
+.right-layout .order-detail-list td {
+	border: none;
+}
+
+.order-detail-list td.order-food {
+	width: 20%;
+}
+
+.order-detail-list td.order-food > span {
+    border: 2px solid black;
+    height: 76px;
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    padding: 10px 0;
 }
