@@ -1,0 +1,18 @@
+PopupOrderManagementData #class
+online.food.ordering #namespace
+restaurantId String #field
+restaurantId PERSISTENT #fieldModifier
+restaurantName String #field
+restaurantName PERSISTENT #fieldModifier
+website String #field
+website PERSISTENT #fieldModifier
+foods List<online.food.ordering.Food> #field
+foods PERSISTENT #fieldModifier
+notice String #field
+notice PERSISTENT #fieldModifier
+optional String #field
+optional PERSISTENT #fieldModifier
+food String #field
+food PERSISTENT #fieldModifier
+price String #field
+price PERSISTENT #fieldModifier
