@@ -10,10 +10,11 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">mainLayout</ui:define>
 		<ui:define name="content">
+			<h:form id="form">
 			<p:layout style="height:600px;">
 				<p:layoutUnit position="west" size="200">
 					<div>
-						<p:button value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;"/>
+						<p:commandButton value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;" actionListener="#{logic.New}" update="form"/>
 					</div>
 					<div>
 						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}">
@@ -102,6 +103,7 @@
 					</div>
 				</p:layoutUnit>
 			</p:layout>
+			</h:form>
 		</ui:define>		
 	</ui:composition>
 </h:body>

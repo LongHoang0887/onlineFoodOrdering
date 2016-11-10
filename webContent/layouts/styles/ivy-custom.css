@@ -12,7 +12,7 @@
 	display: none;
 }
 
-.order-ticket-list .ui-datatable-tablewrapper {
+.order-ticket-list .ui-datatable-tablewrapper, .create-food-table .ui-datatable-tablewrapper {
 	margin: 0;
 }
 
@@ -97,4 +97,32 @@
 .order-item span.order-restaurant {
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.create-order .order-info-table {
+	width: 100%;
+	border: none;
+}
+
+.create-order .order-info-table td {
+	width: 100%;
+	border: none;
+}
+
+.order-info-table td.input-label {
+	width: 30%;
+}
+
+.order-info-table td input {
+	width: 90%;
+}
+
+.create-order .create-order-footer {
+	position: relative;
+	margin-top: 20px;
+	bottom: 0;
+}
+
+.create-order .create-food-table input{
+	width: 85%;
 }

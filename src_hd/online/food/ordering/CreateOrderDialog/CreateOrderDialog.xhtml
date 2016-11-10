@@ -12,52 +12,83 @@
 		<ui:define name="content">
 			
 			<h:form id="form">
-				<h:panelGrid columns="2">
-					<f:facet name="header">
-						<p:messages></p:messages>
-					</f:facet>
-
-					<p:outputLabel value="Restaurant (*)" />
-					<p:inputText value="#{data.restaurant.restaurantName}" required="true" requiredMessage="Restaurant name could not be blank"/>
-					<p:outputLabel value="Website" />
-					<p:inputText value="#{data.restaurant.website}" />
-					<p:outputLabel value="Phone" />
-					<p:inputText value="#{data.restaurant.phone}" />
-
-					<p:selectBooleanCheckbox value="#{data.restaurant.outOfFood}" itemLabel="Order out of food list"/>
-			</h:panelGrid>
-			
-			<h:panelGrid columns="3" >
-					<p:outputLabel value="Food name (*)" />
-					<p:outputLabel value="Price" />
-
-			</h:panelGrid>
-
-					<br />
-				<p:inputText value="#{data.name}" required="true" requiredMessage="Food name could not be blank"/>
-				<p:inputText value="#{data.price}"/>
-				<p:commandButton actionListener="#{logic.add}" value="Add" update="form"/>
-
-				<p:dataTable var="food" value="#{data.foods}" >
-				    <p:column headerText="Food">
-				        <h:outputText value="#{food.name}" />
-				    </p:column>
-				 
-				    <p:column headerText="Price">
-				        <h:outputText value="#{food.price}" />
-				    </p:column>
-				 
-				    <p:column headerText="Action">
-				        <p:commandButton actionListener="#{logic.delete(food)}" value="Delete" update="form" process="@this"/>
-				    </p:column>
-				</p:dataTable>
-
-				<p:commandButton actionListener="#{logic.save}" value="Save" update="form" icon="ui-icon-check" process="@this" disabled="#{data.isEnableSaveBtn}" />
-				<br />
-				<p:commandButton actionListener="#{logic.close}" value="Close" update="form" icon="ui-icon-check"/>
-				
+				<p:layout style="width: 400px; height: 550px;" styleClass="create-order">
+					<p:layoutUnit position="center" header="Create Ordering Ticket">
+						<p:panelGrid styleClass="order-info-table">
+							<p:row>
+								<p:column colspan="2">
+									<f:facet name="header"><p:messages></p:messages></f:facet>
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="input-label">
+									<p:outputLabel value="Restaurant (*)" />		
+								</p:column>
+								<p:column>
+									<p:inputText value="#{data.restaurant.restaurantName}" required="true" requiredMessage="Restaurant name could not be blank"/>		
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="input-label">
+									<p:outputLabel value="Website" />	
+								</p:column>
+								<p:column>
+									<p:inputText value="#{data.restaurant.website}" />		
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="input-label">
+									<p:outputLabel value="Phone" />	
+								</p:column>
+								<p:column>
+									<p:inputText value="#{data.restaurant.phone}" />		
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column colspan="2" style="text-align:center; padding: 15px 0;">
+									<p:selectBooleanCheckbox value="#{data.restaurant.outOfFood}" itemLabel="Order out of food list"/>
+								</p:column>
+							</p:row>		
+						</p:panelGrid>
+						
+						<div class="ui-grid create-food-table" style="padding: 10px;">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-6">
+									<p:outputLabel value="Food name (*)" />
+								</div>
+								<div class="ui-grid-col-6"><p:outputLabel value="Price" /></div>
+								
+							</div>
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-6">
+									<p:inputText value="#{data.name}" required="true" requiredMessage="Food name could not be blank"/>
+								</div>
+								<div class="ui-grid-col-3">
+									<p:inputText value="#{data.price}"/>
+								</div>
+								<div class="ui-grid-col-3"><p:commandButton actionListener="#{logic.add}" value="Add" update="form" style="float:right;"/></div>
+							</div>			
+							<div class="ui-grid-col-12" style="margin-top: 10px;">
+								<p:dataTable var="food" value="#{data.foods}" >
+								    <p:column headerText="Food">
+								        <h:outputText value="#{food.name}" />
+								    </p:column>
+								    <p:column headerText="Price">
+								        <h:outputText value="#{food.price}" />
+								    </p:column>
+								    <p:column headerText="Action">
+								        <p:commandButton actionListener="#{logic.delete(food)}" value="Delete" update="form" process="@this"/>
+								    </p:column>
+								</p:dataTable>
+							</div>
+						</div>
+						<div class="create-order-footer">
+							<p:commandButton style="float:right;" actionListener="#{logic.close}" value="Close" update="form" icon="ui-icon-check"/>
+							<p:commandButton style="float:right;" actionListener="#{logic.save}" value="Save" update="form" icon="ui-icon-check" disabled="#{data.isEnableSaveBtn}" />
+						</div>
+					</p:layoutUnit>
+				</p:layout>
 			</h:form>
-			
 		</ui:define>
 	</ui:composition>
 </h:body>
