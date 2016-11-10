@@ -16,7 +16,7 @@
 						<p:button value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;"/>
 					</div>
 					<div>
-						<p:dataTable value="#{data.orderingList}" var="ordering" styleClass="order-ticket-list" selectionMode="single" selection="#{ordering}" rowKey="#{ordering.id}">
+						<p:dataTable value="#{data.orderingList}" var="ordering" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedOrder}" rowKey="#{ordering.id}">
 							<p:column>#{ordering.restaurantName}</p:column>
 					    </p:dataTable>
 					</div>
@@ -30,8 +30,8 @@
 					</div>
 					<div class="info-summary">
 						<p:panelGrid columns="3" layout="grid" style="border: none;">            
-						    <h:outputText>
-						    	<h:outputLabel value="Restaurant:" /> Smoothies 142
+						    <h:outputText value="Smoothies 142">
+						    	<h:outputLabel value="Restaurant:" />
 						    </h:outputText>
 						    <h:outputText>
 						    	<h:outputLabel value="Website:" /> http://sinhto142.com
