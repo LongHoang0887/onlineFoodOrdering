@@ -126,3 +126,7 @@
 .create-order .create-food-table input{
 	width: 85%;
 }
+
+.create-order .ui-messages {
+	width: auto;	
+}
