@@ -1,0 +1,19 @@
+Ordering #class
+true #isEntity
+online.food.ordering #namespace
+Ordering #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+restaurantName String #field
+restaurantName PERSISTENT #fieldModifier
+createdDate java.util.Date #field
+createdDate PERSISTENT #fieldModifier
+website String #field
+website PERSISTENT #fieldModifier
+phone String #field
+phone PERSISTENT #fieldModifier
+outOfFood Boolean #field
+outOfFood PERSISTENT #fieldModifier

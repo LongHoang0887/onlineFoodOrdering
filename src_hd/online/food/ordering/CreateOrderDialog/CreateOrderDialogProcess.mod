@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 17:24:52 ICT 2016]
+[>Created: Thu Nov 10 13:41:55 ICT 2016]
 158489E6E55BBC40 3.18 #module
 >Proto >Proto Collection #zClass
 Cs0 CreateOrderDialogProcess Big #zClass
@@ -17,10 +17,45 @@ Cs0 @TextInP .xml .xml #zField
 Cs0 @TextInP .responsibility .responsibility #zField
 Cs0 @RichDialogInitStart f0 '' #zField
 Cs0 @RichDialogProcessEnd f1 '' #zField
-Cs0 @PushWFArc f2 '' #zField
 Cs0 @RichDialogProcessStart f3 '' #zField
 Cs0 @RichDialogEnd f4 '' #zField
 Cs0 @PushWFArc f5 '' #zField
+Cs0 @RichDialogProcessStart f6 '' #zField
+Cs0 @RichDialogProcessStart f9 '' #zField
+Cs0 @RichDialogProcessEnd f12 '' #zField
+Cs0 @GridStep f11 '' #zField
+Cs0 @PushWFArc f13 '' #zField
+Cs0 @GridStep f14 '' #zField
+Cs0 @PushWFArc f15 '' #zField
+Cs0 @PushWFArc f2 '' #zField
+Cs0 @GridStep f16 '' #zField
+Cs0 @PushWFArc f17 '' #zField
+Cs0 @RichDialogMethodStart f23 '' #zField
+Cs0 @RichDialogProcessEnd f24 '' #zField
+Cs0 @GridStep f18 '' #zField
+Cs0 @PushWFArc f19 '' #zField
+Cs0 @GridStep f21 '' #zField
+Cs0 @PushWFArc f20 '' #zField
+Cs0 @Alternative f25 '' #zField
+Cs0 @PushWFArc f26 '' #zField
+Cs0 @PushWFArc f22 '' #zField
+Cs0 @PushWFArc f27 '' #zField
+Cs0 @GridStep f28 '' #zField
+Cs0 @PushWFArc f29 '' #zField
+Cs0 @PushWFArc f10 '' #zField
+Cs0 @RichDialogProcessEnd f7 '' #zField
+Cs0 @GridStep f30 '' #zField
+Cs0 @PushWFArc f31 '' #zField
+Cs0 @Alternative f32 '' #zField
+Cs0 @PushWFArc f33 '' #zField
+Cs0 @GridStep f34 '' #zField
+Cs0 @PushWFArc f36 '' #zField
+Cs0 @GridStep f37 '' #zField
+Cs0 @PushWFArc f38 '' #zField
+Cs0 @PushWFArc f35 '' #zField
+Cs0 @GridStep f39 '' #zField
+Cs0 @PushWFArc f40 '' #zField
+Cs0 @PushWFArc f8 '' #zField
 >Proto Cs0 Cs0 CreateOrderDialogProcess #zField
 Cs0 f0 guid 158489E6E6D3B372 #txt
 Cs0 f0 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
@@ -41,10 +76,8 @@ Cs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Cs0 f0 83 51 26 26 -16 15 #rect
 Cs0 f0 @|RichDialogInitStartIcon #fIcon
 Cs0 f1 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
-Cs0 f1 211 51 26 26 0 12 #rect
+Cs0 f1 339 51 26 26 0 12 #rect
 Cs0 f1 @|RichDialogProcessEndIcon #fIcon
-Cs0 f2 expr out #txt
-Cs0 f2 109 64 211 64 #arcP
 Cs0 f3 guid 158489E6E8492DBC #txt
 Cs0 f3 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f3 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
@@ -66,11 +99,406 @@ Cs0 f4 211 147 26 26 0 12 #rect
 Cs0 f4 @|RichDialogEndIcon #fIcon
 Cs0 f5 expr out #txt
 Cs0 f5 109 160 211 160 #arcP
+Cs0 f6 guid 15848A1B9508D29C #txt
+Cs0 f6 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f6 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f6 actionTable 'out=in;
+' #txt
+Cs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>save</name>
+        <nameStyle>4,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f6 83 731 26 26 -13 15 #rect
+Cs0 f6 @|RichDialogProcessStartIcon #fIcon
+Cs0 f9 guid 15848BFCDF3940EB #txt
+Cs0 f9 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f9 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f9 actionTable 'out=in;
+' #txt
+Cs0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>add</name>
+        <nameStyle>3,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f9 83 339 26 26 -10 15 #rect
+Cs0 f9 @|RichDialogProcessStartIcon #fIcon
+Cs0 f12 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f12 723 339 26 26 0 12 #rect
+Cs0 f12 @|RichDialogProcessEndIcon #fIcon
+Cs0 f11 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f11 actionTable 'out=in;
+' #txt
+Cs0 f11 actionCode 'import online.food.ordering.Food;
+import java.util.ArrayList;
+
+Food f = new Food();
+f.setName(in.name);
+f.setPrice(in.price);
+
+in.foods.add(f);' #txt
+Cs0 f11 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>add Food to
+grid list</name>
+        <nameStyle>21,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f11 168 330 112 44 -32 -16 #rect
+Cs0 f11 @|StepIcon #fIcon
+Cs0 f13 expr out #txt
+Cs0 f13 109 352 168 352 #arcP
+Cs0 f14 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f14 actionTable 'out=in;
+' #txt
+Cs0 f14 actionCode 'import online.food.ordering.Ordering;
+import online.food.ordering.Food;
+import java.util.ArrayList;
+
+in.foods = new ArrayList<Food>();
+in.price = 0;
+in.isEnableSaveBtn = true;
+in.ordering = new Ordering();' #txt
+Cs0 f14 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>init vaue</name>
+        <nameStyle>9,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f14 168 42 112 44 -22 -8 #rect
+Cs0 f14 @|StepIcon #fIcon
+Cs0 f15 expr out #txt
+Cs0 f15 109 64 168 64 #arcP
+Cs0 f2 expr out #txt
+Cs0 f2 280 64 339 64 #arcP
+Cs0 f16 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f16 actionTable 'out=in;
+' #txt
+Cs0 f16 actionCode 'in.name = "";
+in.price = 0;' #txt
+Cs0 f16 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Reset text field</name>
+        <nameStyle>16,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f16 328 330 112 44 -40 -8 #rect
+Cs0 f16 @|StepIcon #fIcon
+Cs0 f17 expr out #txt
+Cs0 f17 280 352 328 352 #arcP
+Cs0 f23 guid 15848FE90B25F3B6 #txt
+Cs0 f23 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f23 method delete(online.food.ordering.Food) #txt
+Cs0 f23 disableUIEvents false #txt
+Cs0 f23 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<online.food.ordering.Food food> param = methodEvent.getInputArguments();
+' #txt
+Cs0 f23 inParameterMapAction 'out.selectedFood=param.food;
+' #txt
+Cs0 f23 outParameterDecl '<> result;
+' #txt
+Cs0 f23 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>delete(Food)</name>
+        <nameStyle>12,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f23 83 531 26 26 -35 15 #rect
+Cs0 f23 @|RichDialogMethodStartIcon #fIcon
+Cs0 f24 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f24 659 531 26 26 0 12 #rect
+Cs0 f24 @|RichDialogProcessEndIcon #fIcon
+Cs0 f18 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f18 actionTable 'out=in;
+' #txt
+Cs0 f18 actionCode in.foods.remove(in.selectedFood); #txt
+Cs0 f18 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f18 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>remove selectedItem
+ from list</name>
+        <nameStyle>30,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f18 152 522 144 44 -52 -16 #rect
+Cs0 f18 @|StepIcon #fIcon
+Cs0 f19 expr out #txt
+Cs0 f19 109 544 152 544 #arcP
+Cs0 f21 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f21 actionTable 'out=in;
+out.isEnableSaveBtn=true;
+' #txt
+Cs0 f21 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>set readonly to 
+Save button</name>
+        <nameStyle>17,7
+11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f21 464 522 128 44 -40 -16 #rect
+Cs0 f21 @|StepIcon #fIcon
+Cs0 f20 expr out #txt
+Cs0 f20 592 544 659 544 #arcP
+Cs0 f25 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>whether foods is empty
+or not</name>
+        <nameStyle>23,7
+6,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f25 368 528 32 32 -63 18 #rect
+Cs0 f25 @|AlternativeIcon #fIcon
+Cs0 f26 expr out #txt
+Cs0 f26 296 544 368 544 #arcP
+Cs0 f22 expr in #txt
+Cs0 f22 outCond 'in.foods.size() == 0' #txt
+Cs0 f22 400 544 464 544 #arcP
+Cs0 f27 expr in #txt
+Cs0 f27 384 560 672 557 #arcP
+Cs0 f27 1 384 632 #addKink
+Cs0 f27 2 672 632 #addKink
+Cs0 f27 1 0.20242933145292624 0 0 #arcLabel
+Cs0 f28 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f28 actionTable 'out=in;
+out.isEnableSaveBtn=false;
+' #txt
+Cs0 f28 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f28 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>enable Save 
+button</name>
+        <nameStyle>13,7
+6,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f28 488 330 112 44 -35 -16 #rect
+Cs0 f28 @|StepIcon #fIcon
+Cs0 f29 expr out #txt
+Cs0 f29 440 352 488 352 #arcP
+Cs0 f10 expr out #txt
+Cs0 f10 600 352 723 352 #arcP
+Cs0 f7 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f7 1003 787 26 26 0 12 #rect
+Cs0 f7 @|RichDialogProcessEndIcon #fIcon
+Cs0 f30 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f30 actionTable 'out=in;
+' #txt
+Cs0 f30 actionCode 'import serviceImpl.OrderingServiceImpl;
+import service.OrderingService;
+
+OrderingService service = new OrderingServiceImpl();
+
+ivy.log.info(in.ordering);
+
+in.orderId = service.saveOrdering(in.ordering);' #txt
+Cs0 f30 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f30 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>save ordering
+to DB</name>
+        <nameStyle>14,7
+5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f30 168 722 112 44 -37 -16 #rect
+Cs0 f30 @|StepIcon #fIcon
+Cs0 f31 expr out #txt
+Cs0 f31 109 744 168 744 #arcP
+Cs0 f32 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f32 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>whether orderId &gt; 0
+or not</name>
+        <nameStyle>20,7
+6,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f32 352 728 32 32 -53 18 #rect
+Cs0 f32 @|AlternativeIcon #fIcon
+Cs0 f33 expr out #txt
+Cs0 f33 280 744 352 744 #arcP
+Cs0 f34 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f34 actionTable 'out=in;
+' #txt
+Cs0 f34 actionCode 'import serviceImpl.FoodServiceImpl;
+import service.FoodService;
+
+FoodService service = new FoodServiceImpl();
+ivy.log.info(in.foods);
+service.saveFoods(in.foods);' #txt
+Cs0 f34 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f34 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>save Foods
+to DB</name>
+        <nameStyle>11,7
+5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f34 672 666 112 44 -32 -16 #rect
+Cs0 f34 @|StepIcon #fIcon
+Cs0 f36 expr in #txt
+Cs0 f36 368 760 1016 813 #arcP
+Cs0 f36 1 368 856 #addKink
+Cs0 f36 2 1016 856 #addKink
+Cs0 f36 0 0.8028344718039047 0 0 #arcLabel
+Cs0 f37 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f37 actionTable 'out=in;
+' #txt
+Cs0 f37 actionCode 'import online.food.ordering.Food;
+
+for (Food food : in.foods) {
+	food.setOrderId(in.orderId);
+}' #txt
+Cs0 f37 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f37 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Assign orderid
+to foods list</name>
+        <nameStyle>15,7
+13,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f37 448 666 128 44 -40 -16 #rect
+Cs0 f37 @|StepIcon #fIcon
+Cs0 f38 expr in #txt
+Cs0 f38 outCond 'in.orderId > 0' #txt
+Cs0 f38 368 728 448 688 #arcP
+Cs0 f38 1 368 688 #addKink
+Cs0 f38 1 0.18201377131125981 0 0 #arcLabel
+Cs0 f35 expr out #txt
+Cs0 f35 576 688 672 688 #arcP
+Cs0 f39 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f39 actionTable 'out=in;
+' #txt
+Cs0 f39 actionCode 'import online.food.ordering.Ordering;
+import online.food.ordering.Food;
+import java.util.ArrayList;
+
+in.foods = new ArrayList<Food>();
+in.price = 0;
+in.isEnableSaveBtn = true;
+in.ordering = new Ordering();' #txt
+Cs0 f39 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f39 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>reset form</name>
+        <nameStyle>10,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f39 832 666 112 44 -28 -8 #rect
+Cs0 f39 @|StepIcon #fIcon
+Cs0 f40 expr out #txt
+Cs0 f40 784 688 832 688 #arcP
+Cs0 f8 expr out #txt
+Cs0 f8 944 688 1016 787 #arcP
+Cs0 f8 1 1016 688 #addKink
+Cs0 f8 0 0.9238636331908798 0 0 #arcLabel
 >Proto Cs0 .type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 >Proto Cs0 .processKind HTML_DIALOG #txt
 >Proto Cs0 -8 -8 16 16 16 26 #rect
 >Proto Cs0 '' #fIcon
-Cs0 f0 mainOut f2 tail #connect
-Cs0 f2 head f1 mainIn #connect
 Cs0 f3 mainOut f5 tail #connect
 Cs0 f5 head f4 mainIn #connect
+Cs0 f9 mainOut f13 tail #connect
+Cs0 f13 head f11 mainIn #connect
+Cs0 f0 mainOut f15 tail #connect
+Cs0 f15 head f14 mainIn #connect
+Cs0 f14 mainOut f2 tail #connect
+Cs0 f2 head f1 mainIn #connect
+Cs0 f11 mainOut f17 tail #connect
+Cs0 f17 head f16 mainIn #connect
+Cs0 f23 mainOut f19 tail #connect
+Cs0 f19 head f18 mainIn #connect
+Cs0 f21 mainOut f20 tail #connect
+Cs0 f20 head f24 mainIn #connect
+Cs0 f18 mainOut f26 tail #connect
+Cs0 f26 head f25 in #connect
+Cs0 f25 out f22 tail #connect
+Cs0 f22 head f21 mainIn #connect
+Cs0 f25 out f27 tail #connect
+Cs0 f27 head f24 mainIn #connect
+Cs0 f16 mainOut f29 tail #connect
+Cs0 f29 head f28 mainIn #connect
+Cs0 f28 mainOut f10 tail #connect
+Cs0 f10 head f12 mainIn #connect
+Cs0 f6 mainOut f31 tail #connect
+Cs0 f31 head f30 mainIn #connect
+Cs0 f30 mainOut f33 tail #connect
+Cs0 f33 head f32 in #connect
+Cs0 f36 head f7 mainIn #connect
+Cs0 f32 out f38 tail #connect
+Cs0 f38 head f37 mainIn #connect
+Cs0 f32 out f36 tail #connect
+Cs0 f37 mainOut f35 tail #connect
+Cs0 f35 head f34 mainIn #connect
+Cs0 f34 mainOut f40 tail #connect
+Cs0 f40 head f39 mainIn #connect
+Cs0 f39 mainOut f8 tail #connect
+Cs0 f8 head f7 mainIn #connect
