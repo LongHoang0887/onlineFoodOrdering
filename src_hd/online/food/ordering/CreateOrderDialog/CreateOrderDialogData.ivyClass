@@ -2,15 +2,17 @@ CreateOrderDialogData #class
 online.food.ordering.CreateOrderDialog #namespace
 foods List<online.food.ordering.Food> #field
 foods PERSISTENT #fieldModifier
+ordering online.food.ordering.Ordering #field
+ordering PERSISTENT #fieldModifier
+selectedFood online.food.ordering.Food #field
+selectedFood PERSISTENT #fieldModifier
 name String #field
 name PERSISTENT #fieldModifier
 price Integer #field
 price PERSISTENT #fieldModifier
-selectedFood online.food.ordering.Food #field
-selectedFood PERSISTENT #fieldModifier
-isEnableSaveBtn Boolean #field
-isEnableSaveBtn PERSISTENT #fieldModifier
-ordering online.food.ordering.Ordering #field
-ordering PERSISTENT #fieldModifier
 orderId Integer #field
 orderId PERSISTENT #fieldModifier
+isEnableSaveBtn Boolean #field
+isEnableSaveBtn PERSISTENT #fieldModifier
+isFoodExist Boolean #field
+isFoodExist PERSISTENT #fieldModifier

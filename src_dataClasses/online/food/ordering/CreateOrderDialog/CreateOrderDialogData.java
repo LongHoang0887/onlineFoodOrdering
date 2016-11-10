@@ -7,7 +7,7 @@ package online.food.ordering.CreateOrderDialog;
 public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 4017850223305055357L;
+  private static final long serialVersionUID = 2149140497224682944L;
 
   private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> foods;
 
@@ -27,6 +27,46 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
   public void setFoods(ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> _foods)
   {
     foods = _foods;
+  }
+
+  private online.food.ordering.Ordering ordering;
+
+  /**
+   * Gets the field ordering.
+   * @return the value of the field ordering; may be null.
+   */
+  public online.food.ordering.Ordering getOrdering()
+  {
+    return ordering;
+  }
+
+  /**
+   * Sets the field ordering.
+   * @param _ordering the new value of the field ordering.
+   */
+  public void setOrdering(online.food.ordering.Ordering _ordering)
+  {
+    ordering = _ordering;
+  }
+
+  private online.food.ordering.Food selectedFood;
+
+  /**
+   * Gets the field selectedFood.
+   * @return the value of the field selectedFood; may be null.
+   */
+  public online.food.ordering.Food getSelectedFood()
+  {
+    return selectedFood;
+  }
+
+  /**
+   * Sets the field selectedFood.
+   * @param _selectedFood the new value of the field selectedFood.
+   */
+  public void setSelectedFood(online.food.ordering.Food _selectedFood)
+  {
+    selectedFood = _selectedFood;
   }
 
   private java.lang.String name;
@@ -69,24 +109,24 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
     price = _price;
   }
 
-  private online.food.ordering.Food selectedFood;
+  private java.lang.Integer orderId;
 
   /**
-   * Gets the field selectedFood.
-   * @return the value of the field selectedFood; may be null.
+   * Gets the field orderId.
+   * @return the value of the field orderId; may be null.
    */
-  public online.food.ordering.Food getSelectedFood()
+  public java.lang.Integer getOrderId()
   {
-    return selectedFood;
+    return orderId;
   }
 
   /**
-   * Sets the field selectedFood.
-   * @param _selectedFood the new value of the field selectedFood.
+   * Sets the field orderId.
+   * @param _orderId the new value of the field orderId.
    */
-  public void setSelectedFood(online.food.ordering.Food _selectedFood)
+  public void setOrderId(java.lang.Integer _orderId)
   {
-    selectedFood = _selectedFood;
+    orderId = _orderId;
   }
 
   private java.lang.Boolean isEnableSaveBtn;
@@ -109,44 +149,24 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
     isEnableSaveBtn = _isEnableSaveBtn;
   }
 
-  private online.food.ordering.Ordering ordering;
+  private java.lang.Boolean isFoodExist;
 
   /**
-   * Gets the field ordering.
-   * @return the value of the field ordering; may be null.
+   * Gets the field isFoodExist.
+   * @return the value of the field isFoodExist; may be null.
    */
-  public online.food.ordering.Ordering getOrdering()
+  public java.lang.Boolean getIsFoodExist()
   {
-    return ordering;
+    return isFoodExist;
   }
 
   /**
-   * Sets the field ordering.
-   * @param _ordering the new value of the field ordering.
+   * Sets the field isFoodExist.
+   * @param _isFoodExist the new value of the field isFoodExist.
    */
-  public void setOrdering(online.food.ordering.Ordering _ordering)
+  public void setIsFoodExist(java.lang.Boolean _isFoodExist)
   {
-    ordering = _ordering;
-  }
-
-  private java.lang.Integer orderId;
-
-  /**
-   * Gets the field orderId.
-   * @return the value of the field orderId; may be null.
-   */
-  public java.lang.Integer getOrderId()
-  {
-    return orderId;
-  }
-
-  /**
-   * Sets the field orderId.
-   * @param _orderId the new value of the field orderId.
-   */
-  public void setOrderId(java.lang.Integer _orderId)
-  {
-    orderId = _orderId;
+    isFoodExist = _isFoodExist;
   }
 
 }

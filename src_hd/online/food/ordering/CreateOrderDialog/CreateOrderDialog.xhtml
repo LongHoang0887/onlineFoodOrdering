@@ -16,26 +16,25 @@
 					<f:facet name="header">
 						<p:messages></p:messages>
 					</f:facet>
-					
-					
+
 					<p:outputLabel value="Restaurant (*)" />
-					<p:inputText value="#{data.ordering.restaurantName}" />
+					<p:inputText value="#{data.ordering.restaurantName}" required="true" requiredMessage="Restaurant name could not be blank"/>
 					<p:outputLabel value="Website" />
 					<p:inputText value="#{data.ordering.website}" />
 					<p:outputLabel value="Phone" />
 					<p:inputText value="#{data.ordering.phone}" />
-					
+
 					<p:selectBooleanCheckbox value="#{data.ordering.outOfFood}" itemLabel="Order out of food list"/>
 			</h:panelGrid>
 			
 			<h:panelGrid columns="3" >
 					<p:outputLabel value="Food name (*)" />
 					<p:outputLabel value="Price" />
-					
+
 			</h:panelGrid>
 
 					<br />
-				<p:inputText value="#{data.name}" requiredMessage="Food name could not be blank"/>
+				<p:inputText value="#{data.name}" required="true" requiredMessage="Food name could not be blank"/>
 				<p:inputText value="#{data.price}"/>
 				<p:commandButton actionListener="#{logic.add}" value="Add" update="form"/>
 
@@ -49,7 +48,7 @@
 				    </p:column>
 				 
 				    <p:column headerText="Action">
-				        <p:commandButton actionListener="#{logic.delete(food)}" value="Delete" update="form"/>
+				        <p:commandButton actionListener="#{logic.delete(food)}" value="Delete" update="form" process="@this"/>
 				    </p:column>
 				</p:dataTable>
 
