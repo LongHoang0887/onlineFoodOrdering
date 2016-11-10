@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 16:30:00 ICT 2016]
+[>Created: Thu Nov 10 18:27:56 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -73,11 +73,11 @@ ms0 f6 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
 ' #txt
-ms0 f6 actionCode 'import serviceImpl.OrderingServiceImpl;
+ms0 f6 actionCode 'import serviceImpl.RestaurantServiceImpl;
 import online.food.ordering.Ordering;
 
-OrderingServiceImpl service = new OrderingServiceImpl();
-in.orderingList = service.getAllOrdering();' #txt
+RestaurantServiceImpl service = new RestaurantServiceImpl();
+in.restaurantList = service.getAllRestaurant();' #txt
 ms0 f6 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
