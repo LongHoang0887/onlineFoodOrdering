@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 17:05:39 ICT 2016]
+[>Created: Thu Nov 10 15:32:00 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -17,10 +17,12 @@ ms0 @TextInP .xml .xml #zField
 ms0 @TextInP .responsibility .responsibility #zField
 ms0 @RichDialogInitStart f0 '' #zField
 ms0 @RichDialogProcessEnd f1 '' #zField
-ms0 @PushWFArc f2 '' #zField
 ms0 @RichDialogProcessStart f3 '' #zField
 ms0 @RichDialogEnd f4 '' #zField
 ms0 @PushWFArc f5 '' #zField
+ms0 @GridStep f6 '' #zField
+ms0 @PushWFArc f7 '' #zField
+ms0 @PushWFArc f2 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -41,10 +43,8 @@ ms0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f0 83 51 26 26 -16 15 #rect
 ms0 f0 @|RichDialogInitStartIcon #fIcon
 ms0 f1 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f1 211 51 26 26 0 12 #rect
+ms0 f1 419 51 26 26 0 12 #rect
 ms0 f1 @|RichDialogProcessEndIcon #fIcon
-ms0 f2 expr out #txt
-ms0 f2 109 64 211 64 #arcP
 ms0 f3 guid 158488CD7A6BAB5E #txt
 ms0 f3 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f3 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
@@ -66,11 +66,38 @@ ms0 f4 211 147 26 26 0 12 #rect
 ms0 f4 @|RichDialogEndIcon #fIcon
 ms0 f5 expr out #txt
 ms0 f5 109 160 211 160 #arcP
+ms0 f6 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f6 actionTable 'out=in;
+' #txt
+ms0 f6 actionCode 'import serviceImpl.OrderingServiceImpl;
+import online.food.ordering.Ordering;
+
+OrderingServiceImpl service = new OrderingServiceImpl();
+in.orderingList = service.getAllOrdering();' #txt
+ms0 f6 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Load Ordering List</name>
+        <nameStyle>18,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f6 168 42 112 44 -51 -8 #rect
+ms0 f6 @|StepIcon #fIcon
+ms0 f7 expr out #txt
+ms0 f7 109 64 168 64 #arcP
+ms0 f2 expr out #txt
+ms0 f2 280 64 419 64 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
 >Proto ms0 '' #fIcon
-ms0 f0 mainOut f2 tail #connect
-ms0 f2 head f1 mainIn #connect
 ms0 f3 mainOut f5 tail #connect
 ms0 f5 head f4 mainIn #connect
+ms0 f0 mainOut f7 tail #connect
+ms0 f7 head f6 mainIn #connect
+ms0 f6 mainOut f2 tail #connect
+ms0 f2 head f1 mainIn #connect
