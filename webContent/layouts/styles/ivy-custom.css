@@ -13,10 +13,6 @@
 	text-align: left;	
 }
 
-.right-layout div.ui-layout-unit-content {
-	overflow: hidden;
-}
-
 .right-layout .header {
 	border: 2px solid gray; 
 	height: 50px; 
@@ -60,8 +56,6 @@
 
 .guest-order-list {
 	height: 600px;
-	overflow: scroll;
-	overflow-x: hidden;
 }
 
 .guest-order-list div.order-item {
