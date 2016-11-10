@@ -4,8 +4,16 @@
 	cursor: pointer;
 }
 
-.order-ticket-list tr:hover {
-	background: #b2beca;
+.order-ticket-list tr.ui-datatable-odd {
+	background-color: #FFFFFF;
+}
+
+.order-ticket-list thead {
+	display: none;
+}
+
+.order-ticket-list .ui-datatable-tablewrapper {
+	margin: 0;
 }
 
 .order-ticket-list {
