@@ -3,11 +3,11 @@ package online.food.ordering;
 /**
  */
 @SuppressWarnings("all")
-@javax.annotation.Generated(comments="This is the java file of the ivy data class LoginManagementData", value={"ch.ivyteam.ivy.scripting.streamInOut.IvyScriptJavaClassBuilder"})
-public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
+@javax.annotation.Generated(comments="This is the java file of the ivy data class LoginServiceData", value={"ch.ivyteam.ivy.scripting.streamInOut.IvyScriptJavaClassBuilder"})
+public class LoginServiceData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3623193914549261060L;
+  private static final long serialVersionUID = -3166237846632606972L;
 
   private java.lang.String userName;
 
@@ -49,13 +49,13 @@ public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.Compos
     password = _password;
   }
 
-  private java.lang.String message;
+  private java.lang.Boolean message;
 
   /**
    * Gets the field message.
    * @return the value of the field message; may be null.
    */
-  public java.lang.String getMessage()
+  public java.lang.Boolean getMessage()
   {
     return message;
   }
@@ -64,7 +64,7 @@ public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.Compos
    * Sets the field message.
    * @param _message the new value of the field message.
    */
-  public void setMessage(java.lang.String _message)
+  public void setMessage(java.lang.Boolean _message)
   {
     message = _message;
   }

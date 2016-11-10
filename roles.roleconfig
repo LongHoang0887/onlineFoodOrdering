@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <role>
     <identifier>Everybody</identifier>
+    <role>
+        <identifier>guest</identifier>
+    </role>
+    <role>
+        <identifier>orderingManager</identifier>
+    </role>
+    <role>
+        <identifier>purchasingManger</identifier>
+    </role>
 </role>

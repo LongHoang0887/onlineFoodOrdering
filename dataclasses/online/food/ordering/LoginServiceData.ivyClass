@@ -1,8 +1,8 @@
-LoginManagementData #class
+LoginServiceData #class
 online.food.ordering #namespace
 userName String #field
 userName PERSISTENT #fieldModifier
 password String #field
 password PERSISTENT #fieldModifier
-message String #field
+message Boolean #field
 message PERSISTENT #fieldModifier
