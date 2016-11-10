@@ -1,0 +1,25 @@
+.order-ticket-list tr {
+	height: 50px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.order-ticket-list tr:hover {
+	background: #b2beca;
+}
+
+.order-ticket-list {
+	width:100%; 
+	text-align: left; 
+}
+
+.right-layout .header {
+	border: 2px solid gray; 
+	height: 50px; 
+	line-height: 50px; 
+	padding: 5px 10px;
+}
+
+.right-layout .header button {
+	float: right;
+}

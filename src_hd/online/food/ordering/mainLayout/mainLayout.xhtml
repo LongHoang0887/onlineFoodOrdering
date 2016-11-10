@@ -10,25 +10,44 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">mainLayout</ui:define>
 		<ui:define name="content">
-			<h3>
-			This is an <a href="http://developer.axonivy.com/doc/latest/DesignerGuideHtml/ivy.userinterface.html#ivy-htmldialogs">Html Dialog</a> 
-			implemented with JSF and <a href="http://primefaces.org/">Primefaces</a> as widget library
-			</h3>
-			
-			<h:form id="form">
-				<h:panelGrid columns="2">
-					<f:facet name="header">
-						<p:messages></p:messages>
-					</f:facet>
-					
-					
-					
-					<br />
-					<p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="ui-icon-check" />
-				</h:panelGrid>
-			</h:form>
-			
-		</ui:define>
+			<p:layout style="min-height:700px;">
+				<p:layoutUnit position="west" size="200">
+					<div>
+						<p:button value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;"/>
+					</div>
+					<div>
+						<p:panelGrid border="1" styleClass="order-ticket-list">
+							<p:row>
+								<p:column>Smothies 142</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Pizza Hut</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Domino</p:column>
+							</p:row>
+							<p:row>
+								<p:column>KFC</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Burger King</p:column>
+							</p:row>
+							<p:row>
+								<p:column>Loteria</p:column>
+							</p:row>
+						</p:panelGrid>
+					</div>
+				</p:layoutUnit>
+				<p:layoutUnit position="center" styleClass="right-layout">
+				    <div class="header">
+				    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
+						<p:button value="Clone" />
+						<p:button value="Delete" />
+						<p:button value="Purchase" />
+					</div>
+				</p:layoutUnit>
+			</p:layout>
+		</ui:define>		
 	</ui:composition>
 </h:body>
 </html>
