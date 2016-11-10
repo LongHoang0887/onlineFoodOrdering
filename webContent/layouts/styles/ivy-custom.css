@@ -13,6 +13,10 @@
 	text-align: left;	
 }
 
+.right-layout div.ui-layout-unit-content {
+	overflow: hidden;
+}
+
 .right-layout .header {
 	border: 2px solid gray; 
 	height: 50px; 
@@ -52,4 +56,43 @@
     text-align: center;
     font-size: 21px;
     padding: 10px 0;
+}
+
+.guest-order-list {
+	height: 600px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.guest-order-list div.order-item {
+	border: 2px solid black;
+	min-height: 150px;
+	text-align: center;
+	line-height: 1.5em;
+	font-size: 15px;
+	padding: 10px 0;
+}
+
+.guest-order-list div span {
+	display: block;
+}
+
+.guest-order-list .ui-grid-col-3 {
+	padding: 10px;
+}
+
+.guest-order-list .order-item button {
+	margin-top: 10px;
+}
+
+.guest-order-list .order-item button.order-selected {
+	font-weight: bold;
+	border: none;
+	color: #000000;
+	background: transparent;
+}
+
+.order-item span.order-restaurant {
+	font-size: 20px;
+	font-weight: bold;
 }
