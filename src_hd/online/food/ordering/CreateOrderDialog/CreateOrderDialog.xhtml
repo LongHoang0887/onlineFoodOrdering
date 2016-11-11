@@ -80,7 +80,7 @@
 						</div>
 						<div class="create-order-footer">
 							<p:commandButton style="float:right;" actionListener="#{logic.close}" value="Close" update="form" icon="ui-icon-check"/>
-							<p:commandButton style="float:right;" actionListener="#{logic.save}" value="Save" update="form" icon="ui-icon-check" disabled="#{data.isEnableSaveBtn}" />
+							<p:commandButton style="float:right;" actionListener="#{logic.save}" value="Save" update="form" process="@this" icon="ui-icon-check" disabled="#{data.isEnableSaveBtn}" />
 						</div>
 					</p:layoutUnit>
 				</p:layout>
