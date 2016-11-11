@@ -5,10 +5,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import online.food.ordering.Food;
 import online.food.ordering.PopupOrderManagementData;
 import online.food.ordering.Restaurant;
-import service.FoodService;
 import service.RestaurantService;
 import ch.ivyteam.ivy.environment.Ivy;
 
@@ -57,8 +55,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 		res.setWebsite(restaurant.getWebsite());
 		res.setCreatedDate(new Date());
 		res = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(res);
-		
-		
+
 		return res;
 	}
 

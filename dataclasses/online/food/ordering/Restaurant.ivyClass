@@ -17,3 +17,5 @@ phone String #field
 phone PERSISTENT #fieldModifier
 outOfFood Boolean #field
 outOfFood PERSISTENT #fieldModifier
+hasOrdered Boolean #field
+orderedFood online.food.ordering.Food #field

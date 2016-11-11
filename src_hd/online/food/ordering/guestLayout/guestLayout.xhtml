@@ -11,54 +11,22 @@
 		<ui:define name="title">guestLayout</ui:define>
 		<ui:define name="content">
 			<div class="ui-grid guest-order-list">
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">Smoothies 142</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button value="Order" />
-					</div>			    	
-				</div>
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">Pizza Hut</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button value="Order" />
-					</div>			    	
-				</div>
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">KFC</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button styleClass="order-selected" disabled="true" value="Chicken Set" />
-					</div>			    	
-				</div>
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">Smoothies 142</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button value="Order" />
-					</div>			    	
-				</div>
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">Gongcha Tea</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button value="Order" />
-					</div>			    	
-				</div>
-				<div class="ui-grid-col-3">
-					<div class="order-item">
-						<span class="order-restaurant">Gongcha Tea</span>
-				    	<span>23/03/2016</span>
-				    	<span>21:00</span>
-						<p:button value="Order" />
-					</div>			    	
-				</div>
+				<p:dataList value="#{data.restaurantList}" var="restaurant">
+
+					<div class="ui-grid-col-3">
+						<div class="order-item">
+							<span class="order-restaurant">#{restaurant.restaurantName}</span>
+				    		<span>#{restaurant.createdDate}</span>
+				    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
+    							<p:button value="Order" />
+							</h:panelGroup>
+							<h:panelGroup rendered="#{restaurant.hasOrdered}">
+    							#{restaurant.orderedFood.name}
+							</h:panelGroup>
+							
+						</div>
+					</div>
+				</p:dataList>
 				
 			</div>
 		</ui:define>

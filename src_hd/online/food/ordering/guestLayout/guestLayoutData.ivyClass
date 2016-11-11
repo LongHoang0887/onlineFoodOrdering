@@ -1,2 +1,4 @@
 guestLayoutData #class
 online.food.ordering.guestLayout #namespace
+restaurantList List<online.food.ordering.Restaurant> #field
+restaurantList PERSISTENT #fieldModifier

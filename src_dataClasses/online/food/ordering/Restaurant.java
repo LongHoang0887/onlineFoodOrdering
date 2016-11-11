@@ -9,7 +9,7 @@ package online.food.ordering;
 public class Restaurant extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3351406073786018607L;
+  private static final long serialVersionUID = -347542915635571011L;
 
   /**
    * Identifier
@@ -134,6 +134,46 @@ public class Restaurant extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setOutOfFood(java.lang.Boolean _outOfFood)
   {
     outOfFood = _outOfFood;
+  }
+
+  private transient java.lang.Boolean hasOrdered;
+
+  /**
+   * Gets the field hasOrdered.
+   * @return the value of the field hasOrdered; may be null.
+   */
+  public java.lang.Boolean getHasOrdered()
+  {
+    return hasOrdered;
+  }
+
+  /**
+   * Sets the field hasOrdered.
+   * @param _hasOrdered the new value of the field hasOrdered.
+   */
+  public void setHasOrdered(java.lang.Boolean _hasOrdered)
+  {
+    hasOrdered = _hasOrdered;
+  }
+
+  private transient online.food.ordering.Food orderedFood;
+
+  /**
+   * Gets the field orderedFood.
+   * @return the value of the field orderedFood; may be null.
+   */
+  public online.food.ordering.Food getOrderedFood()
+  {
+    return orderedFood;
+  }
+
+  /**
+   * Sets the field orderedFood.
+   * @param _orderedFood the new value of the field orderedFood.
+   */
+  public void setOrderedFood(online.food.ordering.Food _orderedFood)
+  {
+    orderedFood = _orderedFood;
   }
 
 }

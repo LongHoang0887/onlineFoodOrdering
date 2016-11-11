@@ -36,7 +36,7 @@ public class LoginServiceImpl implements LoginService{
 			FacesContext.getCurrentInstance().addMessage(null, message);
 			return chkFlg;
 		}
-		
+
 		return true;
 	}
 

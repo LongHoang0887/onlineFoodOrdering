@@ -54,7 +54,7 @@ public class FoodServiceImpl implements FoodService {
 
 	@Override
 	public void cloneFoods(Integer resId, Integer newId) {
-		Ivy.log().info("Res: " + resId);
+
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
 		List<Food> foods = getFoodsInRestaurant(resId);
 		for(Food food : foods){
