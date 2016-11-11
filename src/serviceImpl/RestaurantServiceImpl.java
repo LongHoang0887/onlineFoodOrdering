@@ -58,5 +58,4 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 		return res;
 	}
-
 }

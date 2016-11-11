@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <userConfig>
     <user>
-        <username>long-guest</username>
+        <username>guest</username>
         <password>123456</password>
         <role>GUEST</role>
     </user>
     <user>
-        <username>long-order</username>
+        <username>phu</username>
+        <password>123456</password>
+        <role>GUEST</role>
+    </user>
+    <user>
+        <username>long</username>
         <password>123456</password>
         <role>ORDERING_MANAGER</role>
     </user>
     <user>
-        <username>long-purchasing</username>
+        <username>xon</username>
         <password>123456</password>
         <role>PURCHASE_MANAGER</role>
     </user>

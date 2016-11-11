@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 16:17:41 ICT 2016]
+[>Created: Fri Nov 11 17:11:44 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -22,7 +22,6 @@ ms0 @RichDialogEnd f4 '' #zField
 ms0 @PushWFArc f5 '' #zField
 ms0 @GridStep f6 '' #zField
 ms0 @PushWFArc f7 '' #zField
-ms0 @PushWFArc f2 '' #zField
 ms0 @RichDialogProcessStart f8 '' #zField
 ms0 @RichDialogProcessEnd f12 '' #zField
 ms0 @GridStep f14 '' #zField
@@ -44,6 +43,9 @@ ms0 @RichDialogProcessStart f10 '' #zField
 ms0 @PushWFArc f17 '' #zField
 ms0 @PushWFArc f28 '' #zField
 ms0 @GridStep f27 '' #zField
+ms0 @GridStep f29 '' #zField
+ms0 @PushWFArc f30 '' #zField
+ms0 @PushWFArc f2 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -64,7 +66,7 @@ ms0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f0 83 51 26 26 -16 15 #rect
 ms0 f0 @|RichDialogInitStartIcon #fIcon
 ms0 f1 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f1 419 51 26 26 0 12 #rect
+ms0 f1 555 51 26 26 0 12 #rect
 ms0 f1 @|RichDialogProcessEndIcon #fIcon
 ms0 f3 guid 158488CD7A6BAB5E #txt
 ms0 f3 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -110,8 +112,6 @@ ms0 f6 192 42 128 44 -57 -8 #rect
 ms0 f6 @|StepIcon #fIcon
 ms0 f7 expr out #txt
 ms0 f7 109 64 192 64 #arcP
-ms0 f2 expr out #txt
-ms0 f2 320 64 419 64 #arcP
 ms0 f8 guid 1584D898635C36D8 #txt
 ms0 f8 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f8 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
@@ -350,6 +350,39 @@ ms0 f27 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ms0 f27 420 232 120 48 -35 -8 #rect
 ms0 f27 @|StepIcon #fIcon
+ms0 f29 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f29 actionTable 'out=in;
+' #txt
+ms0 f29 actionCode 'import service.OrderingService;
+import serviceImpl.OrderingServiceImpl;
+import online.food.ordering.Restaurant;
+import online.food.ordering.Ordering;
+
+OrderingService service = new OrderingServiceImpl();
+
+for (Restaurant res: in.restaurantList) {
+	List<Ordering> list = service.getListOrderByRestaurant(res.getId());
+	res.setNumberOfOrdered(list.size());
+}' #txt
+ms0 f29 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f29 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>assign number order
+to each restaurant</name>
+        <nameStyle>20,7
+18,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f29 344 42 144 44 -53 -16 #rect
+ms0 f29 @|StepIcon #fIcon
+ms0 f30 expr out #txt
+ms0 f30 320 64 344 64 #arcP
+ms0 f2 expr out #txt
+ms0 f2 488 64 555 64 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -358,8 +391,6 @@ ms0 f3 mainOut f5 tail #connect
 ms0 f5 head f4 mainIn #connect
 ms0 f0 mainOut f7 tail #connect
 ms0 f7 head f6 mainIn #connect
-ms0 f6 mainOut f2 tail #connect
-ms0 f2 head f1 mainIn #connect
 ms0 f14 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
 ms0 f16 mainOut f18 tail #connect
@@ -380,3 +411,7 @@ ms0 f11 mainOut f28 tail #connect
 ms0 f28 head f27 mainIn #connect
 ms0 f27 mainOut f17 tail #connect
 ms0 f17 head f12 mainIn #connect
+ms0 f6 mainOut f30 tail #connect
+ms0 f30 head f29 mainIn #connect
+ms0 f29 mainOut f2 tail #connect
+ms0 f2 head f1 mainIn #connect

@@ -41,4 +41,15 @@ public class OrderingServiceImpl implements OrderingService {
 		return Ivy.persistence().get(PERSISTENCE_UNIT_NAME).find(Food.class, foodId);
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Ordering> getListOrderByRestaurant(Integer resId) {
+
+		String sql = "FROM Ordering WHERE restaurantId = :restaurantId";
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		Query query = entityManager.createQuery(sql);
+		query.setParameter("restaurantId", resId);
+
+		return query.getResultList();
+	}
 }

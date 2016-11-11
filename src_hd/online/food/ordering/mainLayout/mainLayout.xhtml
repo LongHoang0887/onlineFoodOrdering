@@ -19,7 +19,7 @@
 					<div>
 						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}" >
 							<p:ajax event="rowSelect" listener="#{logic.Select}" update="form" />
-							<p:column>#{restaurant.restaurantName}
+							<p:column>#{restaurant.restaurantName} (#{restaurant.numberOfOrdered})
 							</p:column>
 					    </p:dataTable>
 					</div>
