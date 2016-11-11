@@ -51,55 +51,21 @@
 						    </h:outputText>
 						</p:panelGrid>
 						<p:panelGrid styleClass="order-detail-list">
-							<p:row>
-								<p:column styleClass="order-food" rowspan="2">
-									<span>Banana <br></br> 4 units</span>
-								</p:column>
-								<p:column>Price: 35.000</p:column>
-							</p:row>
-							<p:row>
-								<p:column>Whose: Xon Mai, Trung Do, Trung Ly, Duong Nguyen</p:column>
-							</p:row>
-							
-							<p:row>
-								<p:column styleClass="order-food" rowspan="2">
-									<span>Strawberry <br></br> 1 unit</span>
-								</p:column>
-								<p:column>Price: 30.000</p:column>
-							</p:row>
-							<p:row>
-								<p:column>Whose: Phong Pham</p:column>
-							</p:row>
-							
-							<p:row>
-								<p:column styleClass="order-food" rowspan="2">
-									<span>Banana <br></br> 4 units</span>
-								</p:column>
-								<p:column>Price: 35.000</p:column>
-							</p:row>
-							<p:row>
-								<p:column>Whose: Xon Mai, Trung Do, Trung Ly, Duong Nguyen</p:column>
-							</p:row>
-							
-							<p:row>
-								<p:column styleClass="order-food" rowspan="2">
-									<span>Strawberry <br></br> 1 unit</span>
-								</p:column>
-								<p:column>Price: 30.000</p:column>
-							</p:row>
-							<p:row>
-								<p:column>Whose: Phong Pham</p:column>
-							</p:row>
-							
-							<p:row>
-								<p:column styleClass="order-food" rowspan="2">
-									<span>Strawberry <br></br> 1 unit</span>
-								</p:column>
-								<p:column>Price: 30.000</p:column>
-							</p:row>
-							<p:row>
-								<p:column>Whose: Phong Pham</p:column>
-							</p:row>
+							<ui:repeat var="item" value="#{data.foodList}">
+								<p:row>
+									<p:column styleClass="order-food" rowspan="2">
+										<span>
+											<h:outputText value="#{item.name}" > </h:outputText>
+											<br></br> 
+											<h:outputText value="" > 4 units </h:outputText>
+										</span>
+									</p:column>
+									<p:column><h:outputText value="#{item.price}" > </h:outputText></p:column>
+								</p:row>
+								<p:row>
+									<p:column>Whose: Xon Mai, Trung Do, Trung Ly, Duong Nguyen</p:column>
+								</p:row>
+							</ui:repeat>
 						</p:panelGrid>
 					</div>
 					<div>
