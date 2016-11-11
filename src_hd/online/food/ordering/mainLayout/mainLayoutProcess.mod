@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 17:33:35 ICT 2016]
+[>Created: Fri Nov 11 18:09:08 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -35,7 +35,6 @@ ms0 @PushWFArc f9 '' #zField
 ms0 @RichDialogProcessStart f21 '' #zField
 ms0 @GridStep f23 '' #zField
 ms0 @PushWFArc f24 '' #zField
-ms0 @PushWFArc f22 '' #zField
 ms0 @GridStep f25 '' #zField
 ms0 @PushWFArc f15 '' #zField
 ms0 @PushWFArc f26 '' #zField
@@ -46,6 +45,9 @@ ms0 @GridStep f27 '' #zField
 ms0 @GridStep f29 '' #zField
 ms0 @PushWFArc f30 '' #zField
 ms0 @PushWFArc f2 '' #zField
+ms0 @GridStep f31 '' #zField
+ms0 @PushWFArc f32 '' #zField
+ms0 @PushWFArc f22 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -275,10 +277,6 @@ ms0 f23 @|StepIcon #fIcon
 ms0 f24 expr out #txt
 ms0 f24 109 384 198 384 #arcP
 ms0 f24 0 0.826625386996904 0 0 #arcLabel
-ms0 f22 expr out #txt
-ms0 f22 310 384 648 173 #arcP
-ms0 f22 1 648 384 #addKink
-ms0 f22 0 0.8266253869969041 0 0 #arcLabel
 ms0 f25 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f25 actionTable 'out=in;
@@ -383,6 +381,43 @@ ms0 f30 expr out #txt
 ms0 f30 320 64 360 64 #arcP
 ms0 f2 expr out #txt
 ms0 f2 504 64 555 64 #arcP
+ms0 f31 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f31 actionTable 'out=in;
+' #txt
+ms0 f31 actionCode 'import online.food.ordering.Ordering;
+import online.food.ordering.Food;
+import serviceImpl.OrderingServiceImpl;
+import service.OrderingService;
+
+OrderingService service = new OrderingServiceImpl();
+Integer totalPrice = 0;
+for (Food food: in.foodList) {
+   List<Ordering> orders = service.getListOrderByRestaurantAndFood(in.selectedRestaurant.id, food.id);
+		food.setLstOrdered(orders);
+		totalPrice += food.getPrice() * orders.size();
+}
+
+in.totalPrice = totalPrice;' #txt
+ms0 f31 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f31 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Display number of order</name>
+        <nameStyle>23,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f31 424 362 144 44 -66 -8 #rect
+ms0 f31 @|StepIcon #fIcon
+ms0 f32 expr out #txt
+ms0 f32 310 384 424 384 #arcP
+ms0 f32 0 0.8266253869969041 0 0 #arcLabel
+ms0 f22 expr out #txt
+ms0 f22 568 384 648 173 #arcP
+ms0 f22 1 648 384 #addKink
+ms0 f22 0 0.8266253869969041 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -401,8 +436,6 @@ ms0 f19 mainOut f9 tail #connect
 ms0 f9 head f4 mainIn #connect
 ms0 f21 mainOut f24 tail #connect
 ms0 f24 head f23 mainIn #connect
-ms0 f23 mainOut f22 tail #connect
-ms0 f22 head f12 mainIn #connect
 ms0 f25 mainOut f15 tail #connect
 ms0 f15 head f14 mainIn #connect
 ms0 f10 mainOut f26 tail #connect
@@ -415,3 +448,7 @@ ms0 f6 mainOut f30 tail #connect
 ms0 f30 head f29 mainIn #connect
 ms0 f29 mainOut f2 tail #connect
 ms0 f2 head f1 mainIn #connect
+ms0 f23 mainOut f32 tail #connect
+ms0 f32 head f31 mainIn #connect
+ms0 f31 mainOut f22 tail #connect
+ms0 f22 head f12 mainIn #connect

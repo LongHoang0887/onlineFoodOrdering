@@ -7,7 +7,7 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 8825679703181483927L;
+  private static final long serialVersionUID = 1358399463946914842L;
 
   private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -87,6 +87,26 @@ public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setNewRestaurantId(java.lang.Integer _newRestaurantId)
   {
     newRestaurantId = _newRestaurantId;
+  }
+
+  private java.lang.Integer totalPrice;
+
+  /**
+   * Gets the field totalPrice.
+   * @return the value of the field totalPrice; may be null.
+   */
+  public java.lang.Integer getTotalPrice()
+  {
+    return totalPrice;
+  }
+
+  /**
+   * Sets the field totalPrice.
+   * @param _totalPrice the new value of the field totalPrice.
+   */
+  public void setTotalPrice(java.lang.Integer _totalPrice)
+  {
+    totalPrice = _totalPrice;
   }
 
 }

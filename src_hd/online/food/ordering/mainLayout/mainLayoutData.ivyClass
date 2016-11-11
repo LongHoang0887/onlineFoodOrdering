@@ -8,3 +8,5 @@ foodList java.util.List<online.food.ordering.Food> #field
 foodList PERSISTENT #fieldModifier
 newRestaurantId Integer #field
 newRestaurantId PERSISTENT #fieldModifier
+totalPrice Integer #field
+totalPrice PERSISTENT #fieldModifier

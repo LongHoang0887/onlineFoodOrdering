@@ -12,5 +12,6 @@ public interface OrderingService {
 	public Ordering getOrderInfoAtSelectedRestaurant(Integer resId, String personName);
 	public Food getFoodByOrderId(Integer foodId);
 	public List<Ordering> getListOrderByRestaurant(Integer resId);
+	public List<Ordering> getListOrderByRestaurantAndFood(Integer resId, Integer foodId);
 
 }

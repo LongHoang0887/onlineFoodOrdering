@@ -15,3 +15,4 @@ createdDate java.util.Date #field
 createdDate PERSISTENT #fieldModifier
 restaurantId Integer #field
 restaurantId PERSISTENT #fieldModifier
+lstOrdered List<online.food.ordering.Ordering> #field

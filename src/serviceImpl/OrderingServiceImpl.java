@@ -52,4 +52,18 @@ public class OrderingServiceImpl implements OrderingService {
 
 		return query.getResultList();
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Ordering> getListOrderByRestaurantAndFood(Integer resId,
+			Integer foodId) {
+
+		String sql = "FROM Ordering WHERE restaurantId = :restaurantId AND foodId = :foodId";
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		Query query = entityManager.createQuery(sql);
+		query.setParameter("restaurantId", resId);
+		query.setParameter("foodId", foodId);
+
+		return query.getResultList();
+	}
 }
