@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 13:26:04 ICT 2016]
+[>Created: Fri Nov 11 14:29:59 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -27,7 +27,6 @@ ms0 @RichDialogProcessStart f8 '' #zField
 ms0 @RichDialogProcessStart f10 '' #zField
 ms0 @RichDialogProcessEnd f12 '' #zField
 ms0 @GridStep f14 '' #zField
-ms0 @PushWFArc f15 '' #zField
 ms0 @PushWFArc f13 '' #zField
 ms0 @RichDialogProcessStart f16 '' #zField
 ms0 @GridStep f11 '' #zField
@@ -40,6 +39,9 @@ ms0 @RichDialogProcessStart f21 '' #zField
 ms0 @GridStep f23 '' #zField
 ms0 @PushWFArc f24 '' #zField
 ms0 @PushWFArc f22 '' #zField
+ms0 @GridStep f25 '' #zField
+ms0 @PushWFArc f15 '' #zField
+ms0 @PushWFArc f26 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -143,7 +145,7 @@ ms0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f10 83 147 26 26 -18 15 #rect
 ms0 f10 @|RichDialogProcessStartIcon #fIcon
 ms0 f12 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f12 419 147 26 26 0 12 #rect
+ms0 f12 635 147 26 26 0 12 #rect
 ms0 f12 @|RichDialogProcessEndIcon #fIcon
 ms0 f14 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -159,18 +161,16 @@ ms0 f14 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>Delete Restaurant</name>
+        <name>Remove Restaurant</name>
         <nameStyle>17,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-ms0 f14 192 138 112 44 -50 -8 #rect
+ms0 f14 480 138 128 44 -55 -8 #rect
 ms0 f14 @|StepIcon #fIcon
-ms0 f15 expr out #txt
-ms0 f15 109 160 192 160 #arcP
 ms0 f13 expr out #txt
-ms0 f13 304 160 419 160 #arcP
+ms0 f13 608 160 635 160 #arcP
 ms0 f16 guid 15851552832D4D04 #txt
 ms0 f16 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f16 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
@@ -214,8 +214,8 @@ ms0 f18 expr out #txt
 ms0 f18 109 256 192 256 #arcP
 ms0 f18 0 0.6449028566119823 0 0 #arcLabel
 ms0 f17 expr out #txt
-ms0 f17 304 256 432 173 #arcP
-ms0 f17 1 432 256 #addKink
+ms0 f17 304 256 648 173 #arcP
+ms0 f17 1 648 256 #addKink
 ms0 f17 0 0.6449028566119823 0 0 #arcLabel
 ms0 f19 targetWindow NEW:card: #txt
 ms0 f19 targetDisplay TOP #txt
@@ -287,9 +287,35 @@ ms0 f24 expr out #txt
 ms0 f24 109 384 192 384 #arcP
 ms0 f24 0 0.826625386996904 0 0 #arcLabel
 ms0 f22 expr out #txt
-ms0 f22 304 384 432 173 #arcP
-ms0 f22 1 432 384 #addKink
+ms0 f22 304 384 648 173 #arcP
+ms0 f22 1 648 384 #addKink
 ms0 f22 0 0.826625386996904 0 0 #arcLabel
+ms0 f25 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f25 actionTable 'out=in;
+' #txt
+ms0 f25 actionCode 'import service.FoodService;
+import serviceImpl.FoodServiceImpl;
+
+FoodService foodService = new FoodServiceImpl();
+foodService.removeFoodsInRestaurant(in.selectedRestaurant.id);
+' #txt
+ms0 f25 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Remove Foods</name>
+        <nameStyle>12,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f25 200 138 112 44 -42 -8 #rect
+ms0 f25 @|StepIcon #fIcon
+ms0 f15 expr out #txt
+ms0 f15 312 160 480 160 #arcP
+ms0 f26 expr out #txt
+ms0 f26 109 160 200 160 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -300,8 +326,6 @@ ms0 f0 mainOut f7 tail #connect
 ms0 f7 head f6 mainIn #connect
 ms0 f6 mainOut f2 tail #connect
 ms0 f2 head f1 mainIn #connect
-ms0 f10 mainOut f15 tail #connect
-ms0 f15 head f14 mainIn #connect
 ms0 f14 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
 ms0 f16 mainOut f18 tail #connect
@@ -316,3 +340,7 @@ ms0 f21 mainOut f24 tail #connect
 ms0 f24 head f23 mainIn #connect
 ms0 f23 mainOut f22 tail #connect
 ms0 f22 head f12 mainIn #connect
+ms0 f25 mainOut f15 tail #connect
+ms0 f15 head f14 mainIn #connect
+ms0 f10 mainOut f26 tail #connect
+ms0 f26 head f25 mainIn #connect

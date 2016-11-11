@@ -39,15 +39,19 @@ public class FoodServiceImpl implements FoodService {
 	
 	@SuppressWarnings("unchecked")
 	public List<Food> getFoodsInRestaurant(Integer resId){
-		String sql = "SELECT * FROM FOOD WHERE RESTAURANTID = :restaurantId";
+		String sql = "FROM Food WHERE RESTAURANTID = :restaurantId";
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
 		return (List<Food>) entityManager.createQuery(sql).setParameter("restaurantId", resId).getResultList();
 	}
 
 	@Override
 	public void removeFoodsInRestaurant(Integer resId) {
-		String sql = "DELETE FROM FOOD WHERE RESTAURANTID = :restaurantId";
-		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();
+//		String sql = "delete from Food where restaurantId = :restaurantId";
+//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+//		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();		
+		List<Food> foods = getFoodsInRestaurant(resId);
+		for(Food food : foods) {
+			Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(food);
+		}
 	}
 }
