@@ -12,4 +12,6 @@ public interface RestaurantService {
 	public List<Restaurant> getAllRestaurant();
 	
 	public PopupOrderManagementData getRestaurantById(String restaurantId);
+	
+	public void removeRestaurant(Restaurant restaurant);
 }

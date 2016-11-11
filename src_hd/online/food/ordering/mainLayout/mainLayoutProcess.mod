@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 18:27:56 ICT 2016]
+[>Created: Fri Nov 11 09:57:40 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -26,6 +26,11 @@ ms0 @PushWFArc f2 '' #zField
 ms0 @RichDialogProcessStart f8 '' #zField
 ms0 @RichDialogEnd f11 '' #zField
 ms0 @PushWFArc f9 '' #zField
+ms0 @RichDialogProcessStart f10 '' #zField
+ms0 @RichDialogProcessEnd f12 '' #zField
+ms0 @GridStep f14 '' #zField
+ms0 @PushWFArc f15 '' #zField
+ms0 @PushWFArc f13 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -61,14 +66,14 @@ ms0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f3 83 299 26 26 -15 12 #rect
+ms0 f3 83 371 26 26 -15 12 #rect
 ms0 f3 @|RichDialogProcessStartIcon #fIcon
 ms0 f4 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f4 guid 158488CD7A6243F3 #txt
-ms0 f4 211 299 26 26 0 12 #rect
+ms0 f4 211 371 26 26 0 12 #rect
 ms0 f4 @|RichDialogEndIcon #fIcon
 ms0 f5 expr out #txt
-ms0 f5 109 312 211 312 #arcP
+ms0 f5 109 384 211 384 #arcP
 ms0 f6 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
@@ -117,6 +122,52 @@ ms0 f11 415 180 26 26 0 12 #rect
 ms0 f11 @|RichDialogEndIcon #fIcon
 ms0 f9 expr out #txt
 ms0 f9 108 192 415 192 #arcP
+ms0 f10 guid 158512034F7415E3 #txt
+ms0 f10 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f10 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f10 actionTable 'out=in;
+' #txt
+ms0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Delete</name>
+        <nameStyle>6,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f10 83 275 26 26 -18 15 #rect
+ms0 f10 @|RichDialogProcessStartIcon #fIcon
+ms0 f12 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f12 419 275 26 26 0 12 #rect
+ms0 f12 @|RichDialogProcessEndIcon #fIcon
+ms0 f14 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f14 actionTable 'out=in;
+' #txt
+ms0 f14 actionCode 'import serviceImpl.RestaurantServiceImpl;
+
+RestaurantServiceImpl service = new RestaurantServiceImpl();
+service.removeRestaurant(in.selectedRestaurant);
+in.restaurantList.remove(in.selectedRestaurant);
+in.selectedRestaurant = null;' #txt
+ms0 f14 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Delete Restaurant</name>
+        <nameStyle>17,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f14 192 266 112 44 -50 -8 #rect
+ms0 f14 @|StepIcon #fIcon
+ms0 f15 expr out #txt
+ms0 f15 109 288 192 288 #arcP
+ms0 f13 expr out #txt
+ms0 f13 304 288 419 288 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -129,3 +180,7 @@ ms0 f6 mainOut f2 tail #connect
 ms0 f2 head f1 mainIn #connect
 ms0 f8 mainOut f9 tail #connect
 ms0 f9 head f11 mainIn #connect
+ms0 f10 mainOut f15 tail #connect
+ms0 f15 head f14 mainIn #connect
+ms0 f14 mainOut f13 tail #connect
+ms0 f13 head f12 mainIn #connect

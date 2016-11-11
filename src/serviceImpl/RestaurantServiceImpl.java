@@ -40,4 +40,9 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return sql.toString();
 	}
 
+	@Override
+	public void removeRestaurant(Restaurant restaurant) {
+		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(restaurant);
+	}
+
 }

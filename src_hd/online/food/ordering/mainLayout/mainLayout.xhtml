@@ -17,7 +17,7 @@
 						<p:commandButton value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;" actionListener="#{logic.New}" update="form"/>
 					</div>
 					<div>
-						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}">
+						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}" >
 							<p:column>#{restaurant.restaurantName}</p:column>
 					    </p:dataTable>
 					</div>
@@ -26,12 +26,12 @@
 				    <div class="header">
 				    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
 						<p:button value="Clone" />
-						<p:button value="Delete" />
+						<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" />
 						<p:button value="Purchase" />
 					</div>
 					<div class="info-summary">
 						<p:panelGrid columns="3" layout="grid" style="border: none;">            
-						    <h:outputText value="Smoothies 142">
+						    <h:outputText value="#{data.selectedRestaurant.restaurantName}">
 						    	<h:outputLabel value="Restaurant:" />
 						    </h:outputText>
 						    <h:outputText>
