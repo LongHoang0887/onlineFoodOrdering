@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 18:51:43 ICT 2016]
+[>Created: Fri Nov 11 08:34:36 ICT 2016]
 1584E0C691E57C59 3.18 #module
 >Proto >Proto Collection #zClass
 Re0 RestaurantService Big #zClass
@@ -22,7 +22,9 @@ Re0 @PushWFArc f2 '' #zField
 Re0 f0 inParamDecl '<java.lang.String restaurantId> param;' #txt
 Re0 f0 inParamTable 'out.restaurantId=param.restaurantId;
 ' #txt
-Re0 f0 outParamDecl '<> result;
+Re0 f0 outParamDecl '<online.food.ordering.PopupOrderManagementData popupData> result;
+' #txt
+Re0 f0 outParamTable 'result.popupData=in.popupOrderManagementData;
 ' #txt
 Re0 f0 actionDecl 'online.food.ordering.RestaurantServiceData out;
 ' #txt

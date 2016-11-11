@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 18:12:30 ICT 2016]
+[>Created: Fri Nov 11 08:35:42 ICT 2016]
 1584D645377B30B2 3.18 #module
 >Proto >Proto Collection #zClass
 Ps0 PopupOrderProcess Big #zClass
@@ -32,6 +32,8 @@ Ps0 f0 method start(String) #txt
 Ps0 f0 disableUIEvents true #txt
 Ps0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
 <java.lang.String restaurantId> param = methodEvent.getInputArguments();
+' #txt
+Ps0 f0 inParameterMapAction 'out.restaurantId=param.restaurantId;
 ' #txt
 Ps0 f0 outParameterDecl '<> result;
 ' #txt
@@ -90,7 +92,12 @@ Ps0 f7 109 160 232 160 #arcP
 Ps0 f5 expr out #txt
 Ps0 f5 344 160 483 160 #arcP
 Ps0 f8 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f8 doCall false #txt
+Ps0 f8 processCall 'Functional Processes/RestaurantService:call(String)' #txt
+Ps0 f8 doCall true #txt
+Ps0 f8 requestActionDecl '<java.lang.String restaurantId> param;
+' #txt
+Ps0 f8 requestMappingAction 'param.restaurantId=in.restaurantId;
+' #txt
 Ps0 f8 responseActionDecl 'online.food.ordering.PopupOrder.PopupOrderData out;
 ' #txt
 Ps0 f8 responseMappingAction 'out=in;

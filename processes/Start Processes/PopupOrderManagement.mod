@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 18:38:59 ICT 2016]
+[>Created: Fri Nov 11 08:26:13 ICT 2016]
 1584D5A74AF2AFF1 3.18 #module
 >Proto >Proto Collection #zClass
 Pt0 PopupOrderManagement Big #zClass
@@ -68,6 +68,8 @@ Pt0 f3 richDialogId online.food.ordering.PopupOrder #txt
 Pt0 f3 startMethod start(String) #txt
 Pt0 f3 type online.food.ordering.PopupOrderManagementData #txt
 Pt0 f3 requestActionDecl '<String restaurantId> param;' #txt
+Pt0 f3 requestMappingAction 'param.restaurantId=in.restaurantId;
+' #txt
 Pt0 f3 responseActionDecl 'online.food.ordering.PopupOrderManagementData out;
 ' #txt
 Pt0 f3 responseMappingAction 'out=in;
