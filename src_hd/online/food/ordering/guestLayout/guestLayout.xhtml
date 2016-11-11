@@ -10,25 +10,33 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">guestLayout</ui:define>
 		<ui:define name="content">
-			<div class="ui-grid guest-order-list">
-				<p:dataList value="#{data.restaurantList}" var="restaurant">
-
-					<div class="ui-grid-col-3">
-						<div class="order-item">
-							<span class="order-restaurant">#{restaurant.restaurantName}</span>
-				    		<span>#{restaurant.createdDate}</span>
-				    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
-    							<p:button value="Order" />
-							</h:panelGroup>
-							<h:panelGroup rendered="#{restaurant.hasOrdered}">
-    							#{restaurant.orderedFood.name}
-							</h:panelGroup>
-							
-						</div>
+			<p:layout>
+				<p:layoutUnit position="center">
+					<div class="ui-grid guest-order-list">
+						<ui:repeat value="#{data.restaurantList}" var="restaurant" >
+							<div class="ui-grid-col-3">
+								<div class="order-item">
+									<span class="order-restaurant">#{restaurant.restaurantName}</span>
+						    		<h:outputText value="#{restaurant.createdDate}">
+						    			<f:convertDateTime pattern="dd/MM/yyyy" />
+						    		</h:outputText>
+						    		<br></br>
+						    		<h:outputText value="#{restaurant.createdDate}">
+						    			<f:convertDateTime pattern="HH:mm" />
+						    		</h:outputText>
+						    		<br></br>
+						    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
+		    							<p:button value="Order" />
+									</h:panelGroup>
+									<h:panelGroup rendered="#{restaurant.hasOrdered}">
+		    							#{restaurant.orderedFood.name}
+									</h:panelGroup>
+								</div>
+							</div>
+						</ui:repeat>
 					</div>
-				</p:dataList>
-				
-			</div>
+				</p:layoutUnit>
+			</p:layout>
 		</ui:define>
 	</ui:composition>
 </h:body>
