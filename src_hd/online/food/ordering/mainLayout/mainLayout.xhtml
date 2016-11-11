@@ -43,6 +43,7 @@
 						    	<h:outputLabel value="Phone: " />
 						    </h:outputText>
 						    <h:outputText value="#{data.selectedRestaurant.createdDate}">
+						    	<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 						    	<h:outputLabel value="Created date: " />
 						    </h:outputText> 
 						    <h:outputText value="">
