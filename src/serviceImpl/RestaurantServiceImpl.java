@@ -58,9 +58,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 		res.setCreatedDate(new Date());
 		res = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(res);
 		
-//		FoodServiceImpl foodService = new FoodServiceImpl();
-//		List<Food> foods = new ArrayList<>(foodService.getFoodsInRestaurant(newRes.getId()));
-//		foodService.saveFoods(foods);
+		
 		return res;
 	}
 

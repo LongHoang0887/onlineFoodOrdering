@@ -13,4 +13,6 @@ public interface FoodService {
 	public List<Food> getFoodsInRestaurant(Integer resId);
 	
 	public void removeFoodsInRestaurant(Integer resId);
+	
+	public void cloneFoods(Integer resId, Integer newId);
 }

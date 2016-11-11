@@ -51,4 +51,17 @@ public class FoodServiceImpl implements FoodService {
 		IIvyEntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME);
 		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();		
 	}
+
+	@Override
+	public void cloneFoods(Integer resId, Integer newId) {
+		Ivy.log().info("Res: " + resId);
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		List<Food> foods = getFoodsInRestaurant(resId);
+		for(Food food : foods){
+			entityManager.detach(food);
+			food.setId(null);
+			food.setRestaurantId(newId);
+			Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(food);
+		}
+	}
 }

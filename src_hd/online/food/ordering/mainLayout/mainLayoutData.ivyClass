@@ -6,3 +6,5 @@ selectedRestaurant online.food.ordering.Restaurant #field
 selectedRestaurant PERSISTENT #fieldModifier
 foodList java.util.List<online.food.ordering.Food> #field
 foodList PERSISTENT #fieldModifier
+newRestaurantId Integer #field
+newRestaurantId PERSISTENT #fieldModifier
