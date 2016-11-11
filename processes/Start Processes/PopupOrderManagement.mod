@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 08:26:13 ICT 2016]
+[>Created: Fri Nov 11 10:04:37 ICT 2016]
 1584D5A74AF2AFF1 3.18 #module
 >Proto >Proto Collection #zClass
 Pt0 PopupOrderManagement Big #zClass
@@ -60,7 +60,7 @@ Pt0 f0 @C|.responsibility Everybody #txt
 Pt0 f0 81 49 30 30 -21 17 #rect
 Pt0 f0 @|StartRequestIcon #fIcon
 Pt0 f1 type online.food.ordering.PopupOrderManagementData #txt
-Pt0 f1 585 49 30 30 0 15 #rect
+Pt0 f1 489 49 30 30 0 15 #rect
 Pt0 f1 @|EndIcon #fIcon
 Pt0 f3 targetWindow NEW:card: #txt
 Pt0 f3 targetDisplay TOP #txt
@@ -87,12 +87,12 @@ Pt0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Pt0 f3 376 42 112 44 -35 -8 #rect
+Pt0 f3 240 42 112 44 -35 -8 #rect
 Pt0 f3 @|RichDialogIcon #fIcon
 Pt0 f2 expr out #txt
-Pt0 f2 488 64 585 64 #arcP
+Pt0 f2 352 64 489 64 #arcP
 Pt0 f4 expr out #txt
-Pt0 f4 111 64 376 64 #arcP
+Pt0 f4 111 64 240 64 #arcP
 >Proto Pt0 .type online.food.ordering.PopupOrderManagementData #txt
 >Proto Pt0 .processKind NORMAL #txt
 >Proto Pt0 0 0 32 24 18 0 #rect
