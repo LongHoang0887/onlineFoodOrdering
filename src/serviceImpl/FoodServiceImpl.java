@@ -8,6 +8,7 @@ import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 
 import ch.ivyteam.ivy.environment.Ivy;
+import ch.ivyteam.ivy.process.data.persistence.IIvyEntityManager;
 import online.food.ordering.Food;
 import service.FoodService;
 
@@ -46,12 +47,8 @@ public class FoodServiceImpl implements FoodService {
 
 	@Override
 	public void removeFoodsInRestaurant(Integer resId) {
-//		String sql = "delete from Food where restaurantId = :restaurantId";
-//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-//		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();		
-		List<Food> foods = getFoodsInRestaurant(resId);
-		for(Food food : foods) {
-			Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(food);
-		}
+		String sql = "delete from Food where restaurantId = :restaurantId";
+		IIvyEntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME);
+		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();		
 	}
 }
