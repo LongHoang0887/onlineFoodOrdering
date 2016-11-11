@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 10:36:26 ICT 2016]
+[>Created: Fri Nov 11 12:55:28 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -30,10 +30,12 @@ ms0 @GridStep f14 '' #zField
 ms0 @PushWFArc f15 '' #zField
 ms0 @PushWFArc f13 '' #zField
 ms0 @RichDialogProcessStart f16 '' #zField
-ms0 @PushWFArc f9 '' #zField
 ms0 @GridStep f11 '' #zField
 ms0 @PushWFArc f18 '' #zField
 ms0 @PushWFArc f17 '' #zField
+ms0 @RichDialog f19 '' #zField
+ms0 @PushWFArc f20 '' #zField
+ms0 @PushWFArc f9 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -182,10 +184,6 @@ ms0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ms0 f16 83 243 26 26 -16 15 #rect
 ms0 f16 @|RichDialogProcessStartIcon #fIcon
-ms0 f9 expr out #txt
-ms0 f9 109 448 432 365 #arcP
-ms0 f9 1 432 448 #addKink
-ms0 f9 0 0.6448146088226693 0 0 #arcLabel
 ms0 f11 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f11 actionTable 'out=in;
@@ -215,6 +213,38 @@ ms0 f17 expr out #txt
 ms0 f17 304 256 432 173 #arcP
 ms0 f17 1 432 256 #addKink
 ms0 f17 0 0.6449028566119823 0 0 #arcLabel
+ms0 f19 targetWindow NEW:card: #txt
+ms0 f19 targetDisplay TOP #txt
+ms0 f19 richDialogId online.food.ordering.CreateOrderDialog #txt
+ms0 f19 startMethod start() #txt
+ms0 f19 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f19 requestActionDecl '<> param;' #txt
+ms0 f19 responseActionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f19 responseMappingAction 'out=in;
+' #txt
+ms0 f19 windowConfiguration '* ' #txt
+ms0 f19 isAsynch false #txt
+ms0 f19 isInnerRd true #txt
+ms0 f19 userContext '* ' #txt
+ms0 f19 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Create Ordering Dialog</name>
+        <nameStyle>22,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f19 152 426 144 44 -63 -8 #rect
+ms0 f19 @|RichDialogIcon #fIcon
+ms0 f20 expr out #txt
+ms0 f20 109 448 152 448 #arcP
+ms0 f20 0 0.6448146088226693 0 0 #arcLabel
+ms0 f9 expr out #txt
+ms0 f9 296 448 432 365 #arcP
+ms0 f9 1 432 448 #addKink
+ms0 f9 0 0.784163218690627 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -229,9 +259,11 @@ ms0 f10 mainOut f15 tail #connect
 ms0 f15 head f14 mainIn #connect
 ms0 f14 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
-ms0 f8 mainOut f9 tail #connect
-ms0 f9 head f4 mainIn #connect
 ms0 f16 mainOut f18 tail #connect
 ms0 f18 head f11 mainIn #connect
 ms0 f11 mainOut f17 tail #connect
 ms0 f17 head f12 mainIn #connect
+ms0 f8 mainOut f20 tail #connect
+ms0 f20 head f19 mainIn #connect
+ms0 f19 mainOut f9 tail #connect
+ms0 f9 head f4 mainIn #connect

@@ -6,3 +6,5 @@ password String #field
 password PERSISTENT #fieldModifier
 message String #field
 message PERSISTENT #fieldModifier
+roleName String #field
+roleName PERSISTENT #fieldModifier

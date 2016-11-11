@@ -7,7 +7,7 @@ package online.food.ordering;
 public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3623193914549261060L;
+  private static final long serialVersionUID = -4598244473114193949L;
 
   private java.lang.String userName;
 
@@ -67,6 +67,26 @@ public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.Compos
   public void setMessage(java.lang.String _message)
   {
     message = _message;
+  }
+
+  private java.lang.String roleName;
+
+  /**
+   * Gets the field roleName.
+   * @return the value of the field roleName; may be null.
+   */
+  public java.lang.String getRoleName()
+  {
+    return roleName;
+  }
+
+  /**
+   * Sets the field roleName.
+   * @param _roleName the new value of the field roleName.
+   */
+  public void setRoleName(java.lang.String _roleName)
+  {
+    roleName = _roleName;
   }
 
 }

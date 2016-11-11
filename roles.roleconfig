@@ -2,12 +2,15 @@
 <role>
     <identifier>Everybody</identifier>
     <role>
-        <identifier>guest</identifier>
+        <identifier>GUEST</identifier>
+        <displayName>GUEST</displayName>
     </role>
     <role>
-        <identifier>orderingManager</identifier>
+        <identifier>ORDERING_MANAGER</identifier>
+        <displayName>ORDERING MANAGER</displayName>
     </role>
     <role>
-        <identifier>purchasingManger</identifier>
+        <identifier>PURCHASE_MANAGER</identifier>
+        <displayName>PURCHASE MANAGER</displayName>
     </role>
 </role>

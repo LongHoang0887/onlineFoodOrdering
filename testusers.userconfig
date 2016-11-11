@@ -3,16 +3,16 @@
     <user>
         <username>long-guest</username>
         <password>123456</password>
-        <role>guest</role>
+        <role>GUEST</role>
     </user>
     <user>
         <username>long-order</username>
         <password>123456</password>
-        <role>orderingManager</role>
+        <role>ORDERING_MANAGER</role>
     </user>
     <user>
         <username>long-purchasing</username>
         <password>123456</password>
-        <role>purchasingManger</role>
+        <role>PURCHASE_MANAGER</role>
     </user>
 </userConfig>
