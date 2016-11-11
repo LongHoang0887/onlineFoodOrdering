@@ -1,10 +1,12 @@
 package serviceImpl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import online.food.ordering.Food;
 import online.food.ordering.PopupOrderManagementData;
 import online.food.ordering.Restaurant;
 import service.RestaurantService;
@@ -25,6 +27,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return (List<Restaurant>) Ivy.persistence().get(PERSISTENCE_UNIT_NAME).findAll(Restaurant.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public PopupOrderManagementData getRestaurantById(String restaurantId) {
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
@@ -42,6 +45,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	public void removeRestaurant(Restaurant restaurant) {
+//		FoodServiceImpl foodService = new FoodServiceImpl();
+//		foodService.removeFoodsInRestaurant(restaurant.getId());
 		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(restaurant);
 	}
 
@@ -54,6 +59,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 		newRes.setWebsite(restaurant.getWebsite());
 		newRes.setCreatedDate(new Date());
 		newRes = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(newRes);
+		
+//		FoodServiceImpl foodService = new FoodServiceImpl();
+//		List<Food> foods = new ArrayList<>(foodService.getFoodsInRestaurant(newRes.getId()));
+//		foodService.saveFoods(foods);
 		
 		return newRes;
 	}

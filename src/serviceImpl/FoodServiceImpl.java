@@ -27,7 +27,6 @@ public class FoodServiceImpl implements FoodService {
 	}
 
 	public boolean checkFoodExists(List<Food> foods, String foodName) {
-
 		for(Food food: foods) {
 			if (food.getName().equalsIgnoreCase(foodName)) {
 				FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Food exists in the list already.", "Invalid credentials");
@@ -35,7 +34,6 @@ public class FoodServiceImpl implements FoodService {
 				return true;
 			}
 		}
-
 		return false;
 	}
 	
@@ -44,5 +42,12 @@ public class FoodServiceImpl implements FoodService {
 		String sql = "SELECT * FROM FOOD WHERE RESTAURANTID = :restaurantId";
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
 		return (List<Food>) entityManager.createQuery(sql).setParameter("restaurantId", resId).getResultList();
+	}
+
+	@Override
+	public void removeFoodsInRestaurant(Integer resId) {
+		String sql = "DELETE FROM FOOD WHERE RESTAURANTID = :restaurantId";
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		entityManager.createQuery(sql).setParameter("restaurantId", resId).executeUpdate();
 	}
 }

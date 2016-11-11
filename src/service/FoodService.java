@@ -11,4 +11,6 @@ public interface FoodService {
 	public boolean checkFoodExists(List<Food> foods, String foodName);
 	
 	public List<Food> getFoodsInRestaurant(Integer resId);
+	
+	public void removeFoodsInRestaurant(Integer resId);
 }
