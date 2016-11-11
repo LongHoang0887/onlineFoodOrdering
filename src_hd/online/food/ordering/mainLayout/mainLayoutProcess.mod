@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 13:25:03 ICT 2016]
+[>Created: Fri Nov 11 13:26:04 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -281,13 +281,13 @@ ms0 f23 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f23 200 362 112 44 -51 -8 #rect
+ms0 f23 192 362 112 44 -51 -8 #rect
 ms0 f23 @|StepIcon #fIcon
 ms0 f24 expr out #txt
-ms0 f24 109 384 200 384 #arcP
+ms0 f24 109 384 192 384 #arcP
 ms0 f24 0 0.826625386996904 0 0 #arcLabel
 ms0 f22 expr out #txt
-ms0 f22 312 384 432 173 #arcP
+ms0 f22 304 384 432 173 #arcP
 ms0 f22 1 432 384 #addKink
 ms0 f22 0 0.826625386996904 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt

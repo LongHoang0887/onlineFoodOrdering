@@ -44,8 +44,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	public void removeRestaurant(Restaurant restaurant) {
-//		FoodServiceImpl foodService = new FoodServiceImpl();
-//		foodService.removeFoodsInRestaurant(restaurant.getId());
+		FoodServiceImpl foodService = new FoodServiceImpl();
+		foodService.removeFoodsInRestaurant(restaurant.getId());
 		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(restaurant);
 	}
 
