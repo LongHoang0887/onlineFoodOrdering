@@ -18,7 +18,9 @@
 					</div>
 					<div>
 						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}" >
-							<p:column>#{restaurant.restaurantName}</p:column>
+							<p:ajax event="rowSelect" listener="#{logic.Select}" update="form" />
+							<p:column>#{restaurant.restaurantName}
+							</p:column>
 					    </p:dataTable>
 					</div>
 				</p:layoutUnit>
@@ -32,19 +34,19 @@
 					<div class="info-summary">
 						<p:panelGrid columns="3" layout="grid" style="border: none;">            
 						    <h:outputText value="#{data.selectedRestaurant.restaurantName}">
-						    	<h:outputLabel value="Restaurant:" />
+						    	<h:outputLabel value="Restaurant: " />
 						    </h:outputText>
-						    <h:outputText>
-						    	<h:outputLabel value="Website:" /> http://sinhto142.com
+						    <h:outputText value="#{data.selectedRestaurant.website}">
+						    	<h:outputLabel value="Website: " />
 						    </h:outputText>
-						    <h:outputText>
-						    	<h:outputLabel value="Phone:" /> 19001080
+						    <h:outputText value="#{data.selectedRestaurant.phone}">
+						    	<h:outputLabel value="Phone: " />
 						    </h:outputText>
-						    <h:outputText>
-						    	<h:outputLabel value="Created date:" /> 23/03/2016 11:10
+						    <h:outputText value="#{data.selectedRestaurant.createdDate}">
+						    	<h:outputLabel value="Created date: " />
 						    </h:outputText> 
-						    <h:outputText>
-						    	<h:outputLabel value="Total:" /> 250.000 vnd
+						    <h:outputText value="">
+						    	<h:outputLabel value="Total: " />
 						    </h:outputText>
 						</p:panelGrid>
 						<p:panelGrid styleClass="order-detail-list">

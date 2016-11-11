@@ -1,6 +1,5 @@
 package serviceImpl;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -52,19 +51,19 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	public Restaurant cloneRestaurant(Restaurant restaurant) {
-		Restaurant newRes = new Restaurant();
-		newRes.setRestaurantName(restaurant.getRestaurantName());
-		newRes.setOutOfFood(restaurant.getOutOfFood());
-		newRes.setPhone(restaurant.getPhone());
-		newRes.setWebsite(restaurant.getWebsite());
-		newRes.setCreatedDate(new Date());
-		newRes = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(newRes);
+		Restaurant res = new Restaurant();
+		res.setRestaurantName(restaurant.getRestaurantName());
+		res.setOutOfFood(restaurant.getOutOfFood());
+		res.setPhone(restaurant.getPhone());
+		res.setWebsite(restaurant.getWebsite());
+		res.setCreatedDate(new Date());
+		res = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(res);
 		
 //		FoodServiceImpl foodService = new FoodServiceImpl();
 //		List<Food> foods = new ArrayList<>(foodService.getFoodsInRestaurant(newRes.getId()));
 //		foodService.saveFoods(foods);
 		
-		return newRes;
+		return res;
 	}
 
 }
