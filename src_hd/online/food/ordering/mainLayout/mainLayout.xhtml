@@ -25,7 +25,7 @@
 				<p:layoutUnit position="center" styleClass="right-layout">
 				    <div class="header">
 				    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
-						<p:button value="Clone" />
+						<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form"/>
 						<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" />
 						<p:button value="Purchase" />
 					</div>

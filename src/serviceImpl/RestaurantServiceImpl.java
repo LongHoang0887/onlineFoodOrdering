@@ -45,4 +45,17 @@ public class RestaurantServiceImpl implements RestaurantService {
 		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).remove(restaurant);
 	}
 
+	@Override
+	public Restaurant cloneRestaurant(Restaurant restaurant) {
+		Restaurant newRes = new Restaurant();
+		newRes.setRestaurantName(restaurant.getRestaurantName());
+		newRes.setOutOfFood(restaurant.getOutOfFood());
+		newRes.setPhone(restaurant.getPhone());
+		newRes.setWebsite(restaurant.getWebsite());
+		newRes.setCreatedDate(new Date());
+		newRes = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(newRes);
+		
+		return newRes;
+	}
+
 }

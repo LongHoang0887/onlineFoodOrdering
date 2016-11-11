@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.persistence.EntityManager;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import online.food.ordering.Food;
@@ -36,5 +37,12 @@ public class FoodServiceImpl implements FoodService {
 		}
 
 		return false;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Food> getFoodsInRestaurant(Integer resId){
+		String sql = "SELECT * FROM FOOD WHERE RESTAURANTID = :restaurantId";
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		return (List<Food>) entityManager.createQuery(sql).setParameter("restaurantId", resId).getResultList();
 	}
 }
