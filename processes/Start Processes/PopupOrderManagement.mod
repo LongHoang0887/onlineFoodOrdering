@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 10:04:37 ICT 2016]
+[>Created: Fri Nov 11 15:39:22 ICT 2016]
 1584D5A74AF2AFF1 3.18 #module
 >Proto >Proto Collection #zClass
 Pt0 PopupOrderManagement Big #zClass
@@ -22,7 +22,7 @@ Pt0 @PushWFArc f4 '' #zField
 Pt0 f0 outLink start.ivp #txt
 Pt0 f0 type online.food.ordering.PopupOrderManagementData #txt
 Pt0 f0 inParamDecl '<> param;' #txt
-Pt0 f0 inParamTable 'out.restaurantId="1";
+Pt0 f0 inParamTable 'out.restaurantId="200";
 ' #txt
 Pt0 f0 actionDecl 'online.food.ordering.PopupOrderManagementData out;
 ' #txt
@@ -87,12 +87,12 @@ Pt0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Pt0 f3 240 42 112 44 -35 -8 #rect
+Pt0 f3 224 42 112 44 -35 -8 #rect
 Pt0 f3 @|RichDialogIcon #fIcon
 Pt0 f2 expr out #txt
-Pt0 f2 352 64 489 64 #arcP
+Pt0 f2 336 64 489 64 #arcP
 Pt0 f4 expr out #txt
-Pt0 f4 111 64 240 64 #arcP
+Pt0 f4 111 64 224 64 #arcP
 >Proto Pt0 .type online.food.ordering.PopupOrderManagementData #txt
 >Proto Pt0 .processKind NORMAL #txt
 >Proto Pt0 0 0 32 24 18 0 #rect

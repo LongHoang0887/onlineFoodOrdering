@@ -7,7 +7,7 @@ package online.food.ordering;
 public class PopupOrderManagementData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 1402233595468590573L;
+  private static final long serialVersionUID = -3809490536681749986L;
 
   private java.lang.String restaurantId;
 
@@ -167,6 +167,26 @@ public class PopupOrderManagementData extends ch.ivyteam.ivy.scripting.objects.C
   public void setPrice(java.lang.String _price)
   {
     price = _price;
+  }
+
+  private java.lang.Boolean outOfFood;
+
+  /**
+   * Gets the field outOfFood.
+   * @return the value of the field outOfFood; may be null.
+   */
+  public java.lang.Boolean getOutOfFood()
+  {
+    return outOfFood;
+  }
+
+  /**
+   * Sets the field outOfFood.
+   * @param _outOfFood the new value of the field outOfFood.
+   */
+  public void setOutOfFood(java.lang.Boolean _outOfFood)
+  {
+    outOfFood = _outOfFood;
   }
 
 }

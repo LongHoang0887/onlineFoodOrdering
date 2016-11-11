@@ -38,15 +38,17 @@
 								noSelectionOption="true" />
 							<f:selectItems value="#{data.foods}" var="food"
 								itemLabel="#{food.name}" itemValue="#{food.id}" />
+								
+							<p:ajax event="change" listener="#{logic.handlePriceEvent}" update="price"/>
 						</p:selectOneMenu>
-						<p:outputLabel value="It price is #{data.price}"></p:outputLabel>
+						<p:outputLabel id="price" value="It price is #{data.price}"></p:outputLabel>
 
 						<p:outputLabel for="notice" value="and my notice is" />
 						<p:inputText style="width:198px;" id="notice" value="#{data.notice}" label="notice"></p:inputText>
 
 					</h:panelGrid>
 					<br />
-					<p:panelGrid rendered="#{data.isOptional}" id="optionalPanel" columns="1" layout="grid" style="margin-top:20px;border-style: none !important;">
+					<p:panelGrid rendered="#{data.optional}" id="optionalPanel" columns="1" layout="grid" style="margin-top:20px;border-style: none !important;">
 						<p:row>
 							<p:column colspan="11" style="font-weight: bold;">Oops, if you don't have my need, please help me to order</p:column>
 						</p:row>

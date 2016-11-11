@@ -7,7 +7,7 @@ package online.food.ordering.PopupOrder;
 public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -7056288618802515497L;
+  private static final long serialVersionUID = 3134623260366480663L;
 
   private java.lang.String restaurantId;
 
@@ -187,6 +187,46 @@ public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setOptional(java.lang.String _optional)
   {
     optional = _optional;
+  }
+
+  private online.food.ordering.RestaurantServiceData restaurantServiceData;
+
+  /**
+   * Gets the field restaurantServiceData.
+   * @return the value of the field restaurantServiceData; may be null.
+   */
+  public online.food.ordering.RestaurantServiceData getRestaurantServiceData()
+  {
+    return restaurantServiceData;
+  }
+
+  /**
+   * Sets the field restaurantServiceData.
+   * @param _restaurantServiceData the new value of the field restaurantServiceData.
+   */
+  public void setRestaurantServiceData(online.food.ordering.RestaurantServiceData _restaurantServiceData)
+  {
+    restaurantServiceData = _restaurantServiceData;
+  }
+
+  private online.food.ordering.Ordering order;
+
+  /**
+   * Gets the field order.
+   * @return the value of the field order; may be null.
+   */
+  public online.food.ordering.Ordering getOrder()
+  {
+    return order;
+  }
+
+  /**
+   * Sets the field order.
+   * @param _order the new value of the field order.
+   */
+  public void setOrder(online.food.ordering.Ordering _order)
+  {
+    order = _order;
   }
 
 }

@@ -1,0 +1,16 @@
+OrderServiceData #class
+online.food.ordering #namespace
+restaurantId String #field
+restaurantId PERSISTENT #fieldModifier
+foodId String #field
+foodId PERSISTENT #fieldModifier
+optional String #field
+optional PERSISTENT #fieldModifier
+notice String #field
+notice PERSISTENT #fieldModifier
+personName String #field
+personName PERSISTENT #fieldModifier
+foods java.util.List<online.food.ordering.Food> #field
+foods PERSISTENT #fieldModifier
+price String #field
+price PERSISTENT #fieldModifier

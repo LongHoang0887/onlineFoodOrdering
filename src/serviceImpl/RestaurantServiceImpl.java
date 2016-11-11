@@ -1,14 +1,14 @@
 package serviceImpl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
-import online.food.ordering.PopupOrderManagementData;
+import online.food.ordering.Food;
 import online.food.ordering.Restaurant;
 import service.RestaurantService;
 import ch.ivyteam.ivy.environment.Ivy;
+import ch.ivyteam.ivy.process.data.persistence.IIvyQuery;
 
 public class RestaurantServiceImpl implements RestaurantService {
 
@@ -25,19 +25,40 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return (List<Restaurant>) Ivy.persistence().get(PERSISTENCE_UNIT_NAME).findAll(Restaurant.class);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public PopupOrderManagementData getRestaurantById(String restaurantId) {
-		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-		List<PopupOrderManagementData> resultList = entityManager.createQuery(getSql()).setParameter("restaurantId", restaurantId).getResultList();
-		PopupOrderManagementData data = resultList.get(0);
+	public Restaurant getRestaurantById(String restaurantId) {
+//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		IIvyQuery query = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createNativeQuery(getSql());
+		query.setParameter("restaurantId", Integer.valueOf(restaurantId));
+		List dto = query.getResultList();
+
+		Restaurant data = new Restaurant();
+
+		// get list of food
+		List<Food> foods = new ArrayList<Food>();
+//		for (Object item : arrayFoods) {
+////			RestaurantServiceData item = resultList.get(i);
+//				data.setRestaurantId(Integer.valueOf(item.));
+//				data.setRestaurantName(item.getRestaurantName());
+//				data.setWebsite(item.getWebsite());
+//				data.setOutOfFood(item.getOutOfFood());
+//			
+//			Food food = new Food();
+//			food.setId(item.getFoodId());
+//			food.setName(item.getFoodName());
+//			food.setPrice(item.getPrice());
+//			foods.add(food);
+//		}
+		
+//		data.setFoods(foods);
+		
 		return data;
 	}
 
 	private String getSql() {
 		StringBuilder sql = new StringBuilder();
-		sql.append("select * from Restaurant R, Food F where R.restaurantId = F.restaurantId ");
-		sql.append("and R.restaurantId = :restaurantId");
+		sql.append("select R.id as restaurantId, R.restaurantName, R.website, R.outOfFood, F.id as foodId, F.name as foodName, F.price as foodPrice from Restaurant R, Food F ");
+		sql.append("where R.id = F.restaurantId and R.id = :restaurantId ");
 		return sql.toString();
 	}
 

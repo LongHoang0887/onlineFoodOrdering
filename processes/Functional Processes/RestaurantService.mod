@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 08:34:36 ICT 2016]
+[>Created: Fri Nov 11 18:56:28 ICT 2016]
 1584E0C691E57C59 3.18 #module
 >Proto >Proto Collection #zClass
 Re0 RestaurantService Big #zClass
@@ -22,13 +22,11 @@ Re0 @PushWFArc f2 '' #zField
 Re0 f0 inParamDecl '<java.lang.String restaurantId> param;' #txt
 Re0 f0 inParamTable 'out.restaurantId=param.restaurantId;
 ' #txt
-Re0 f0 outParamDecl '<online.food.ordering.PopupOrderManagementData popupData> result;
-' #txt
-Re0 f0 outParamTable 'result.popupData=in.popupOrderManagementData;
+Re0 f0 outParamDecl '<online.food.ordering.RestaurantServiceData popupData> result;
 ' #txt
 Re0 f0 actionDecl 'online.food.ordering.RestaurantServiceData out;
 ' #txt
-Re0 f0 callSignature call(String) #txt
+Re0 f0 callSignature getRestaurantById(String) #txt
 Re0 f0 type online.food.ordering.RestaurantServiceData #txt
 Re0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -48,12 +46,12 @@ Re0 f3 actionDecl 'online.food.ordering.RestaurantServiceData out;
 ' #txt
 Re0 f3 actionTable 'out=in;
 ' #txt
-Re0 f3 actionCode 'import online.food.ordering.PopupOrderManagementData;
+Re0 f3 actionCode 'import online.food.ordering.RestaurantServiceData;
 import service.RestaurantService;
 import serviceImpl.RestaurantServiceImpl;
 
 RestaurantService srv = new RestaurantServiceImpl();
-in.popupOrderManagementData = srv.getRestaurantById(in.restaurantId) as PopupOrderManagementData;
+in.restaurant = srv.getRestaurantById(in.restaurantId);
 ' #txt
 Re0 f3 type online.food.ordering.RestaurantServiceData #txt
 Re0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

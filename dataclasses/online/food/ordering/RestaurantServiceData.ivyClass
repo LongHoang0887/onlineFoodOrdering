@@ -2,5 +2,21 @@ RestaurantServiceData #class
 online.food.ordering #namespace
 restaurantId String #field
 restaurantId PERSISTENT #fieldModifier
-popupOrderManagementData online.food.ordering.PopupOrderManagementData #field
-popupOrderManagementData PERSISTENT #fieldModifier
+restaurantName String #field
+restaurantName PERSISTENT #fieldModifier
+website String #field
+website PERSISTENT #fieldModifier
+outOfFood Boolean #field
+outOfFood PERSISTENT #fieldModifier
+foods java.util.List<online.food.ordering.Food> #field
+foods PERSISTENT #fieldModifier
+foodId Integer #field
+foodId PERSISTENT #fieldModifier
+foodName String #field
+foodName PERSISTENT #fieldModifier
+price Integer #field
+price PERSISTENT #fieldModifier
+resId Integer #field
+resId PERSISTENT #fieldModifier
+restaurant online.food.ordering.Restaurant #field
+restaurant PERSISTENT #fieldModifier

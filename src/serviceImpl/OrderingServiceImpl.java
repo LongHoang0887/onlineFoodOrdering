@@ -14,8 +14,27 @@ public class OrderingServiceImpl implements OrderingService {
 	private static final String PERSISTENCE_UNIT_NAME = "orderingDS";
 
 	@Override
-	public void saveOrder(Ordering order) {
+	public void saveOrder(String restaurantId, String foodId, String optional,
+			String notice, String personName) {
+		Ordering order = new Ordering();
+		order.setRestaurantId(Integer.valueOf(restaurantId));
+		order.setFoodId(Integer.valueOf(foodId));
+		order.setOptional(optional);
+		order.setNotice(notice);
+		order.setPersonName(personName);
+		
 		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(order);
+		
+	}
+
+	@Override
+	public String updatePrice(List<Food> foods, String foodId) {
+		for (Food food : foods) {
+			if (food.getId().equals(foodId)) {
+				return String.valueOf(food.getPrice());
+			}
+		}
+		return "";
 	}
 
 	@SuppressWarnings("unchecked")

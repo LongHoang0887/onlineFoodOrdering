@@ -18,3 +18,7 @@ isOptional Boolean #field
 isOptional PERSISTENT #fieldModifier
 optional String #field
 optional PERSISTENT #fieldModifier
+restaurantServiceData online.food.ordering.RestaurantServiceData #field
+restaurantServiceData PERSISTENT #fieldModifier
+order online.food.ordering.Ordering #field
+order PERSISTENT #fieldModifier
