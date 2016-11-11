@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 18:05:48 ICT 2016]
+[>Created: Fri Nov 11 17:36:07 ICT 2016]
 158489E6E55BBC40 3.18 #module
 >Proto >Proto Collection #zClass
 Cs0 CreateOrderDialogProcess Big #zClass
@@ -19,7 +19,6 @@ Cs0 @RichDialogInitStart f0 '' #zField
 Cs0 @RichDialogProcessEnd f1 '' #zField
 Cs0 @RichDialogProcessStart f3 '' #zField
 Cs0 @RichDialogEnd f4 '' #zField
-Cs0 @PushWFArc f5 '' #zField
 Cs0 @RichDialogProcessStart f6 '' #zField
 Cs0 @RichDialogProcessStart f9 '' #zField
 Cs0 @RichDialogProcessEnd f12 '' #zField
@@ -61,6 +60,9 @@ Cs0 @GridStep f16 '' #zField
 Cs0 @PushWFArc f17 '' #zField
 Cs0 @GridStep f11 '' #zField
 Cs0 @PushWFArc f13 '' #zField
+Cs0 @RichDialog f46 '' #zField
+Cs0 @PushWFArc f47 '' #zField
+Cs0 @PushWFArc f5 '' #zField
 >Proto Cs0 Cs0 CreateOrderDialogProcess #zField
 Cs0 f0 guid 158489E6E6D3B372 #txt
 Cs0 f0 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
@@ -100,10 +102,8 @@ Cs0 f3 83 195 26 26 -15 12 #rect
 Cs0 f3 @|RichDialogProcessStartIcon #fIcon
 Cs0 f4 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f4 guid 158489E6E85FC4F0 #txt
-Cs0 f4 211 195 26 26 0 12 #rect
+Cs0 f4 339 195 26 26 0 12 #rect
 Cs0 f4 @|RichDialogEndIcon #fIcon
-Cs0 f5 expr out #txt
-Cs0 f5 109 208 211 208 #arcP
 Cs0 f6 guid 15848A1B9508D29C #txt
 Cs0 f6 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 Cs0 f6 actionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
@@ -529,12 +529,39 @@ Cs0 f13 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Cs0 f13 368 352 440 352 #arcP
 Cs0 f13 0 0.20833333333333334 0 -10 #arcLabel
+Cs0 f46 targetWindow NEW:card: #txt
+Cs0 f46 targetDisplay TOP #txt
+Cs0 f46 richDialogId online.food.ordering.mainLayout #txt
+Cs0 f46 startMethod start() #txt
+Cs0 f46 type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
+Cs0 f46 requestActionDecl '<> param;' #txt
+Cs0 f46 responseActionDecl 'online.food.ordering.CreateOrderDialog.CreateOrderDialogData out;
+' #txt
+Cs0 f46 responseMappingAction 'out=in;
+' #txt
+Cs0 f46 windowConfiguration '* ' #txt
+Cs0 f46 isAsynch false #txt
+Cs0 f46 isInnerRd true #txt
+Cs0 f46 userContext '* ' #txt
+Cs0 f46 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Open Ordering Screen</name>
+        <nameStyle>20,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Cs0 f46 160 186 128 44 -61 -8 #rect
+Cs0 f46 @|RichDialogIcon #fIcon
+Cs0 f47 expr out #txt
+Cs0 f47 109 208 160 208 #arcP
+Cs0 f5 expr out #txt
+Cs0 f5 288 208 339 208 #arcP
 >Proto Cs0 .type online.food.ordering.CreateOrderDialog.CreateOrderDialogData #txt
 >Proto Cs0 .processKind HTML_DIALOG #txt
 >Proto Cs0 -8 -8 16 16 16 26 #rect
 >Proto Cs0 '' #fIcon
-Cs0 f3 mainOut f5 tail #connect
-Cs0 f5 head f4 mainIn #connect
 Cs0 f0 mainOut f15 tail #connect
 Cs0 f15 head f14 mainIn #connect
 Cs0 f14 mainOut f2 tail #connect
@@ -577,3 +604,7 @@ Cs0 f43 out f45 tail #connect
 Cs0 f45 head f12 mainIn #connect
 Cs0 f43 out f13 tail #connect
 Cs0 f13 head f11 mainIn #connect
+Cs0 f3 mainOut f47 tail #connect
+Cs0 f47 head f46 mainIn #connect
+Cs0 f46 mainOut f5 tail #connect
+Cs0 f5 head f4 mainIn #connect

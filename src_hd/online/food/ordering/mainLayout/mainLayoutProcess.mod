@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 17:11:44 ICT 2016]
+[>Created: Fri Nov 11 17:33:35 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -223,13 +223,13 @@ ms0 f19 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f19 152 562 144 44 -63 -8 #rect
+ms0 f19 184 562 144 44 -63 -8 #rect
 ms0 f19 @|RichDialogIcon #fIcon
 ms0 f20 expr out #txt
-ms0 f20 109 584 152 584 #arcP
+ms0 f20 109 584 184 584 #arcP
 ms0 f20 0 0.6448146088226693 0 0 #arcLabel
 ms0 f9 expr out #txt
-ms0 f9 296 584 432 501 #arcP
+ms0 f9 328 584 432 501 #arcP
 ms0 f9 1 432 584 #addKink
 ms0 f9 0 0.784163218690627 0 0 #arcLabel
 ms0 f21 guid 158520F055C7C393 #txt
@@ -377,12 +377,12 @@ to each restaurant</name>
     </language>
 </elementInfo>
 ' #txt
-ms0 f29 344 42 144 44 -53 -16 #rect
+ms0 f29 360 42 144 44 -53 -16 #rect
 ms0 f29 @|StepIcon #fIcon
 ms0 f30 expr out #txt
-ms0 f30 320 64 344 64 #arcP
+ms0 f30 320 64 360 64 #arcP
 ms0 f2 expr out #txt
-ms0 f2 488 64 555 64 #arcP
+ms0 f2 504 64 555 64 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
