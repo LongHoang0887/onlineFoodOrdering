@@ -1,9 +1,14 @@
 package serviceImpl;
 
 import java.util.List;
+import java.util.Random;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import org.apache.commons.lang.math.RandomUtils;
 
 import online.food.ordering.Food;
 import online.food.ordering.Ordering;
@@ -14,21 +19,45 @@ public class OrderingServiceImpl implements OrderingService {
 	private static final String PERSISTENCE_UNIT_NAME = "orderingDS";
 
 	@Override
-	public void saveOrder(String restaurantId, String foodId, String optional,
-			String notice, String personName) {
+	public Boolean saveOrder(Integer restaurantId, Integer foodId, String optional,
+			String notice, String personName, Boolean outOfFood) {
+		
+		// Check outOfFood is false, selectedFood is mandatory
+		if (!outOfFood && foodId == 0) {
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+					"Please select one food", "Invalid food");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+			return false;
+		}
+		
+		// Check outOfFood is true, selectedFood or optional must be input
+		if (outOfFood && foodId == 0 && optional.trim().length() == 0) {
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+					"Please specify one food from combobox or input your expected food", "Invalid food");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+			return false;
+		}
+		
 		Ordering order = new Ordering();
-		order.setRestaurantId(Integer.valueOf(restaurantId));
-		order.setFoodId(Integer.valueOf(foodId));
+//		order.setId(RandomUtils.nextInt());
+		order.setRestaurantId(restaurantId);
+		order.setFoodId(foodId);
 		order.setOptional(optional);
 		order.setNotice(notice);
 		order.setPersonName(personName);
 		
-		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(order);
+//		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager().detach(order);
+//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+//		entityManager.merge(order);
+//		entityManager.persist(order);
+//		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(order);
+		
+		return true;
 		
 	}
 
 	@Override
-	public String updatePrice(List<Food> foods, String foodId) {
+	public String updatePrice(List<Food> foods, Integer foodId) {
 		for (Food food : foods) {
 			if (food.getId().equals(foodId)) {
 				return String.valueOf(food.getPrice());

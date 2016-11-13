@@ -9,7 +9,7 @@ package online.food.ordering;
 public class Restaurant extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -5916905892091750240L;
+  private static final long serialVersionUID = 353096665306555503L;
 
   /**
    * Identifier
@@ -194,6 +194,26 @@ public class Restaurant extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setNumberOfOrdered(java.lang.Integer _numberOfOrdered)
   {
     numberOfOrdered = _numberOfOrdered;
+  }
+
+  private transient java.util.List<online.food.ordering.Food> foods;
+
+  /**
+   * Gets the field foods.
+   * @return the value of the field foods; may be null.
+   */
+  public java.util.List<online.food.ordering.Food> getFoods()
+  {
+    return foods;
+  }
+
+  /**
+   * Sets the field foods.
+   * @param _foods the new value of the field foods.
+   */
+  public void setFoods(java.util.List<online.food.ordering.Food> _foods)
+  {
+    foods = _foods;
   }
 
 }

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 18:31:02 ICT 2016]
+[>Created: Sun Nov 13 22:31:57 ICT 2016]
 1584D645377B30B2 3.18 #module
 >Proto >Proto Collection #zClass
 Ps0 PopupOrderProcess Big #zClass
@@ -19,28 +19,32 @@ Ps0 @RichDialogInitStart f0 '' #zField
 Ps0 @RichDialogProcessEnd f1 '' #zField
 Ps0 @RichDialogProcessStart f3 '' #zField
 Ps0 @RichDialogEnd f4 '' #zField
-Ps0 @CallSub f6 '' #zField
-Ps0 @PushWFArc f5 '' #zField
 Ps0 @CallSub f8 '' #zField
-Ps0 @PushWFArc f9 '' #zField
 Ps0 @PushWFArc f2 '' #zField
-Ps0 @PushWFArc f7 '' #zField
-Ps0 @RichDialogMethodStart f10 '' #zField
-Ps0 @RichDialogProcessEnd f11 '' #zField
-Ps0 @CallSub f12 '' #zField
-Ps0 @PushWFArc f13 '' #zField
-Ps0 @PushWFArc f14 '' #zField
+Ps0 @PushWFArc f9 '' #zField
+Ps0 @GridStep f15 '' #zField
+Ps0 @PushWFArc f6 '' #zField
+Ps0 @RichDialogProcessEnd f7 '' #zField
+Ps0 @Alternative f10 '' #zField
+Ps0 @PushWFArc f11 '' #zField
+Ps0 @PushWFArc f5 '' #zField
+Ps0 @PushWFArc f12 '' #zField
+Ps0 @RichDialogMethodStart f13 '' #zField
+Ps0 @RichDialogProcessEnd f14 '' #zField
+Ps0 @PushWFArc f16 '' #zField
 >Proto Ps0 Ps0 PopupOrderProcess #zField
 Ps0 f0 guid 1584D6453876F99B #txt
 Ps0 f0 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f0 method start(String) #txt
+Ps0 f0 method start(Integer) #txt
 Ps0 f0 disableUIEvents true #txt
 Ps0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<java.lang.String restaurantId> param = methodEvent.getInputArguments();
+<java.lang.Integer restaurantId> param = methodEvent.getInputArguments();
 ' #txt
 Ps0 f0 inParameterMapAction 'out.restaurantId=param.restaurantId;
 ' #txt
-Ps0 f0 outParameterDecl '<> result;
+Ps0 f0 outParameterDecl '<online.food.ordering.Restaurant restaurant> result;
+' #txt
+Ps0 f0 outParameterMapAction 'result.restaurant=in.restaurant;
 ' #txt
 Ps0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -54,7 +58,7 @@ Ps0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Ps0 f0 83 51 26 26 -47 15 #rect
 Ps0 f0 @|RichDialogInitStartIcon #fIcon
 Ps0 f1 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f1 515 51 26 26 0 12 #rect
+Ps0 f1 387 51 26 26 0 12 #rect
 Ps0 f1 @|RichDialogProcessEndIcon #fIcon
 Ps0 f3 guid 1584D6453984EB22 #txt
 Ps0 f3 type online.food.ordering.PopupOrder.PopupOrderData #txt
@@ -73,120 +77,112 @@ Ps0 f3 83 147 26 26 -15 12 #rect
 Ps0 f3 @|RichDialogProcessStartIcon #fIcon
 Ps0 f4 type online.food.ordering.PopupOrder.PopupOrderData #txt
 Ps0 f4 guid 1584D64539899F7C #txt
-Ps0 f4 515 147 26 26 0 12 #rect
+Ps0 f4 547 147 26 26 0 12 #rect
 Ps0 f4 @|RichDialogEndIcon #fIcon
-Ps0 f6 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f6 processCall 'Functional Processes/OrderService:saveOrder(String,String,String,String,String)' #txt
-Ps0 f6 doCall true #txt
-Ps0 f6 requestActionDecl '<java.lang.String foodId,java.lang.String notice,java.lang.String optional,java.lang.String personName,java.lang.String restaurantId> param;
-' #txt
-Ps0 f6 responseActionDecl 'online.food.ordering.PopupOrder.PopupOrderData out;
-' #txt
-Ps0 f6 responseMappingAction 'out=in;
-' #txt
-Ps0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Save Order</name>
-        <nameStyle>10,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Ps0 f6 248 138 112 44 -30 -8 #rect
-Ps0 f6 @|CallSubIcon #fIcon
-Ps0 f5 expr out #txt
-Ps0 f5 360 160 515 160 #arcP
 Ps0 f8 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f8 processCall 'Functional Processes/RestaurantService:getRestaurantById(String)' #txt
+Ps0 f8 processCall 'Functional Processes/RestaurantService:getRestaurantById(Integer)' #txt
 Ps0 f8 doCall true #txt
-Ps0 f8 requestActionDecl '<java.lang.String restaurantId> param;
+Ps0 f8 requestActionDecl '<java.lang.Integer restaurantId> param;
 ' #txt
 Ps0 f8 requestMappingAction 'param.restaurantId=in.restaurantId;
 ' #txt
 Ps0 f8 responseActionDecl 'online.food.ordering.PopupOrder.PopupOrderData out;
 ' #txt
 Ps0 f8 responseMappingAction 'out=in;
+out.restaurant=result.restaurant;
 ' #txt
 Ps0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>Load restaurant</name>
-        <nameStyle>15,7
+        <name>Load restaurant and foods</name>
+        <nameStyle>25,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Ps0 f8 240 42 112 44 -43 -8 #rect
+Ps0 f8 168 42 160 44 -72 -8 #rect
 Ps0 f8 @|CallSubIcon #fIcon
-Ps0 f9 expr out #txt
-Ps0 f9 352 64 515 64 #arcP
 Ps0 f2 expr out #txt
-Ps0 f2 109 64 240 64 #arcP
-Ps0 f7 expr out #txt
-Ps0 f7 109 160 248 160 #arcP
-Ps0 f10 guid 1585316266A3FE25 #txt
+Ps0 f2 109 64 168 64 #arcP
+Ps0 f9 expr out #txt
+Ps0 f9 328 64 387 64 #arcP
+Ps0 f15 actionDecl 'online.food.ordering.PopupOrder.PopupOrderData out;
+' #txt
+Ps0 f15 actionTable 'out=in;
+' #txt
+Ps0 f15 actionCode 'import serviceImpl.OrderingServiceImpl;
+import service.OrderingService;
+OrderingService srv = new OrderingServiceImpl();
+in.saveResult = srv.saveOrder(in.restaurant.id, in.selectedFood.id,
+		in.optional, in.notice, "long", in.restaurant.outOfFood);' #txt
+Ps0 f15 type online.food.ordering.PopupOrder.PopupOrderData #txt
+Ps0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Save Order</name>
+        <nameStyle>10
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ps0 f15 192 138 112 44 -30 -8 #rect
+Ps0 f15 @|StepIcon #fIcon
+Ps0 f6 expr out #txt
+Ps0 f6 109 160 192 160 #arcP
+Ps0 f7 type online.food.ordering.PopupOrder.PopupOrderData #txt
+Ps0 f7 547 243 26 26 0 12 #rect
+Ps0 f7 @|RichDialogProcessEndIcon #fIcon
 Ps0 f10 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f10 method handlePriceEvent(String) #txt
-Ps0 f10 disableUIEvents false #txt
-Ps0 f10 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<java.lang.String foodId> param = methodEvent.getInputArguments();
+Ps0 f10 392 144 32 32 0 16 #rect
+Ps0 f10 @|AlternativeIcon #fIcon
+Ps0 f11 expr out #txt
+Ps0 f11 304 160 392 160 #arcP
+Ps0 f5 expr in #txt
+Ps0 f5 outCond 'in.saveResult == true' #txt
+Ps0 f5 424 160 547 160 #arcP
+Ps0 f12 expr in #txt
+Ps0 f12 outCond 'in.saveResult == false' #txt
+Ps0 f12 418 166 549 249 #arcP
+Ps0 f13 guid 1585CCCF1DC995A1 #txt
+Ps0 f13 type online.food.ordering.PopupOrder.PopupOrderData #txt
+Ps0 f13 method displayPrice(Integer) #txt
+Ps0 f13 disableUIEvents false #txt
+Ps0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<java.lang.Integer price> param = methodEvent.getInputArguments();
 ' #txt
-Ps0 f10 inParameterMapAction 'out.food=param.foodId;
+Ps0 f13 outParameterDecl '<java.lang.String price> result;
 ' #txt
-Ps0 f10 outParameterDecl '<> result;
-' #txt
-Ps0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+Ps0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>handlePriceEvent(String)</name>
-        <nameStyle>24,5,7
+        <name>displayPrice(Integer)</name>
+        <nameStyle>21,5,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Ps0 f10 83 275 26 26 -68 15 #rect
-Ps0 f10 @|RichDialogMethodStartIcon #fIcon
-Ps0 f11 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f11 467 275 26 26 0 12 #rect
-Ps0 f11 @|RichDialogProcessEndIcon #fIcon
-Ps0 f12 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f12 processCall 'Functional Processes/OrderService:updatePrice(List<online.food.ordering.Food>,String)' #txt
-Ps0 f12 doCall true #txt
-Ps0 f12 requestActionDecl '<java.util.List<online.food.ordering.Food> food,java.lang.String foodId> param;
-' #txt
-Ps0 f12 responseActionDecl 'online.food.ordering.PopupOrder.PopupOrderData out;
-' #txt
-Ps0 f12 responseMappingAction 'out=in;
-' #txt
-Ps0 f12 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Update Price</name>
-        <nameStyle>12,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Ps0 f12 200 274 112 44 -35 -8 #rect
-Ps0 f12 @|CallSubIcon #fIcon
-Ps0 f13 expr out #txt
-Ps0 f13 108 288 200 296 #arcP
-Ps0 f14 expr out #txt
-Ps0 f14 312 296 467 288 #arcP
+Ps0 f13 83 315 26 26 -56 15 #rect
+Ps0 f13 @|RichDialogMethodStartIcon #fIcon
+Ps0 f14 type online.food.ordering.PopupOrder.PopupOrderData #txt
+Ps0 f14 307 315 26 26 0 12 #rect
+Ps0 f14 @|RichDialogProcessEndIcon #fIcon
+Ps0 f16 expr out #txt
+Ps0 f16 109 328 307 328 #arcP
 >Proto Ps0 .type online.food.ordering.PopupOrder.PopupOrderData #txt
 >Proto Ps0 .processKind HTML_DIALOG #txt
 >Proto Ps0 -8 -8 16 16 16 26 #rect
 >Proto Ps0 '' #fIcon
-Ps0 f6 mainOut f5 tail #connect
-Ps0 f5 head f4 mainIn #connect
-Ps0 f8 mainOut f9 tail #connect
-Ps0 f9 head f1 mainIn #connect
 Ps0 f0 mainOut f2 tail #connect
 Ps0 f2 head f8 mainIn #connect
-Ps0 f3 mainOut f7 tail #connect
-Ps0 f7 head f6 mainIn #connect
-Ps0 f10 mainOut f13 tail #connect
-Ps0 f13 head f12 mainIn #connect
-Ps0 f12 mainOut f14 tail #connect
-Ps0 f14 head f11 mainIn #connect
+Ps0 f8 mainOut f9 tail #connect
+Ps0 f9 head f1 mainIn #connect
+Ps0 f3 mainOut f6 tail #connect
+Ps0 f6 head f15 mainIn #connect
+Ps0 f15 mainOut f11 tail #connect
+Ps0 f11 head f10 in #connect
+Ps0 f10 out f5 tail #connect
+Ps0 f5 head f4 mainIn #connect
+Ps0 f10 out f12 tail #connect
+Ps0 f12 head f7 mainIn #connect
+Ps0 f13 mainOut f16 tail #connect
+Ps0 f16 head f14 mainIn #connect

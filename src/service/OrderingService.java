@@ -12,10 +12,9 @@ public interface OrderingService {
 	public Food getFoodByOrderId(Integer foodId);
 	public List<Ordering> getListOrderByRestaurant(Integer resId);
 	public List<Ordering> getListOrderByRestaurantAndFood(Integer resId, Integer foodId);
-	
-	public void saveOrder(String restaurantId, String foodId, String optional, String notice, String personName);
-	
-	public String updatePrice(List<Food> foods, String foodId);
+	public Boolean saveOrder(Integer restaurantId, Integer foodId, 
+			String optional, String notice, String personName, Boolean outOfFood);
+	public String updatePrice(List<Food> foods, Integer foodId);
 	
 
 }

@@ -7,15 +7,15 @@ package online.food.ordering;
 public class OrderServiceData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 391608678459019625L;
+  private static final long serialVersionUID = 9070175856256782697L;
 
-  private java.lang.String restaurantId;
+  private java.lang.Integer restaurantId;
 
   /**
    * Gets the field restaurantId.
    * @return the value of the field restaurantId; may be null.
    */
-  public java.lang.String getRestaurantId()
+  public java.lang.Integer getRestaurantId()
   {
     return restaurantId;
   }
@@ -24,18 +24,18 @@ public class OrderServiceData extends ch.ivyteam.ivy.scripting.objects.Composite
    * Sets the field restaurantId.
    * @param _restaurantId the new value of the field restaurantId.
    */
-  public void setRestaurantId(java.lang.String _restaurantId)
+  public void setRestaurantId(java.lang.Integer _restaurantId)
   {
     restaurantId = _restaurantId;
   }
 
-  private java.lang.String foodId;
+  private java.lang.Integer foodId;
 
   /**
    * Gets the field foodId.
    * @return the value of the field foodId; may be null.
    */
-  public java.lang.String getFoodId()
+  public java.lang.Integer getFoodId()
   {
     return foodId;
   }
@@ -44,7 +44,7 @@ public class OrderServiceData extends ch.ivyteam.ivy.scripting.objects.Composite
    * Sets the field foodId.
    * @param _foodId the new value of the field foodId.
    */
-  public void setFoodId(java.lang.String _foodId)
+  public void setFoodId(java.lang.Integer _foodId)
   {
     foodId = _foodId;
   }

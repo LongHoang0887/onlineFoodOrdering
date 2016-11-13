@@ -1,6 +1,6 @@
 PopupOrderManagementData #class
 online.food.ordering #namespace
-restaurantId String #field
+restaurantId Integer #field
 restaurantId PERSISTENT #fieldModifier
 restaurantName String #field
 restaurantName PERSISTENT #fieldModifier

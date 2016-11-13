@@ -64,4 +64,10 @@ public class FoodServiceImpl implements FoodService {
 			Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(food);
 		}
 	}
+
+	@Override
+	public Food getFoodById(Integer id) {
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		return entityManager.find(Food.class, id);
+	}
 }

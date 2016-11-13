@@ -10,7 +10,7 @@ public interface RestaurantService {
 	
 	public List<Restaurant> getAllRestaurant();
 	
-	public Restaurant getRestaurantById(String restaurantId);
+	public Restaurant getRestaurantById(Integer restaurantId);
 	
 	public void removeRestaurant(Restaurant restaurant);
 	

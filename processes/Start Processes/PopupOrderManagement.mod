@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 11 15:39:22 ICT 2016]
+[>Created: Sun Nov 13 14:28:10 ICT 2016]
 1584D5A74AF2AFF1 3.18 #module
 >Proto >Proto Collection #zClass
 Pt0 PopupOrderManagement Big #zClass
@@ -22,7 +22,7 @@ Pt0 @PushWFArc f4 '' #zField
 Pt0 f0 outLink start.ivp #txt
 Pt0 f0 type online.food.ordering.PopupOrderManagementData #txt
 Pt0 f0 inParamDecl '<> param;' #txt
-Pt0 f0 inParamTable 'out.restaurantId="200";
+Pt0 f0 inParamTable 'out.restaurantId=200;
 ' #txt
 Pt0 f0 actionDecl 'online.food.ordering.PopupOrderManagementData out;
 ' #txt
@@ -60,14 +60,14 @@ Pt0 f0 @C|.responsibility Everybody #txt
 Pt0 f0 81 49 30 30 -21 17 #rect
 Pt0 f0 @|StartRequestIcon #fIcon
 Pt0 f1 type online.food.ordering.PopupOrderManagementData #txt
-Pt0 f1 489 49 30 30 0 15 #rect
+Pt0 f1 449 49 30 30 0 15 #rect
 Pt0 f1 @|EndIcon #fIcon
 Pt0 f3 targetWindow NEW:card: #txt
 Pt0 f3 targetDisplay TOP #txt
 Pt0 f3 richDialogId online.food.ordering.PopupOrder #txt
-Pt0 f3 startMethod start(String) #txt
+Pt0 f3 startMethod start(Integer) #txt
 Pt0 f3 type online.food.ordering.PopupOrderManagementData #txt
-Pt0 f3 requestActionDecl '<String restaurantId> param;' #txt
+Pt0 f3 requestActionDecl '<Integer restaurantId> param;' #txt
 Pt0 f3 requestMappingAction 'param.restaurantId=in.restaurantId;
 ' #txt
 Pt0 f3 responseActionDecl 'online.food.ordering.PopupOrderManagementData out;
@@ -90,7 +90,7 @@ Pt0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Pt0 f3 224 42 112 44 -35 -8 #rect
 Pt0 f3 @|RichDialogIcon #fIcon
 Pt0 f2 expr out #txt
-Pt0 f2 336 64 489 64 #arcP
+Pt0 f2 336 64 449 64 #arcP
 Pt0 f4 expr out #txt
 Pt0 f4 111 64 224 64 #arcP
 >Proto Pt0 .type online.food.ordering.PopupOrderManagementData #txt

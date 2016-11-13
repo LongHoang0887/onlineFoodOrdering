@@ -7,15 +7,15 @@ package online.food.ordering.PopupOrder;
 public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3134623260366480663L;
+  private static final long serialVersionUID = 5418091311746415658L;
 
-  private java.lang.String restaurantId;
+  private java.lang.Integer restaurantId;
 
   /**
    * Gets the field restaurantId.
    * @return the value of the field restaurantId; may be null.
    */
-  public java.lang.String getRestaurantId()
+  public java.lang.Integer getRestaurantId()
   {
     return restaurantId;
   }
@@ -24,109 +24,29 @@ public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
    * Sets the field restaurantId.
    * @param _restaurantId the new value of the field restaurantId.
    */
-  public void setRestaurantId(java.lang.String _restaurantId)
+  public void setRestaurantId(java.lang.Integer _restaurantId)
   {
     restaurantId = _restaurantId;
   }
 
-  private java.lang.String restaurantName;
+  private online.food.ordering.Food selectedFood;
 
   /**
-   * Gets the field restaurantName.
-   * @return the value of the field restaurantName; may be null.
+   * Gets the field selectedFood.
+   * @return the value of the field selectedFood; may be null.
    */
-  public java.lang.String getRestaurantName()
+  public online.food.ordering.Food getSelectedFood()
   {
-    return restaurantName;
+    return selectedFood;
   }
 
   /**
-   * Sets the field restaurantName.
-   * @param _restaurantName the new value of the field restaurantName.
+   * Sets the field selectedFood.
+   * @param _selectedFood the new value of the field selectedFood.
    */
-  public void setRestaurantName(java.lang.String _restaurantName)
+  public void setSelectedFood(online.food.ordering.Food _selectedFood)
   {
-    restaurantName = _restaurantName;
-  }
-
-  private java.lang.String website;
-
-  /**
-   * Gets the field website.
-   * @return the value of the field website; may be null.
-   */
-  public java.lang.String getWebsite()
-  {
-    return website;
-  }
-
-  /**
-   * Sets the field website.
-   * @param _website the new value of the field website.
-   */
-  public void setWebsite(java.lang.String _website)
-  {
-    website = _website;
-  }
-
-  private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> foods;
-
-  /**
-   * Gets the field foods.
-   * @return the value of the field foods; may be null.
-   */
-  public ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> getFoods()
-  {
-    return foods;
-  }
-
-  /**
-   * Sets the field foods.
-   * @param _foods the new value of the field foods.
-   */
-  public void setFoods(ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> _foods)
-  {
-    foods = _foods;
-  }
-
-  private java.lang.String food;
-
-  /**
-   * Gets the field food.
-   * @return the value of the field food; may be null.
-   */
-  public java.lang.String getFood()
-  {
-    return food;
-  }
-
-  /**
-   * Sets the field food.
-   * @param _food the new value of the field food.
-   */
-  public void setFood(java.lang.String _food)
-  {
-    food = _food;
-  }
-
-  private java.lang.String price;
-
-  /**
-   * Gets the field price.
-   * @return the value of the field price; may be null.
-   */
-  public java.lang.String getPrice()
-  {
-    return price;
-  }
-
-  /**
-   * Sets the field price.
-   * @param _price the new value of the field price.
-   */
-  public void setPrice(java.lang.String _price)
-  {
-    price = _price;
+    selectedFood = _selectedFood;
   }
 
   private java.lang.String notice;
@@ -149,26 +69,6 @@ public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
     notice = _notice;
   }
 
-  private java.lang.Boolean isOptional;
-
-  /**
-   * Gets the field isOptional.
-   * @return the value of the field isOptional; may be null.
-   */
-  public java.lang.Boolean getIsOptional()
-  {
-    return isOptional;
-  }
-
-  /**
-   * Sets the field isOptional.
-   * @param _isOptional the new value of the field isOptional.
-   */
-  public void setIsOptional(java.lang.Boolean _isOptional)
-  {
-    isOptional = _isOptional;
-  }
-
   private java.lang.String optional;
 
   /**
@@ -189,26 +89,6 @@ public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
     optional = _optional;
   }
 
-  private online.food.ordering.RestaurantServiceData restaurantServiceData;
-
-  /**
-   * Gets the field restaurantServiceData.
-   * @return the value of the field restaurantServiceData; may be null.
-   */
-  public online.food.ordering.RestaurantServiceData getRestaurantServiceData()
-  {
-    return restaurantServiceData;
-  }
-
-  /**
-   * Sets the field restaurantServiceData.
-   * @param _restaurantServiceData the new value of the field restaurantServiceData.
-   */
-  public void setRestaurantServiceData(online.food.ordering.RestaurantServiceData _restaurantServiceData)
-  {
-    restaurantServiceData = _restaurantServiceData;
-  }
-
   private online.food.ordering.Ordering order;
 
   /**
@@ -227,6 +107,86 @@ public class PopupOrderData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setOrder(online.food.ordering.Ordering _order)
   {
     order = _order;
+  }
+
+  private online.food.ordering.Restaurant restaurant;
+
+  /**
+   * Gets the field restaurant.
+   * @return the value of the field restaurant; may be null.
+   */
+  public online.food.ordering.Restaurant getRestaurant()
+  {
+    return restaurant;
+  }
+
+  /**
+   * Sets the field restaurant.
+   * @param _restaurant the new value of the field restaurant.
+   */
+  public void setRestaurant(online.food.ordering.Restaurant _restaurant)
+  {
+    restaurant = _restaurant;
+  }
+
+  private java.util.List<online.food.ordering.Food> foods;
+
+  /**
+   * Gets the field foods.
+   * @return the value of the field foods; may be null.
+   */
+  public java.util.List<online.food.ordering.Food> getFoods()
+  {
+    return foods;
+  }
+
+  /**
+   * Sets the field foods.
+   * @param _foods the new value of the field foods.
+   */
+  public void setFoods(java.util.List<online.food.ordering.Food> _foods)
+  {
+    foods = _foods;
+  }
+
+  private java.lang.Boolean saveResult;
+
+  /**
+   * Gets the field saveResult.
+   * @return the value of the field saveResult; may be null.
+   */
+  public java.lang.Boolean getSaveResult()
+  {
+    return saveResult;
+  }
+
+  /**
+   * Sets the field saveResult.
+   * @param _saveResult the new value of the field saveResult.
+   */
+  public void setSaveResult(java.lang.Boolean _saveResult)
+  {
+    saveResult = _saveResult;
+  }
+
+  private java.lang.String displayPrice;
+
+  /**
+   * Gets the field displayPrice.
+   * @return the value of the field displayPrice; may be null.
+   */
+  public java.lang.String getDisplayPrice()
+  {
+    return displayPrice;
+  }
+
+  /**
+   * Sets the field displayPrice.
+   * @param _displayPrice the new value of the field displayPrice.
+   */
+  public void setDisplayPrice(java.lang.String _displayPrice)
+  {
+    displayPrice = _displayPrice;
   }
 
 }

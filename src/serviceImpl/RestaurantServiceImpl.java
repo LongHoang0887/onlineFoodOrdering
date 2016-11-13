@@ -1,14 +1,14 @@
 package serviceImpl;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import online.food.ordering.Food;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import online.food.ordering.Restaurant;
 import service.RestaurantService;
 import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.process.data.persistence.IIvyQuery;
 
 public class RestaurantServiceImpl implements RestaurantService {
 
@@ -26,39 +26,17 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
-	public Restaurant getRestaurantById(String restaurantId) {
-//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-		IIvyQuery query = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createNativeQuery(getSql());
+	public Restaurant getRestaurantById(Integer restaurantId) {
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		Query query = entityManager.createQuery(getRestaurantSql());
 		query.setParameter("restaurantId", Integer.valueOf(restaurantId));
-		List dto = query.getResultList();
 
-		Restaurant data = new Restaurant();
-
-		// get list of food
-		List<Food> foods = new ArrayList<Food>();
-//		for (Object item : arrayFoods) {
-////			RestaurantServiceData item = resultList.get(i);
-//				data.setRestaurantId(Integer.valueOf(item.));
-//				data.setRestaurantName(item.getRestaurantName());
-//				data.setWebsite(item.getWebsite());
-//				data.setOutOfFood(item.getOutOfFood());
-//			
-//			Food food = new Food();
-//			food.setId(item.getFoodId());
-//			food.setName(item.getFoodName());
-//			food.setPrice(item.getPrice());
-//			foods.add(food);
-//		}
-		
-//		data.setFoods(foods);
-		
-		return data;
+		return (Restaurant) query.getSingleResult();
 	}
 
-	private String getSql() {
+	private String getRestaurantSql() {
 		StringBuilder sql = new StringBuilder();
-		sql.append("select R.id as restaurantId, R.restaurantName, R.website, R.outOfFood, F.id as foodId, F.name as foodName, F.price as foodPrice from Restaurant R, Food F ");
-		sql.append("where R.id = F.restaurantId and R.id = :restaurantId ");
+		sql.append("From Restaurant Where id = :restaurantId ");
 		return sql.toString();
 	}
 
