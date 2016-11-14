@@ -14,7 +14,11 @@
 			<p:layout>
 				<p:layoutUnit position="center">
 					<h:outputText value="#{data.roleName}"></h:outputText>
+					
+					
+					
 					<div class="ui-grid guest-order-list">
+					<h:panelGroup rendered="#{data.hasRestaurantList}">
 						<h:form id="resList">
 							<ui:repeat  value="#{data.restaurantList}" var="restaurant" >
 								<div class="ui-grid-col-3">
@@ -111,8 +115,12 @@
 								}
 							}
 						</script>
-
+					</h:panelGroup>
+					<h:panelGroup rendered="#{!data.hasRestaurantList}">
+  							There are no Restaurant available for ordering
+					</h:panelGroup>
 					</div>
+					
 				</p:layoutUnit>
 			</p:layout>
 		</ui:define>

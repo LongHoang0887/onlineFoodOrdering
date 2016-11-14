@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 19:44:28 ICT 2016]
+[>Created: Mon Nov 14 20:13:31 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -54,7 +54,6 @@ ms0 @PushWFArc f7 '' #zField
 ms0 @PushWFArc f33 '' #zField
 ms0 @PushWFArc f13 '' #zField
 ms0 @RichDialogProcessStart f17 '' #zField
-ms0 @RichDialogProcessEnd f39 '' #zField
 ms0 @RichDialogProcessStart f40 '' #zField
 ms0 @RichDialogProcessEnd f41 '' #zField
 ms0 @RichDialogProcessStart f42 '' #zField
@@ -63,13 +62,13 @@ ms0 @GridStep f47 '' #zField
 ms0 @PushWFArc f48 '' #zField
 ms0 @GridStep f49 '' #zField
 ms0 @PushWFArc f50 '' #zField
-ms0 @PushWFArc f44 '' #zField
 ms0 @GridStep f51 '' #zField
 ms0 @PushWFArc f52 '' #zField
 ms0 @PushWFArc f45 '' #zField
 ms0 @GridStep f53 '' #zField
 ms0 @PushWFArc f54 '' #zField
 ms0 @PushWFArc f46 '' #zField
+ms0 @PushWFArc f55 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -87,7 +86,7 @@ ms0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f0 83 51 26 26 -16 15 #rect
+ms0 f0 83 139 26 26 -16 15 #rect
 ms0 f0 @|RichDialogInitStartIcon #fIcon
 ms0 f3 guid 158488CD7A6BAB5E #txt
 ms0 f3 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -102,14 +101,14 @@ ms0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f3 83 459 26 26 -15 12 #rect
+ms0 f3 83 571 26 26 -15 12 #rect
 ms0 f3 @|RichDialogProcessStartIcon #fIcon
 ms0 f4 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f4 guid 158488CD7A6243F3 #txt
-ms0 f4 419 459 26 26 0 12 #rect
+ms0 f4 419 571 26 26 0 12 #rect
 ms0 f4 @|RichDialogEndIcon #fIcon
 ms0 f5 expr out #txt
-ms0 f5 109 472 419 472 #arcP
+ms0 f5 109 584 419 584 #arcP
 ms0 f6 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
@@ -134,7 +133,7 @@ ms0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f6 376 42 128 44 -57 -8 #rect
+ms0 f6 376 130 128 44 -57 -8 #rect
 ms0 f6 @|StepIcon #fIcon
 ms0 f8 guid 1584D898635C36D8 #txt
 ms0 f8 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -151,10 +150,10 @@ ms0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f8 83 555 26 26 -12 15 #rect
+ms0 f8 83 667 26 26 -12 15 #rect
 ms0 f8 @|RichDialogProcessStartIcon #fIcon
 ms0 f12 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f12 1155 235 26 26 0 12 #rect
+ms0 f12 1155 347 26 26 0 12 #rect
 ms0 f12 @|RichDialogProcessEndIcon #fIcon
 ms0 f14 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -175,7 +174,7 @@ ms0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f14 416 138 128 44 -55 -8 #rect
+ms0 f14 416 250 128 44 -55 -8 #rect
 ms0 f14 @|StepIcon #fIcon
 ms0 f16 guid 15851552832D4D04 #txt
 ms0 f16 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -192,7 +191,7 @@ ms0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f16 83 363 26 26 -16 15 #rect
+ms0 f16 83 475 26 26 -16 15 #rect
 ms0 f16 @|RichDialogProcessStartIcon #fIcon
 ms0 f11 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -217,10 +216,10 @@ ms0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f11 192 354 112 44 -48 -8 #rect
+ms0 f11 192 466 112 44 -48 -8 #rect
 ms0 f11 @|StepIcon #fIcon
 ms0 f18 expr out #txt
-ms0 f18 109 376 192 376 #arcP
+ms0 f18 109 488 192 488 #arcP
 ms0 f18 0 0.6449028566119823 0 0 #arcLabel
 ms0 f19 targetWindow NEW:card: #txt
 ms0 f19 targetDisplay TOP #txt
@@ -245,14 +244,14 @@ ms0 f19 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f19 184 546 144 44 -63 -8 #rect
+ms0 f19 184 658 144 44 -63 -8 #rect
 ms0 f19 @|RichDialogIcon #fIcon
 ms0 f20 expr out #txt
-ms0 f20 109 568 184 568 #arcP
+ms0 f20 109 680 184 680 #arcP
 ms0 f20 0 0.6448146088226693 0 0 #arcLabel
 ms0 f9 expr out #txt
-ms0 f9 328 568 432 485 #arcP
-ms0 f9 1 432 568 #addKink
+ms0 f9 328 680 432 597 #arcP
+ms0 f9 1 432 680 #addKink
 ms0 f9 0 0.784163218690627 0 0 #arcLabel
 ms0 f21 guid 158520F055C7C393 #txt
 ms0 f21 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -269,7 +268,7 @@ ms0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f21 83 235 26 26 -17 15 #rect
+ms0 f21 83 347 26 26 -17 15 #rect
 ms0 f21 @|RichDialogProcessStartIcon #fIcon
 ms0 f23 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -292,10 +291,10 @@ ms0 f23 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f23 198 226 112 44 -51 -8 #rect
+ms0 f23 198 338 112 44 -51 -8 #rect
 ms0 f23 @|StepIcon #fIcon
 ms0 f24 expr out #txt
-ms0 f24 109 248 198 248 #arcP
+ms0 f24 109 360 198 360 #arcP
 ms0 f24 0 0.826625386996904 0 0 #arcLabel
 ms0 f25 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -317,12 +316,12 @@ ms0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f25 192 138 112 44 -42 -8 #rect
+ms0 f25 192 250 112 44 -42 -8 #rect
 ms0 f25 @|StepIcon #fIcon
 ms0 f15 expr out #txt
-ms0 f15 304 160 416 160 #arcP
+ms0 f15 304 272 416 272 #arcP
 ms0 f26 expr out #txt
-ms0 f26 109 160 192 160 #arcP
+ms0 f26 109 272 192 272 #arcP
 ms0 f10 guid 158512034F7415E3 #txt
 ms0 f10 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f10 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
@@ -338,10 +337,10 @@ ms0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f10 83 147 26 26 -18 15 #rect
+ms0 f10 83 259 26 26 -18 15 #rect
 ms0 f10 @|RichDialogProcessStartIcon #fIcon
 ms0 f28 expr out #txt
-ms0 f28 304 376 420 376 #arcP
+ms0 f28 304 488 420 488 #arcP
 ms0 f28 0 0.6449028566119823 0 0 #arcLabel
 ms0 f27 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -362,7 +361,7 @@ ms0 f27 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f27 420 352 120 48 -35 -8 #rect
+ms0 f27 420 464 120 48 -35 -8 #rect
 ms0 f27 @|StepIcon #fIcon
 ms0 f29 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -393,10 +392,10 @@ to each restaurant</name>
     </language>
 </elementInfo>
 ' #txt
-ms0 f29 544 42 144 44 -53 -16 #rect
+ms0 f29 544 130 144 44 -53 -16 #rect
 ms0 f29 @|StepIcon #fIcon
 ms0 f30 expr out #txt
-ms0 f30 504 64 544 64 #arcP
+ms0 f30 504 152 544 152 #arcP
 ms0 f31 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f31 actionTable 'out=in;
@@ -425,13 +424,13 @@ ms0 f31 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f31 736 226 144 44 -66 -8 #rect
+ms0 f31 736 338 144 44 -66 -8 #rect
 ms0 f31 @|StepIcon #fIcon
 ms0 f32 expr out #txt
-ms0 f32 310 248 736 248 #arcP
+ms0 f32 310 360 736 360 #arcP
 ms0 f32 0 0.8266253869969041 0 0 #arcLabel
 ms0 f22 expr out #txt
-ms0 f22 880 248 1155 248 #arcP
+ms0 f22 880 360 1155 360 #arcP
 ms0 f22 0 0.6558350177826677 0 0 #arcLabel
 ms0 f1 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -459,10 +458,10 @@ ms0 f1 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f1 736 138 144 44 -63 -8 #rect
+ms0 f1 736 250 144 44 -63 -8 #rect
 ms0 f1 @|StepIcon #fIcon
 ms0 f2 expr out #txt
-ms0 f2 544 160 736 160 #arcP
+ms0 f2 544 272 736 272 #arcP
 ms0 f34 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f34 actionTable 'out=in;
@@ -480,10 +479,10 @@ disable?</name>
     </language>
 </elementInfo>
 ' #txt
-ms0 f34 744 42 128 44 -40 -16 #rect
+ms0 f34 744 130 128 44 -40 -16 #rect
 ms0 f34 @|StepIcon #fIcon
 ms0 f35 expr out #txt
-ms0 f35 688 64 744 64 #arcP
+ms0 f35 688 152 744 152 #arcP
 ms0 f35 0 0.7730691931279445 0 0 #arcLabel
 ms0 f36 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -512,20 +511,20 @@ based on role</name>
     </language>
 </elementInfo>
 ' #txt
-ms0 f36 176 42 128 44 -40 -16 #rect
+ms0 f36 176 130 128 44 -40 -16 #rect
 ms0 f36 @|StepIcon #fIcon
 ms0 f38 expr out #txt
-ms0 f38 808 86 808 138 #arcP
+ms0 f38 808 174 808 250 #arcP
 ms0 f38 0 0.7730691931279445 0 0 #arcLabel
 ms0 f37 expr out #txt
-ms0 f37 109 64 176 64 #arcP
+ms0 f37 109 152 176 152 #arcP
 ms0 f7 expr out #txt
-ms0 f7 304 64 376 64 #arcP
+ms0 f7 304 152 376 152 #arcP
 ms0 f33 expr out #txt
-ms0 f33 808 182 808 226 #arcP
+ms0 f33 808 294 808 338 #arcP
 ms0 f13 expr out #txt
-ms0 f13 540 376 1168 261 #arcP
-ms0 f13 1 1168 376 #addKink
+ms0 f13 540 488 1168 373 #arcP
+ms0 f13 1 1168 488 #addKink
 ms0 f13 0 0.5945098015227205 0 0 #arcLabel
 ms0 f17 guid 15862DBC92CAA303 #txt
 ms0 f17 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -542,11 +541,8 @@ ms0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f17 83 691 26 26 -26 15 #rect
+ms0 f17 83 27 26 26 -26 15 #rect
 ms0 f17 @|RichDialogProcessStartIcon #fIcon
-ms0 f39 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f39 571 691 26 26 0 12 #rect
-ms0 f39 @|RichDialogProcessEndIcon #fIcon
 ms0 f40 guid 15862DBD9FD8AB83 #txt
 ms0 f40 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f40 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
@@ -562,10 +558,10 @@ ms0 f40 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f40 83 787 26 26 -22 15 #rect
+ms0 f40 83 899 26 26 -22 15 #rect
 ms0 f40 @|RichDialogProcessStartIcon #fIcon
 ms0 f41 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f41 339 787 26 26 0 12 #rect
+ms0 f41 507 899 26 26 0 12 #rect
 ms0 f41 @|RichDialogProcessEndIcon #fIcon
 ms0 f42 guid 15862DBE6C82E6C9 #txt
 ms0 f42 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -582,10 +578,10 @@ ms0 f42 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f42 83 883 26 26 -15 15 #rect
+ms0 f42 83 995 26 26 -15 15 #rect
 ms0 f42 @|RichDialogProcessStartIcon #fIcon
 ms0 f43 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f43 339 883 26 26 0 12 #rect
+ms0 f43 339 995 26 26 0 12 #rect
 ms0 f43 @|RichDialogProcessEndIcon #fIcon
 ms0 f47 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -603,10 +599,10 @@ ms0 f47 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f47 168 682 112 44 -30 -8 #rect
+ms0 f47 168 18 112 44 -30 -8 #rect
 ms0 f47 @|StepIcon #fIcon
 ms0 f48 expr out #txt
-ms0 f48 109 704 168 704 #arcP
+ms0 f48 109 40 168 40 #arcP
 ms0 f49 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f49 actionTable 'out=in;
@@ -615,7 +611,8 @@ ms0 f49 actionCode 'import serviceImpl.RestaurantServiceImpl;
 import service.RestaurantService;
 
 RestaurantService service = new RestaurantServiceImpl();
-service.setPurchasedRestaurant(in.selectedRestaurant);' #txt
+service.setPurchasedRestaurant(in.selectedRestaurant);
+' #txt
 ms0 f49 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f49 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -626,12 +623,10 @@ ms0 f49 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f49 360 682 112 44 -51 -8 #rect
+ms0 f49 360 18 112 44 -51 -8 #rect
 ms0 f49 @|StepIcon #fIcon
 ms0 f50 expr out #txt
-ms0 f50 280 704 360 704 #arcP
-ms0 f44 expr out #txt
-ms0 f44 472 704 571 704 #arcP
+ms0 f50 280 40 360 40 #arcP
 ms0 f51 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f51 actionTable 'out=in;
@@ -648,12 +643,12 @@ ms0 f51 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f51 168 778 112 44 -35 -8 #rect
+ms0 f51 304 890 112 44 -35 -8 #rect
 ms0 f51 @|StepIcon #fIcon
 ms0 f52 expr out #txt
-ms0 f52 109 800 168 800 #arcP
+ms0 f52 109 912 304 912 #arcP
 ms0 f45 expr out #txt
-ms0 f45 280 800 339 800 #arcP
+ms0 f45 416 912 507 912 #arcP
 ms0 f53 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f53 actionTable 'out=in;
@@ -670,12 +665,16 @@ ms0 f53 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f53 168 874 112 44 -30 -8 #rect
+ms0 f53 168 986 112 44 -30 -8 #rect
 ms0 f53 @|StepIcon #fIcon
 ms0 f54 expr out #txt
-ms0 f54 109 896 168 896 #arcP
+ms0 f54 109 1008 168 1008 #arcP
 ms0 f46 expr out #txt
-ms0 f46 280 896 339 896 #arcP
+ms0 f46 280 1008 339 1008 #arcP
+ms0 f55 expr out #txt
+ms0 f55 416 62 440 130 #arcP
+ms0 f55 1 416 120 #addKink
+ms0 f55 0 0.7241379310344828 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -720,8 +719,6 @@ ms0 f17 mainOut f48 tail #connect
 ms0 f48 head f47 mainIn #connect
 ms0 f47 mainOut f50 tail #connect
 ms0 f50 head f49 mainIn #connect
-ms0 f49 mainOut f44 tail #connect
-ms0 f44 head f39 mainIn #connect
 ms0 f40 mainOut f52 tail #connect
 ms0 f52 head f51 mainIn #connect
 ms0 f51 mainOut f45 tail #connect
@@ -730,3 +727,5 @@ ms0 f42 mainOut f54 tail #connect
 ms0 f54 head f53 mainIn #connect
 ms0 f53 mainOut f46 tail #connect
 ms0 f46 head f43 mainIn #connect
+ms0 f49 mainOut f55 tail #connect
+ms0 f55 head f6 mainIn #connect

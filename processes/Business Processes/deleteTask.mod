@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 19:56:02 ICT 2016]
+[>Created: Mon Nov 14 20:25:01 ICT 2016]
 15862DF169583539 3.18 #module
 >Proto >Proto Collection #zClass
 dk0 deleteTask Big #zClass
@@ -61,6 +61,7 @@ List<ITask> tasks = ivy.wf.getTaskQueryExecutor().getResults(query);
 for (ITask task: tasks) {
 	task.destroy();
 }' #txt
+dk0 f3 security system #txt
 dk0 f3 type online.food.ordering.Restaurant #txt
 dk0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

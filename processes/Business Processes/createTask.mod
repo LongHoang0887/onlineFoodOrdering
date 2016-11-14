@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 19:57:58 ICT 2016]
+[>Created: Mon Nov 14 20:25:56 ICT 2016]
 15862A01B0898BDE 3.18 #module
 >Proto >Proto Collection #zClass
 ck0 createTask Big #zClass
@@ -18,8 +18,6 @@ ck0 @SignalStartEvent f0 '' #zField
 ck0 @UserTask f3 '' #zField
 ck0 @TkArc f4 '' #zField
 ck0 @PushWFArc f2 '' #zField
-ck0 @SignalBoundaryEvent f5 '' #zField
-ck0 @PushWFArc f6 '' #zField
 >Proto ck0 ck0 createTask #zField
 ck0 f1 type online.food.ordering.Restaurant #txt
 ck0 f1 369 49 30 30 0 15 #rect
@@ -80,28 +78,6 @@ ck0 f4 143 64 200 64 #arcP
 ck0 f2 expr data #txt
 ck0 f2 outCond ivp=="TaskA.ivp" #txt
 ck0 f2 312 64 369 64 #arcP
-ck0 f5 actionDecl 'online.food.ordering.Restaurant out;
-' #txt
-ck0 f5 actionTable 'out=in;
-' #txt
-ck0 f5 actionCode 'ivy.log.info("approve task Id ==> " + signal.getSignalData());
-
-out.id = Integer.valueOf(signal.getSignalData().toString());
-' #txt
-ck0 f5 type online.food.ordering.Restaurant #txt
-ck0 f5 signalCode purchase:approveTask #txt
-ck0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>purchase:approveTask</name>
-        <nameStyle>20,5,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-ck0 f5 249 153 30 30 -63 17 #rect
-ck0 f5 @|SignalBoundaryEventIcon #fIcon
-ck0 f6 275 158 372 73 #arcP
 >Proto ck0 .type online.food.ordering.Restaurant #txt
 >Proto ck0 .processKind NORMAL #txt
 >Proto ck0 0 0 32 24 18 0 #rect
@@ -110,5 +86,3 @@ ck0 f0 mainOut f4 tail #connect
 ck0 f4 head f3 in #connect
 ck0 f3 out f2 tail #connect
 ck0 f2 head f1 mainIn #connect
-ck0 f5 mainOut f6 tail #connect
-ck0 f6 head f1 mainIn #connect

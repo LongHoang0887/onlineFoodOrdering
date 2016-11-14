@@ -16,3 +16,5 @@ notice String #field
 notice PERSISTENT #fieldModifier
 saveResult Boolean #field
 saveResult PERSISTENT #fieldModifier
+hasRestaurantList Boolean #field
+hasRestaurantList PERSISTENT #fieldModifier

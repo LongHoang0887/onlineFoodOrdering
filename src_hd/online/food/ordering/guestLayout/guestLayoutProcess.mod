@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 19:52:06 ICT 2016]
+[>Created: Mon Nov 14 20:37:01 ICT 2016]
 1584C7EB23C34D85 3.18 #module
 >Proto >Proto Collection #zClass
 gs0 guestLayoutProcess Big #zClass
@@ -24,7 +24,6 @@ gs0 @GridStep f6 '' #zField
 gs0 @PushWFArc f7 '' #zField
 gs0 @GridStep f8 '' #zField
 gs0 @PushWFArc f9 '' #zField
-gs0 @PushWFArc f2 '' #zField
 gs0 @RichDialogMethodStart f10 '' #zField
 gs0 @RichDialogProcessEnd f11 '' #zField
 gs0 @GridStep f15 '' #zField
@@ -38,6 +37,9 @@ gs0 @Alternative f18 '' #zField
 gs0 @PushWFArc f19 '' #zField
 gs0 @PushWFArc f21 '' #zField
 gs0 @PushWFArc f22 '' #zField
+gs0 @GridStep f23 '' #zField
+gs0 @PushWFArc f24 '' #zField
+gs0 @PushWFArc f2 '' #zField
 >Proto gs0 gs0 guestLayoutProcess #zField
 gs0 f0 guid 1584C7EB25277484 #txt
 gs0 f0 type online.food.ordering.guestLayout.guestLayoutData #txt
@@ -58,7 +60,7 @@ gs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 gs0 f0 83 51 26 26 -16 15 #rect
 gs0 f0 @|RichDialogInitStartIcon #fIcon
 gs0 f1 type online.food.ordering.guestLayout.guestLayoutData #txt
-gs0 f1 643 51 26 26 0 12 #rect
+gs0 f1 747 51 26 26 0 12 #rect
 gs0 f1 @|RichDialogProcessEndIcon #fIcon
 gs0 f3 guid 1584C7EB262C42AA #txt
 gs0 f3 type online.food.ordering.guestLayout.guestLayoutData #txt
@@ -145,8 +147,6 @@ gs0 f8 344 42 144 44 -53 -16 #rect
 gs0 f8 @|StepIcon #fIcon
 gs0 f9 expr out #txt
 gs0 f9 296 64 344 64 #arcP
-gs0 f2 expr out #txt
-gs0 f2 488 64 643 64 #arcP
 gs0 f10 guid 15861BB14A569BB4 #txt
 gs0 f10 type online.food.ordering.guestLayout.guestLayoutData #txt
 gs0 f10 method openDialog(online.food.ordering.Restaurant) #txt
@@ -277,6 +277,22 @@ gs0 f21 480 171 289 86 #arcP
 gs0 f22 expr in #txt
 gs0 f22 outCond 'in.saveResult == false' #txt
 gs0 f22 507 176 651 176 #arcP
+gs0 f23 actionDecl 'online.food.ordering.guestLayout.guestLayoutData out;
+' #txt
+gs0 f23 actionTable 'out=in;
+' #txt
+gs0 f23 actionCode 'if (in.restaurantList != null && in.restaurantList.size() > 0) {
+in.hasRestaurantList = true;
+} else {
+in.hasRestaurantList = false;
+}	' #txt
+gs0 f23 type online.food.ordering.guestLayout.guestLayoutData #txt
+gs0 f23 552 42 112 44 0 -8 #rect
+gs0 f23 @|StepIcon #fIcon
+gs0 f24 expr out #txt
+gs0 f24 488 64 552 64 #arcP
+gs0 f2 expr out #txt
+gs0 f2 664 64 747 64 #arcP
 >Proto gs0 .type online.food.ordering.guestLayout.guestLayoutData #txt
 >Proto gs0 .processKind HTML_DIALOG #txt
 >Proto gs0 -8 -8 16 16 16 26 #rect
@@ -287,8 +303,6 @@ gs0 f0 mainOut f7 tail #connect
 gs0 f7 head f6 mainIn #connect
 gs0 f6 mainOut f9 tail #connect
 gs0 f9 head f8 mainIn #connect
-gs0 f8 mainOut f2 tail #connect
-gs0 f2 head f1 mainIn #connect
 gs0 f10 mainOut f12 tail #connect
 gs0 f12 head f15 mainIn #connect
 gs0 f15 mainOut f13 tail #connect
@@ -301,3 +315,7 @@ gs0 f18 out f21 tail #connect
 gs0 f21 head f6 mainIn #connect
 gs0 f18 out f22 tail #connect
 gs0 f22 head f20 mainIn #connect
+gs0 f8 mainOut f24 tail #connect
+gs0 f24 head f23 mainIn #connect
+gs0 f23 mainOut f2 tail #connect
+gs0 f2 head f1 mainIn #connect

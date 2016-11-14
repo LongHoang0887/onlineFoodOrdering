@@ -32,9 +32,30 @@
 							<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form" rendered="#{data.isOrderManager}"/>
 							<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" rendered="#{data.isOrderManager}"/>
 							<p:commandButton value="Purchase" actionListener="#{logic.purchase}" update="form" rendered="#{data.isOrderManager}"/>
-							<p:commandButton value="Reject" actionListener="#{logic.reject}" update="form" rendered="#{data.isPurchaseManager}"/>
-							<p:commandButton value="Approve" actionListener="#{logic.approve}" update="form" rendered="#{data.isPurchaseManager}"/>
-						</div>
+								<p:commandButton value="Reject" actionListener="#{logic.reject}"
+									update="form" rendered="#{data.isPurchaseManager}">
+
+									<p:confirm header="Confirmation" message="Are you sure you want to reject it?"
+										icon="ui-icon-alert" />
+								</p:commandButton>
+
+								<p:commandButton value="Approve"
+									actionListener="#{logic.approve}" update="form"
+									rendered="#{data.isPurchaseManager}">
+
+									<p:confirm header="Confirmation" message="Are you sure you want to approve it?"
+										icon="ui-icon-alert" />
+								</p:commandButton>
+
+								<p:confirmDialog global="true" showEffect="fade"
+									hideEffect="fade">
+									<p:commandButton value="Yes" type="button"
+										styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+									<p:commandButton value="No" type="button"
+										styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+								</p:confirmDialog>
+
+							</div>
 						<div class="info-summary">
 							<p:panelGrid columns="3" layout="grid" style="border: none;">            
 							    <h:outputText value="#{data.selectedRestaurant.restaurantName}">

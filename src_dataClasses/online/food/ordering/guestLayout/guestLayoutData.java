@@ -7,7 +7,7 @@ package online.food.ordering.guestLayout;
 public class guestLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 2306839578783056308L;
+  private static final long serialVersionUID = -551745028968579151L;
 
   private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -167,6 +167,26 @@ public class guestLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeO
   public void setSaveResult(java.lang.Boolean _saveResult)
   {
     saveResult = _saveResult;
+  }
+
+  private java.lang.Boolean hasRestaurantList;
+
+  /**
+   * Gets the field hasRestaurantList.
+   * @return the value of the field hasRestaurantList; may be null.
+   */
+  public java.lang.Boolean getHasRestaurantList()
+  {
+    return hasRestaurantList;
+  }
+
+  /**
+   * Sets the field hasRestaurantList.
+   * @param _hasRestaurantList the new value of the field hasRestaurantList.
+   */
+  public void setHasRestaurantList(java.lang.Boolean _hasRestaurantList)
+  {
+    hasRestaurantList = _hasRestaurantList;
   }
 
 }
