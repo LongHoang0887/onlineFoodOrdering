@@ -53,6 +53,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 		res.setPhone(restaurant.getPhone());
 		res.setWebsite(restaurant.getWebsite());
 		res.setCreatedDate(new Date());
+		res.setNumberOfOrdered(0);
+		res.setOrderedFood(null);
 		res = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(res);
 
 		return res;
