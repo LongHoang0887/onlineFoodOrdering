@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Sun Nov 13 22:31:57 ICT 2016]
+[>Created: Mon Nov 14 08:30:12 ICT 2016]
 1584D645377B30B2 3.18 #module
 >Proto >Proto Collection #zClass
 Ps0 PopupOrderProcess Big #zClass
@@ -29,9 +29,6 @@ Ps0 @Alternative f10 '' #zField
 Ps0 @PushWFArc f11 '' #zField
 Ps0 @PushWFArc f5 '' #zField
 Ps0 @PushWFArc f12 '' #zField
-Ps0 @RichDialogMethodStart f13 '' #zField
-Ps0 @RichDialogProcessEnd f14 '' #zField
-Ps0 @PushWFArc f16 '' #zField
 >Proto Ps0 Ps0 PopupOrderProcess #zField
 Ps0 f0 guid 1584D6453876F99B #txt
 Ps0 f0 type online.food.ordering.PopupOrder.PopupOrderData #txt
@@ -143,31 +140,6 @@ Ps0 f5 424 160 547 160 #arcP
 Ps0 f12 expr in #txt
 Ps0 f12 outCond 'in.saveResult == false' #txt
 Ps0 f12 418 166 549 249 #arcP
-Ps0 f13 guid 1585CCCF1DC995A1 #txt
-Ps0 f13 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f13 method displayPrice(Integer) #txt
-Ps0 f13 disableUIEvents false #txt
-Ps0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<java.lang.Integer price> param = methodEvent.getInputArguments();
-' #txt
-Ps0 f13 outParameterDecl '<java.lang.String price> result;
-' #txt
-Ps0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>displayPrice(Integer)</name>
-        <nameStyle>21,5,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Ps0 f13 83 315 26 26 -56 15 #rect
-Ps0 f13 @|RichDialogMethodStartIcon #fIcon
-Ps0 f14 type online.food.ordering.PopupOrder.PopupOrderData #txt
-Ps0 f14 307 315 26 26 0 12 #rect
-Ps0 f14 @|RichDialogProcessEndIcon #fIcon
-Ps0 f16 expr out #txt
-Ps0 f16 109 328 307 328 #arcP
 >Proto Ps0 .type online.food.ordering.PopupOrder.PopupOrderData #txt
 >Proto Ps0 .processKind HTML_DIALOG #txt
 >Proto Ps0 -8 -8 16 16 16 26 #rect
@@ -184,5 +156,3 @@ Ps0 f10 out f5 tail #connect
 Ps0 f5 head f4 mainIn #connect
 Ps0 f10 out f12 tail #connect
 Ps0 f12 head f7 mainIn #connect
-Ps0 f13 mainOut f16 tail #connect
-Ps0 f16 head f14 mainIn #connect
