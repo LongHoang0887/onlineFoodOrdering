@@ -70,4 +70,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 		return res;
 	}
+
+	@Override
+	public void setPurchasedRestaurant(Restaurant restaurant) {
+		restaurant.setHasPurchased(true);
+		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).merge(restaurant);
+		
+	}
 }
