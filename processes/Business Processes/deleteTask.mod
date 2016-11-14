@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 19:49:09 ICT 2016]
+[>Created: Mon Nov 14 19:56:02 ICT 2016]
 15862DF169583539 3.18 #module
 >Proto >Proto Collection #zClass
 dk0 deleteTask Big #zClass
@@ -29,7 +29,7 @@ ivy.log.info("delete task Id ==> " + signal.getSignalData());
 
 out.id = Integer.valueOf(signal.getSignalData().toString());' #txt
 dk0 f0 type online.food.ordering.Restaurant #txt
-dk0 f0 signalCode deleteTask #txt
+dk0 f0 signalCode purchase:deleteTask #txt
 dk0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
