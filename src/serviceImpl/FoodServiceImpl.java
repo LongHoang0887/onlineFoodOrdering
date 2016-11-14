@@ -7,10 +7,10 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 
-import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.process.data.persistence.IIvyEntityManager;
 import online.food.ordering.Food;
 import service.FoodService;
+import ch.ivyteam.ivy.environment.Ivy;
+import ch.ivyteam.ivy.process.data.persistence.IIvyEntityManager;
 
 public class FoodServiceImpl implements FoodService {
 
@@ -42,7 +42,8 @@ public class FoodServiceImpl implements FoodService {
 	public List<Food> getFoodsInRestaurant(Integer resId){
 		String sql = "FROM Food WHERE RESTAURANTID = :restaurantId";
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-		return (List<Food>) entityManager.createQuery(sql).setParameter("restaurantId", resId).getResultList();
+		List<Food> resultList = entityManager.createQuery(sql).setParameter("restaurantId", resId).getResultList();
+		return resultList;
 	}
 
 	@Override
@@ -68,6 +69,7 @@ public class FoodServiceImpl implements FoodService {
 	@Override
 	public Food getFoodById(Integer id) {
 		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-		return entityManager.find(Food.class, id);
+		Food food = entityManager.find(Food.class, id);
+		return food;
 	}
 }

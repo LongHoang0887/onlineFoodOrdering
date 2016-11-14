@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 08:38:45 ICT 2016]
+[>Created: Mon Nov 14 11:33:51 ICT 2016]
 1584E0C691E57C59 3.18 #module
 >Proto >Proto Collection #zClass
 Re0 RestaurantService Big #zClass
@@ -48,7 +48,9 @@ Re0 f3 actionDecl 'online.food.ordering.RestaurantServiceData out;
 ' #txt
 Re0 f3 actionTable 'out=in;
 ' #txt
-Re0 f3 actionCode 'import online.food.ordering.RestaurantServiceData;
+Re0 f3 actionCode 'import java.util.ArrayList;
+import online.food.ordering.Food;
+import online.food.ordering.RestaurantServiceData;
 import service.RestaurantService;
 import serviceImpl.RestaurantServiceImpl;
 import serviceImpl.FoodServiceImpl;
@@ -58,8 +60,10 @@ RestaurantService srv = new RestaurantServiceImpl();
 in.restaurant = srv.getRestaurantById(in.restaurantId);
 
 FoodService foodSrv = new FoodServiceImpl();
+List<Food> resultList = foodSrv.getFoodsInRestaurant(in.restaurantId);
 
-in.restaurant.setFoods(foodSrv.getFoodsInRestaurant(in.restaurantId));
+in.restaurant.setFoods(resultList);
+
 ' #txt
 Re0 f3 type online.food.ordering.RestaurantServiceData #txt
 Re0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

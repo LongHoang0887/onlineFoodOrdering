@@ -44,13 +44,15 @@
 								
 							<p:ajax event="change" update="price"/>
 						</p:selectOneMenu>
-						<p:outputLabel id="price" value="It price is ">
-							<h:outputLabel style="font-weight:bold !important;"
-								value="#{data.selectedFood.price == null ? 0 : 
-									data.selectedFood.price } vnd ">
-								
-							</h:outputLabel>
-						</p:outputLabel>
+						<p:outputPanel id="price">
+							<p:outputLabel value="It price is " rendered="#{data.selectedFood.price !=0}">
+								<h:outputLabel style="font-weight:bold !important;"
+									value="#{data.selectedFood.price == null ? 0 : data.selectedFood.price } vnd ">
+								</h:outputLabel>
+							</p:outputLabel>
+							<p:outputLabel style="font-weight:bold !important;" value="Free for all" rendered="#{data.selectedFood.price ==0}">
+							</p:outputLabel>
+						</p:outputPanel>
 
 						<p:outputLabel for="notice" value="and my notice is" />
 						<p:inputText style="width:198px;" id="notice" value="#{data.notice}" label="notice"></p:inputText>
