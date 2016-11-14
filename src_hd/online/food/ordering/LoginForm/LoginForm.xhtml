@@ -11,7 +11,7 @@
 		<ui:define name="title">LoginForm</ui:define>
 		<ui:define name="content">
 			<h:form id="form">
-				<h:panelGrid columns="2">
+				<h:panelGrid columns="2" style="margin: 100px auto;">
 					<f:facet name="header">
 						<p:messages id="messages"></p:messages>
 					</f:facet>
@@ -22,7 +22,7 @@
 					<p:password id="password" value="#{data.password}" required="true" label="Password"></p:password>
 					
 					<br/>
-					<p:commandButton styleClass="food-command-btn" actionListener="#{logic.close}" value="Login" update="form" >
+					<p:commandButton style="margin: 10px auto;" styleClass="food-command-btn" actionListener="#{logic.close}" value="Login" update="form" >
 						
 					</p:commandButton>
 					
