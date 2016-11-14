@@ -130,3 +130,9 @@
 .create-order .ui-messages {
 	width: auto;	
 }
+
+.log-out {
+	float: right;
+	font-size: 16px;
+	padding: 10px 0;
+}
