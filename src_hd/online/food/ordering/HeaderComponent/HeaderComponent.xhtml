@@ -21,10 +21,9 @@
         </div>
         <div class="log-out">
         	<div>Welcome Xon Mai
-        		<a href="#">(Log out)</a>
-        	</div>
-        	<h:outputText value="#{data.roleName}"></h:outputText>
-        	<div><span>Role:  </span></div>
+        		<p:commandLink value="(Log out)" actionListener="#{data.Logout}" />
+			</div>
+        	<div><h:outputText value="#{data.roleName}">Role: </h:outputText></div>
         </div>
       </div>
     </div>
