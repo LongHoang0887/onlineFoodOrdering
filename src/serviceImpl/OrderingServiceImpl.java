@@ -1,14 +1,11 @@
 package serviceImpl;
 
 import java.util.List;
-import java.util.Random;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
-import org.apache.commons.lang.math.RandomUtils;
 
 import online.food.ordering.Food;
 import online.food.ordering.Ordering;
@@ -39,18 +36,12 @@ public class OrderingServiceImpl implements OrderingService {
 		}
 		
 		Ordering order = new Ordering();
-//		order.setId(RandomUtils.nextInt());
 		order.setRestaurantId(restaurantId);
 		order.setFoodId(foodId);
 		order.setOptional(optional);
 		order.setNotice(notice);
 		order.setPersonName(personName);
-		
-//		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager().detach(order);
-//		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
-//		entityManager.merge(order);
-//		entityManager.persist(order);
-//		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(order);
+		Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(order);
 		
 		return true;
 		

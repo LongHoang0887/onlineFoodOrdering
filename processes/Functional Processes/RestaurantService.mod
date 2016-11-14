@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Sat Nov 12 22:06:47 ICT 2016]
+[>Created: Mon Nov 14 08:38:45 ICT 2016]
 1584E0C691E57C59 3.18 #module
 >Proto >Proto Collection #zClass
 Re0 RestaurantService Big #zClass
@@ -58,6 +58,7 @@ RestaurantService srv = new RestaurantServiceImpl();
 in.restaurant = srv.getRestaurantById(in.restaurantId);
 
 FoodService foodSrv = new FoodServiceImpl();
+
 in.restaurant.setFoods(foodSrv.getFoodsInRestaurant(in.restaurantId));
 ' #txt
 Re0 f3 type online.food.ordering.RestaurantServiceData #txt

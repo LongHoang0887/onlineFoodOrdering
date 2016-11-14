@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 08:30:12 ICT 2016]
+[>Created: Mon Nov 14 08:33:38 ICT 2016]
 1584D645377B30B2 3.18 #module
 >Proto >Proto Collection #zClass
 Ps0 PopupOrderProcess Big #zClass
@@ -111,13 +111,13 @@ Ps0 f15 actionCode 'import serviceImpl.OrderingServiceImpl;
 import service.OrderingService;
 OrderingService srv = new OrderingServiceImpl();
 in.saveResult = srv.saveOrder(in.restaurant.id, in.selectedFood.id,
-		in.optional, in.notice, "long", in.restaurant.outOfFood);' #txt
+		in.optional, in.notice, ivy.session.getSessionUserName(), in.restaurant.outOfFood);' #txt
 Ps0 f15 type online.food.ordering.PopupOrder.PopupOrderData #txt
 Ps0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>Save Order</name>
-        <nameStyle>10
+        <nameStyle>10,7
 </nameStyle>
     </language>
 </elementInfo>
