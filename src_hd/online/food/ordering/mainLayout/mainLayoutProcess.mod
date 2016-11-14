@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 16:50:24 ICT 2016]
+[>Created: Mon Nov 14 15:58:05 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -53,9 +53,6 @@ ms0 @PushWFArc f37 '' #zField
 ms0 @PushWFArc f7 '' #zField
 ms0 @PushWFArc f33 '' #zField
 ms0 @PushWFArc f13 '' #zField
-ms0 @RichDialogProcessStart f17 '' #zField
-ms0 @RichDialogProcessEnd f39 '' #zField
-ms0 @PushWFArc f40 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -140,7 +137,7 @@ ms0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f8 83 555 26 26 -12 15 #rect
 ms0 f8 @|RichDialogProcessStartIcon #fIcon
 ms0 f12 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f12 1155 147 26 26 0 12 #rect
+ms0 f12 1155 235 26 26 0 12 #rect
 ms0 f12 @|RichDialogProcessEndIcon #fIcon
 ms0 f14 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -417,9 +414,8 @@ ms0 f32 expr out #txt
 ms0 f32 310 248 736 248 #arcP
 ms0 f32 0 0.8266253869969041 0 0 #arcLabel
 ms0 f22 expr out #txt
-ms0 f22 880 248 1168 173 #arcP
-ms0 f22 1 1168 248 #addKink
-ms0 f22 0 0.8266253869969041 0 0 #arcLabel
+ms0 f22 880 248 1155 248 #arcP
+ms0 f22 0 0.6558350177826677 0 0 #arcLabel
 ms0 f1 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
 ms0 f1 actionTable 'out=in;
@@ -511,31 +507,9 @@ ms0 f7 304 64 376 64 #arcP
 ms0 f33 expr out #txt
 ms0 f33 808 182 808 226 #arcP
 ms0 f13 expr out #txt
-ms0 f13 540 376 1168 173 #arcP
+ms0 f13 540 376 1168 261 #arcP
 ms0 f13 1 1168 376 #addKink
-ms0 f13 0 0.7322439255589146 0 0 #arcLabel
-ms0 f17 guid 158622AEA431E7C2 #txt
-ms0 f17 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f17 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
-' #txt
-ms0 f17 actionTable 'out=in;
-' #txt
-ms0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>purchase</name>
-        <nameStyle>8,5,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-ms0 f17 83 659 26 26 -26 15 #rect
-ms0 f17 @|RichDialogProcessStartIcon #fIcon
-ms0 f39 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f39 635 659 26 26 0 12 #rect
-ms0 f39 @|RichDialogProcessEndIcon #fIcon
-ms0 f40 expr out #txt
-ms0 f40 109 672 635 672 #arcP
+ms0 f13 0 0.5945098015227205 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -576,5 +550,3 @@ ms0 f1 mainOut f33 tail #connect
 ms0 f33 head f31 mainIn #connect
 ms0 f27 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
-ms0 f17 mainOut f40 tail #connect
-ms0 f40 head f39 mainIn #connect
