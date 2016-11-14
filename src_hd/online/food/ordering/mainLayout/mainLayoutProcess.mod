@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 18:23:48 ICT 2016]
+[>Created: Mon Nov 14 19:44:28 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -53,6 +53,23 @@ ms0 @PushWFArc f37 '' #zField
 ms0 @PushWFArc f7 '' #zField
 ms0 @PushWFArc f33 '' #zField
 ms0 @PushWFArc f13 '' #zField
+ms0 @RichDialogProcessStart f17 '' #zField
+ms0 @RichDialogProcessEnd f39 '' #zField
+ms0 @RichDialogProcessStart f40 '' #zField
+ms0 @RichDialogProcessEnd f41 '' #zField
+ms0 @RichDialogProcessStart f42 '' #zField
+ms0 @RichDialogProcessEnd f43 '' #zField
+ms0 @GridStep f47 '' #zField
+ms0 @PushWFArc f48 '' #zField
+ms0 @GridStep f49 '' #zField
+ms0 @PushWFArc f50 '' #zField
+ms0 @PushWFArc f44 '' #zField
+ms0 @GridStep f51 '' #zField
+ms0 @PushWFArc f52 '' #zField
+ms0 @PushWFArc f45 '' #zField
+ms0 @GridStep f53 '' #zField
+ms0 @PushWFArc f54 '' #zField
+ms0 @PushWFArc f46 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
 ms0 f0 type online.food.ordering.mainLayout.mainLayoutData #txt
@@ -510,6 +527,155 @@ ms0 f13 expr out #txt
 ms0 f13 540 376 1168 261 #arcP
 ms0 f13 1 1168 376 #addKink
 ms0 f13 0 0.5945098015227205 0 0 #arcLabel
+ms0 f17 guid 15862DBC92CAA303 #txt
+ms0 f17 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f17 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f17 actionTable 'out=in;
+' #txt
+ms0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>purchase</name>
+        <nameStyle>8,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f17 83 691 26 26 -26 15 #rect
+ms0 f17 @|RichDialogProcessStartIcon #fIcon
+ms0 f39 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f39 571 691 26 26 0 12 #rect
+ms0 f39 @|RichDialogProcessEndIcon #fIcon
+ms0 f40 guid 15862DBD9FD8AB83 #txt
+ms0 f40 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f40 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f40 actionTable 'out=in;
+' #txt
+ms0 f40 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>approve</name>
+        <nameStyle>7,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f40 83 787 26 26 -22 15 #rect
+ms0 f40 @|RichDialogProcessStartIcon #fIcon
+ms0 f41 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f41 339 787 26 26 0 12 #rect
+ms0 f41 @|RichDialogProcessEndIcon #fIcon
+ms0 f42 guid 15862DBE6C82E6C9 #txt
+ms0 f42 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f42 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f42 actionTable 'out=in;
+' #txt
+ms0 f42 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>reject</name>
+        <nameStyle>6,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f42 83 883 26 26 -15 15 #rect
+ms0 f42 @|RichDialogProcessStartIcon #fIcon
+ms0 f43 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f43 339 883 26 26 0 12 #rect
+ms0 f43 @|RichDialogProcessEndIcon #fIcon
+ms0 f47 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f47 actionTable 'out=in;
+' #txt
+ms0 f47 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
+ivy.wf.signals().send(new SignalCode("purchase:createTask"), in.selectedRestaurant.id.toString());' #txt
+ms0 f47 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f47 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>create task</name>
+        <nameStyle>11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f47 168 682 112 44 -30 -8 #rect
+ms0 f47 @|StepIcon #fIcon
+ms0 f48 expr out #txt
+ms0 f48 109 704 168 704 #arcP
+ms0 f49 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f49 actionTable 'out=in;
+' #txt
+ms0 f49 actionCode 'import serviceImpl.RestaurantServiceImpl;
+import service.RestaurantService;
+
+RestaurantService service = new RestaurantServiceImpl();
+service.setPurchasedRestaurant(in.selectedRestaurant);' #txt
+ms0 f49 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f49 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>update Restaurent</name>
+        <nameStyle>17,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f49 360 682 112 44 -51 -8 #rect
+ms0 f49 @|StepIcon #fIcon
+ms0 f50 expr out #txt
+ms0 f50 280 704 360 704 #arcP
+ms0 f44 expr out #txt
+ms0 f44 472 704 571 704 #arcP
+ms0 f51 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f51 actionTable 'out=in;
+' #txt
+ms0 f51 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
+ivy.wf.signals().send(new SignalCode("purchase:approveTask"), in.selectedRestaurant.id.toString());' #txt
+ms0 f51 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f51 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>approve task</name>
+        <nameStyle>12,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f51 168 778 112 44 -35 -8 #rect
+ms0 f51 @|StepIcon #fIcon
+ms0 f52 expr out #txt
+ms0 f52 109 800 168 800 #arcP
+ms0 f45 expr out #txt
+ms0 f45 280 800 339 800 #arcP
+ms0 f53 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f53 actionTable 'out=in;
+' #txt
+ms0 f53 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
+ivy.wf.signals().send(new SignalCode("purchase:deleteTask"), in.selectedRestaurant.id.toString());' #txt
+ms0 f53 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f53 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>delete task</name>
+        <nameStyle>11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f53 168 874 112 44 -30 -8 #rect
+ms0 f53 @|StepIcon #fIcon
+ms0 f54 expr out #txt
+ms0 f54 109 896 168 896 #arcP
+ms0 f46 expr out #txt
+ms0 f46 280 896 339 896 #arcP
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -550,3 +716,17 @@ ms0 f1 mainOut f33 tail #connect
 ms0 f33 head f31 mainIn #connect
 ms0 f27 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
+ms0 f17 mainOut f48 tail #connect
+ms0 f48 head f47 mainIn #connect
+ms0 f47 mainOut f50 tail #connect
+ms0 f50 head f49 mainIn #connect
+ms0 f49 mainOut f44 tail #connect
+ms0 f44 head f39 mainIn #connect
+ms0 f40 mainOut f52 tail #connect
+ms0 f52 head f51 mainIn #connect
+ms0 f51 mainOut f45 tail #connect
+ms0 f45 head f41 mainIn #connect
+ms0 f42 mainOut f54 tail #connect
+ms0 f54 head f53 mainIn #connect
+ms0 f53 mainOut f46 tail #connect
+ms0 f46 head f43 mainIn #connect
