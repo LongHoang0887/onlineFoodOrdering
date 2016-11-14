@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 11:17:09 ICT 2016]
+[>Created: Mon Nov 14 13:19:47 ICT 2016]
 158487BBCA9473BC 3.18 #module
 >Proto >Proto Collection #zClass
 Lt0 LoginManagement Big #zClass
@@ -226,6 +226,7 @@ Lt0 f7 responseActionDecl 'online.food.ordering.LoginManagementData out;
 ' #txt
 Lt0 f7 responseMappingAction 'out=in;
 ' #txt
+Lt0 f7 responseActionCode 'ivy.log.info("MMM: " + in.roleName);' #txt
 Lt0 f7 windowConfiguration '* ' #txt
 Lt0 f7 isAsynch false #txt
 Lt0 f7 isInnerRd false #txt

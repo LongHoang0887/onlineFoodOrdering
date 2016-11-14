@@ -12,6 +12,7 @@
 		<ui:define name="content">
 			<p:layout>
 				<p:layoutUnit position="center">
+					<h:outputText value="#{data.roleName}"></h:outputText>
 					<div class="ui-grid guest-order-list">
 						<ui:repeat value="#{data.restaurantList}" var="restaurant" >
 							<div class="ui-grid-col-3">

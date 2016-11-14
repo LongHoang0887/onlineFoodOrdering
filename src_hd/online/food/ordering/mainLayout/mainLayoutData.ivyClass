@@ -12,3 +12,5 @@ totalPrice Integer #field
 totalPrice PERSISTENT #fieldModifier
 isDisabledNewBtn Boolean #field
 isDisabledNewBtn PERSISTENT #fieldModifier
+roleName String #field
+roleName PERSISTENT #fieldModifier

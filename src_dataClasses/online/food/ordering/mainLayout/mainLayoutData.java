@@ -7,7 +7,7 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -9153053064030596596L;
+  private static final long serialVersionUID = -435737310547433567L;
 
   private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -127,6 +127,26 @@ public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setIsDisabledNewBtn(java.lang.Boolean _isDisabledNewBtn)
   {
     isDisabledNewBtn = _isDisabledNewBtn;
+  }
+
+  private java.lang.String roleName;
+
+  /**
+   * Gets the field roleName.
+   * @return the value of the field roleName; may be null.
+   */
+  public java.lang.String getRoleName()
+  {
+    return roleName;
+  }
+
+  /**
+   * Sets the field roleName.
+   * @param _roleName the new value of the field roleName.
+   */
+  public void setRoleName(java.lang.String _roleName)
+  {
+    roleName = _roleName;
   }
 
 }
