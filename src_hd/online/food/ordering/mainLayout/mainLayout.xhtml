@@ -14,7 +14,7 @@
 			<p:layout style="height:600px;">
 				<p:layoutUnit position="west" size="200">
 					<div>
-						<p:commandButton value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;" actionListener="#{logic.New}" disabled="#{data.isDisabledNewBtn}" update="form"/>
+						<p:commandButton value="New" style="width: 100%; font-size: 16px; font-weight: bold; height: 54px; border: 2px solid gray; display:block;" actionListener="#{logic.New}" rendered="#{data.isOrderManager}" disabled="#{data.isDisabledNewBtn}" update="form"/>
 					</div>
 					<div>
 						<p:dataTable value="#{data.restaurantList}" var="restaurant" styleClass="order-ticket-list" selectionMode="single" selection="#{data.selectedRestaurant}" rowKey="#{restaurant.id}" >
@@ -27,9 +27,11 @@
 				<p:layoutUnit position="center" styleClass="right-layout">
 				    <div class="header">
 				    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
-						<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form"/>
-						<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" />
-						<p:button value="Purchase" />
+						<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form" rendered="#{data.isOrderManager}"/>
+						<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" rendered="#{data.isOrderManager}"/>
+						<p:button value="Purchase" rendered="#{data.isOrderManager}"/>
+						<p:commandButton value="Reject" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
+						<p:commandButton value="Approve" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
 					</div>
 					<div class="info-summary">
 						<p:panelGrid columns="3" layout="grid" style="border: none;">            

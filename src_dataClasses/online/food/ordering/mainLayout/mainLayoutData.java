@@ -7,7 +7,7 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -435737310547433567L;
+  private static final long serialVersionUID = 3137755260291843428L;
 
   private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -147,6 +147,46 @@ public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setRoleName(java.lang.String _roleName)
   {
     roleName = _roleName;
+  }
+
+  private java.lang.Boolean isOrderManager;
+
+  /**
+   * Gets the field isOrderManager.
+   * @return the value of the field isOrderManager; may be null.
+   */
+  public java.lang.Boolean getIsOrderManager()
+  {
+    return isOrderManager;
+  }
+
+  /**
+   * Sets the field isOrderManager.
+   * @param _isOrderManager the new value of the field isOrderManager.
+   */
+  public void setIsOrderManager(java.lang.Boolean _isOrderManager)
+  {
+    isOrderManager = _isOrderManager;
+  }
+
+  private java.lang.Boolean isPurchaseManager;
+
+  /**
+   * Gets the field isPurchaseManager.
+   * @return the value of the field isPurchaseManager; may be null.
+   */
+  public java.lang.Boolean getIsPurchaseManager()
+  {
+    return isPurchaseManager;
+  }
+
+  /**
+   * Sets the field isPurchaseManager.
+   * @param _isPurchaseManager the new value of the field isPurchaseManager.
+   */
+  public void setIsPurchaseManager(java.lang.Boolean _isPurchaseManager)
+  {
+    isPurchaseManager = _isPurchaseManager;
   }
 
 }

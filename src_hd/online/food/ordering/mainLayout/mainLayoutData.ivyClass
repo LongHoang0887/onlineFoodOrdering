@@ -14,3 +14,7 @@ isDisabledNewBtn Boolean #field
 isDisabledNewBtn PERSISTENT #fieldModifier
 roleName String #field
 roleName PERSISTENT #fieldModifier
+isOrderManager Boolean #field
+isOrderManager PERSISTENT #fieldModifier
+isPurchaseManager Boolean #field
+isPurchaseManager PERSISTENT #fieldModifier
