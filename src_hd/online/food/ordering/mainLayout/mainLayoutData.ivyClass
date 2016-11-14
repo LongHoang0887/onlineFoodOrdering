@@ -18,3 +18,5 @@ isOrderManager Boolean #field
 isOrderManager PERSISTENT #fieldModifier
 isPurchaseManager Boolean #field
 isPurchaseManager PERSISTENT #fieldModifier
+hasRestaurantList Boolean #field
+hasRestaurantList PERSISTENT #fieldModifier

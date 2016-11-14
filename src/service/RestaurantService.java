@@ -8,7 +8,7 @@ public interface RestaurantService {
 
 	public Integer saveRestaurant(Restaurant restaurant);
 	
-	public List<Restaurant> getAllRestaurant();
+	public List<Restaurant> getAllRestaurant(boolean hasPurchased);
 	
 	public Restaurant getRestaurantById(Integer restaurantId);
 	

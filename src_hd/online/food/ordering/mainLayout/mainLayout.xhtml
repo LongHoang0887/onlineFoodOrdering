@@ -25,59 +25,66 @@
 					</div>
 				</p:layoutUnit>
 				<p:layoutUnit position="center" styleClass="right-layout">
-				    <div class="header">
-				    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
-						<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form" rendered="#{data.isOrderManager}"/>
-						<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" rendered="#{data.isOrderManager}"/>
-						<p:button value="Purchase" rendered="#{data.isOrderManager}"/>
-						<p:commandButton value="Reject" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
-						<p:commandButton value="Approve" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
-					</div>
-					<div class="info-summary">
-						<p:panelGrid columns="3" layout="grid" style="border: none;">            
-						    <h:outputText value="#{data.selectedRestaurant.restaurantName}">
-						    	<h:outputLabel value="Restaurant: " />
-						    </h:outputText>
-						    <h:outputText value="#{data.selectedRestaurant.website}">
-						    	<h:outputLabel value="Website: " />
-						    </h:outputText>
-						    <h:outputText value="#{data.selectedRestaurant.phone}">
-						    	<h:outputLabel value="Phone: " />
-						    </h:outputText>
-						    <h:outputText value="#{data.selectedRestaurant.createdDate}">
-						    	<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
-						    	<h:outputLabel value="Created date: " />
-						    </h:outputText> 
-						    <h:outputText value="">
-						    	<h:outputLabel value="Total: #{data.totalPrice}"/>
-						    </h:outputText>
-						</p:panelGrid>
-						<p:panelGrid styleClass="order-detail-list">
-							<ui:repeat var="item" value="#{data.foodList}">
-								<p:row>
-									<p:column styleClass="order-food" rowspan="2">
-										<span>
-											<h:outputText value="#{item.name}" > </h:outputText>
-											<br></br> 
-											<h:outputText value="" > #{item.lstOrdered.size()} units </h:outputText>
-										</span>
-									</p:column>
-									<p:column><h:outputText value="#{item.price}" > </h:outputText></p:column>
-								</p:row>
-								<p:row>
-									<p:column>
-										<h:outputLabel value="Whose: ">
-											<ui:repeat var="order" value="#{item.lstOrdered}">
-												#{order.personName} 
-											</ui:repeat>
-										</h:outputLabel>
-									</p:column>
-								</p:row>
-							</ui:repeat>
-						</p:panelGrid>
-					</div>
-					<div>
-					</div>
+					<h:panelGroup rendered="#{data.hasRestaurantList}">
+		    		
+					    <div class="header">
+					    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
+							<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form" rendered="#{data.isOrderManager}"/>
+							<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" rendered="#{data.isOrderManager}"/>
+							<p:button value="Purchase" rendered="#{data.isOrderManager}"/>
+							<p:commandButton value="Reject" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
+							<p:commandButton value="Approve" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
+						</div>
+						<div class="info-summary">
+							<p:panelGrid columns="3" layout="grid" style="border: none;">            
+							    <h:outputText value="#{data.selectedRestaurant.restaurantName}">
+							    	<h:outputLabel value="Restaurant: " />
+							    </h:outputText>
+							    <h:outputText value="#{data.selectedRestaurant.website}">
+							    	<h:outputLabel value="Website: " />
+							    </h:outputText>
+							    <h:outputText value="#{data.selectedRestaurant.phone}">
+							    	<h:outputLabel value="Phone: " />
+							    </h:outputText>
+							    <h:outputText value="#{data.selectedRestaurant.createdDate}">
+							    	<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+							    	<h:outputLabel value="Created date: " />
+							    </h:outputText> 
+							    <h:outputText value="">
+							    	<h:outputLabel value="Total: #{data.totalPrice}"/>
+							    </h:outputText>
+							</p:panelGrid>
+							<p:panelGrid styleClass="order-detail-list">
+								<ui:repeat var="item" value="#{data.foodList}">
+									<p:row>
+										<p:column styleClass="order-food" rowspan="2">
+											<span>
+												<h:outputText value="#{item.name}" > </h:outputText>
+												<br></br> 
+												<h:outputText value="" > #{item.lstOrdered.size()} units </h:outputText>
+											</span>
+										</p:column>
+										<p:column><h:outputText value="#{item.price}" > </h:outputText></p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<h:outputLabel value="Whose: ">
+												<ui:repeat var="order" value="#{item.lstOrdered}">
+													#{order.personName} 
+												</ui:repeat>
+											</h:outputLabel>
+										</p:column>
+									</p:row>
+								</ui:repeat>
+							</p:panelGrid>
+						</div>
+						<div>
+						</div>
+					
+					</h:panelGroup>
+					<h:panelGroup rendered="#{!data.hasRestaurantList}">
+  							There are no order created!!!
+					</h:panelGroup>
 				</p:layoutUnit>
 			</p:layout>
 			</h:form>

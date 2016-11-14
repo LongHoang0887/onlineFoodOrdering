@@ -11,12 +11,12 @@
         <role>GUEST</role>
     </user>
     <user>
-        <username>long</username>
+        <username>order</username>
         <password>123456</password>
         <role>ORDERING_MANAGER</role>
     </user>
     <user>
-        <username>xon</username>
+        <username>purchase</username>
         <password>123456</password>
         <role>PURCHASE_MANAGER</role>
     </user>

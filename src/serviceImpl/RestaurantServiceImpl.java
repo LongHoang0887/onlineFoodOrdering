@@ -1,5 +1,6 @@
 package serviceImpl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,8 +22,16 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
-	public List<Restaurant> getAllRestaurant() {
-		return (List<Restaurant>) Ivy.persistence().get(PERSISTENCE_UNIT_NAME).findAll(Restaurant.class);
+	public List<Restaurant> getAllRestaurant(boolean hasPurchased) {
+
+		List<Restaurant> reList = new ArrayList<Restaurant>();
+		List<Restaurant> resList =  Ivy.persistence().get(PERSISTENCE_UNIT_NAME).findAll(Restaurant.class);
+		for (Restaurant res: resList) {
+			if (res.getHasPurchased().equals(hasPurchased)) {
+				reList.add(res);
+			}
+		}
+		return reList;
 	}
 
 	@Override

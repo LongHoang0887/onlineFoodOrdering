@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 13:32:05 ICT 2016]
+[>Created: Mon Nov 14 15:08:46 ICT 2016]
 1584C7EB23C34D85 3.18 #module
 >Proto >Proto Collection #zClass
 gs0 guestLayoutProcess Big #zClass
@@ -76,7 +76,7 @@ gs0 f6 actionCode 'import serviceImpl.RestaurantServiceImpl;
 import service.RestaurantService;
 
 RestaurantService service = new RestaurantServiceImpl();
-in.restaurantList = service.getAllRestaurant();' #txt
+in.restaurantList = service.getAllRestaurant(false);' #txt
 gs0 f6 type online.food.ordering.guestLayout.guestLayoutData #txt
 gs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

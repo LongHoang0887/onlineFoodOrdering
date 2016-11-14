@@ -7,7 +7,7 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3137755260291843428L;
+  private static final long serialVersionUID = -8216879822840257013L;
 
   private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -187,6 +187,26 @@ public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setIsPurchaseManager(java.lang.Boolean _isPurchaseManager)
   {
     isPurchaseManager = _isPurchaseManager;
+  }
+
+  private java.lang.Boolean hasRestaurantList;
+
+  /**
+   * Gets the field hasRestaurantList.
+   * @return the value of the field hasRestaurantList; may be null.
+   */
+  public java.lang.Boolean getHasRestaurantList()
+  {
+    return hasRestaurantList;
+  }
+
+  /**
+   * Sets the field hasRestaurantList.
+   * @param _hasRestaurantList the new value of the field hasRestaurantList.
+   */
+  public void setHasRestaurantList(java.lang.Boolean _hasRestaurantList)
+  {
+    hasRestaurantList = _hasRestaurantList;
   }
 
 }
