@@ -64,10 +64,11 @@
 								</p:row>
 								<p:row>
 									<p:column>
-										<ui:repeat var="" value=""></ui:repeat>
-										<p:dataList value="#{item.lstOrdered}" var="order">
-	        								#{order.personName}
-	    								</p:dataList>
+										<h:outputLabel value="Whose: ">
+											<ui:repeat var="name" value="#{item.lstOrdered}">
+												#{name.personName},
+											</ui:repeat>
+										</h:outputLabel>
 									</p:column>
 								</p:row>
 							</ui:repeat>
