@@ -18,6 +18,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 	@Override
 	public Integer saveRestaurant(Restaurant restaurant) {
 		restaurant.setCreatedDate(new Date());
+		restaurant.setHasPurchased(false);
 		return Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(restaurant).getId();
 	}
 
@@ -64,6 +65,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 		res.setCreatedDate(new Date());
 		res.setNumberOfOrdered(0);
 		res.setOrderedFood(null);
+		res.setHasPurchased(false);
 		res = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).persist(res);
 
 		return res;

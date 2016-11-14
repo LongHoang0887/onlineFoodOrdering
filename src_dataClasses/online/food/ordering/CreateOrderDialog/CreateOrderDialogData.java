@@ -7,7 +7,7 @@ package online.food.ordering.CreateOrderDialog;
 public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -4545283856117469440L;
+  private static final long serialVersionUID = -1672215521696585423L;
 
   private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Food> foods;
 
@@ -167,6 +167,26 @@ public class CreateOrderDialogData extends ch.ivyteam.ivy.scripting.objects.Comp
   public void setIsFoodExist(java.lang.Boolean _isFoodExist)
   {
     isFoodExist = _isFoodExist;
+  }
+
+  private java.lang.String roleName;
+
+  /**
+   * Gets the field roleName.
+   * @return the value of the field roleName; may be null.
+   */
+  public java.lang.String getRoleName()
+  {
+    return roleName;
+  }
+
+  /**
+   * Sets the field roleName.
+   * @param _roleName the new value of the field roleName.
+   */
+  public void setRoleName(java.lang.String _roleName)
+  {
+    roleName = _roleName;
   }
 
 }

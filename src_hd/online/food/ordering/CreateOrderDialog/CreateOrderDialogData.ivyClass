@@ -16,3 +16,5 @@ isEnableSaveBtn Boolean #field
 isEnableSaveBtn PERSISTENT #fieldModifier
 isFoodExist Boolean #field
 isFoodExist PERSISTENT #fieldModifier
+roleName String #field
+roleName PERSISTENT #fieldModifier
