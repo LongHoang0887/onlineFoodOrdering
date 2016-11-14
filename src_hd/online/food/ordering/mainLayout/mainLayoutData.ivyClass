@@ -10,3 +10,5 @@ newRestaurantId Integer #field
 newRestaurantId PERSISTENT #fieldModifier
 totalPrice Integer #field
 totalPrice PERSISTENT #fieldModifier
+isDisabledNewBtn Boolean #field
+isDisabledNewBtn PERSISTENT #fieldModifier

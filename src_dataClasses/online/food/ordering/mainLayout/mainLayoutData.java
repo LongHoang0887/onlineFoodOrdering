@@ -7,7 +7,7 @@ package online.food.ordering.mainLayout;
 public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 1358399463946914842L;
+  private static final long serialVersionUID = -9153053064030596596L;
 
   private java.util.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -107,6 +107,26 @@ public class mainLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeOb
   public void setTotalPrice(java.lang.Integer _totalPrice)
   {
     totalPrice = _totalPrice;
+  }
+
+  private java.lang.Boolean isDisabledNewBtn;
+
+  /**
+   * Gets the field isDisabledNewBtn.
+   * @return the value of the field isDisabledNewBtn; may be null.
+   */
+  public java.lang.Boolean getIsDisabledNewBtn()
+  {
+    return isDisabledNewBtn;
+  }
+
+  /**
+   * Sets the field isDisabledNewBtn.
+   * @param _isDisabledNewBtn the new value of the field isDisabledNewBtn.
+   */
+  public void setIsDisabledNewBtn(java.lang.Boolean _isDisabledNewBtn)
+  {
+    isDisabledNewBtn = _isDisabledNewBtn;
   }
 
 }

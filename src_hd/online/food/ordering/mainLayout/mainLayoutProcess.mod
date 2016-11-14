@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 11:23:30 ICT 2016]
+[>Created: Mon Nov 14 11:52:01 ICT 2016]
 158488CD7873DE1C 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainLayoutProcess Big #zClass
@@ -48,6 +48,8 @@ ms0 @PushWFArc f22 '' #zField
 ms0 @GridStep f1 '' #zField
 ms0 @PushWFArc f2 '' #zField
 ms0 @PushWFArc f13 '' #zField
+ms0 @GridStep f34 '' #zField
+ms0 @PushWFArc f35 '' #zField
 ms0 @PushWFArc f33 '' #zField
 >Proto ms0 ms0 mainLayoutProcess #zField
 ms0 f0 guid 158488CD79AF30E0 #txt
@@ -130,7 +132,7 @@ ms0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f8 83 571 26 26 -12 15 #rect
 ms0 f8 @|RichDialogProcessStartIcon #fIcon
 ms0 f12 type online.food.ordering.mainLayout.mainLayoutData #txt
-ms0 f12 755 147 26 26 0 12 #rect
+ms0 f12 947 147 26 26 0 12 #rect
 ms0 f12 @|RichDialogProcessEndIcon #fIcon
 ms0 f14 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -317,8 +319,8 @@ ms0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ms0 f10 83 147 26 26 -18 15 #rect
 ms0 f10 @|RichDialogProcessStartIcon #fIcon
 ms0 f17 expr out #txt
-ms0 f17 540 256 768 173 #arcP
-ms0 f17 1 768 256 #addKink
+ms0 f17 540 256 960 173 #arcP
+ms0 f17 1 960 256 #addKink
 ms0 f17 0 0.6449028566119823 0 0 #arcLabel
 ms0 f28 expr out #txt
 ms0 f28 304 256 420 256 #arcP
@@ -358,7 +360,9 @@ OrderingService service = new OrderingServiceImpl();
 for (Restaurant res: in.restaurantList) {
 	List<Ordering> list = service.getListOrderByRestaurant(res.getId());
 	res.setNumberOfOrdered(list.size());
-}' #txt
+}
+
+' #txt
 ms0 f29 type online.food.ordering.mainLayout.mainLayoutData #txt
 ms0 f29 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -409,8 +413,8 @@ ms0 f32 expr out #txt
 ms0 f32 310 384 424 384 #arcP
 ms0 f32 0 0.8266253869969041 0 0 #arcLabel
 ms0 f22 expr out #txt
-ms0 f22 568 384 768 173 #arcP
-ms0 f22 1 768 384 #addKink
+ms0 f22 568 384 960 173 #arcP
+ms0 f22 1 960 384 #addKink
 ms0 f22 0 0.8266253869969041 0 0 #arcLabel
 ms0 f1 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
 ' #txt
@@ -433,15 +437,37 @@ ms0 f1 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ms0 f1 568 138 144 44 -63 -8 #rect
+ms0 f1 744 138 144 44 -63 -8 #rect
 ms0 f1 @|StepIcon #fIcon
 ms0 f2 expr out #txt
-ms0 f2 544 160 568 160 #arcP
+ms0 f2 544 160 744 160 #arcP
 ms0 f13 expr out #txt
-ms0 f13 712 160 755 160 #arcP
+ms0 f13 888 160 947 160 #arcP
+ms0 f34 actionDecl 'online.food.ordering.mainLayout.mainLayoutData out;
+' #txt
+ms0 f34 actionTable 'out=in;
+' #txt
+ms0 f34 actionCode 'in.isDisabledNewBtn = !ivy.var.Training_Feedme_allowCreateNew.toBoolean();' #txt
+ms0 f34 type online.food.ordering.mainLayout.mainLayoutData #txt
+ms0 f34 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>check btn New
+disable?</name>
+        <nameStyle>14,7
+8,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ms0 f34 560 42 128 44 -40 -16 #rect
+ms0 f34 @|StepIcon #fIcon
+ms0 f35 expr out #txt
+ms0 f35 504 64 560 64 #arcP
+ms0 f35 0 0.7730691931279445 0 0 #arcLabel
 ms0 f33 expr out #txt
-ms0 f33 504 64 640 138 #arcP
-ms0 f33 1 640 64 #addKink
+ms0 f33 688 64 816 138 #arcP
+ms0 f33 1 816 64 #addKink
 ms0 f33 0 0.7730691931279445 0 0 #arcLabel
 >Proto ms0 .type online.food.ordering.mainLayout.mainLayoutData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
@@ -477,5 +503,7 @@ ms0 f14 mainOut f2 tail #connect
 ms0 f2 head f1 mainIn #connect
 ms0 f1 mainOut f13 tail #connect
 ms0 f13 head f12 mainIn #connect
-ms0 f29 mainOut f33 tail #connect
+ms0 f29 mainOut f35 tail #connect
+ms0 f35 head f34 mainIn #connect
+ms0 f34 mainOut f33 tail #connect
 ms0 f33 head f1 mainIn #connect
