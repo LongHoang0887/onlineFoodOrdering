@@ -69,7 +69,7 @@ public class LoginManagementData extends ch.ivyteam.ivy.scripting.objects.Compos
     message = _message;
   }
 
-  private java.lang.String roleName;
+  private transient java.lang.String roleName;
 
   /**
    * Gets the field roleName.

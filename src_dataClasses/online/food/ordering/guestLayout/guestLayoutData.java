@@ -7,7 +7,7 @@ package online.food.ordering.guestLayout;
 public class guestLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -8064586123810403973L;
+  private static final long serialVersionUID = -3222942594858793704L;
 
   private ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Restaurant> restaurantList;
 
@@ -27,6 +27,26 @@ public class guestLayoutData extends ch.ivyteam.ivy.scripting.objects.CompositeO
   public void setRestaurantList(ch.ivyteam.ivy.scripting.objects.List<online.food.ordering.Restaurant> _restaurantList)
   {
     restaurantList = _restaurantList;
+  }
+
+  private java.lang.String roleName;
+
+  /**
+   * Gets the field roleName.
+   * @return the value of the field roleName; may be null.
+   */
+  public java.lang.String getRoleName()
+  {
+    return roleName;
+  }
+
+  /**
+   * Sets the field roleName.
+   * @param _roleName the new value of the field roleName.
+   */
+  public void setRoleName(java.lang.String _roleName)
+  {
+    roleName = _roleName;
   }
 
 }
