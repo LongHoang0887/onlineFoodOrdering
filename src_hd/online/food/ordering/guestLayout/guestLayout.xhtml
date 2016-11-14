@@ -34,7 +34,7 @@
 							    		<br></br>
 							    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
 			    							<p:commandButton value="Order" 
-			    									actionListener="#{logic.openDialog(restaurant)}"  process="@this"
+			    									actionListener="#{logic.openDialog(restaurant)}"  process="@this" 
 			    									oncomplete="PF('dlg').show();"
 			    									update="@form" 
 			    									/>
