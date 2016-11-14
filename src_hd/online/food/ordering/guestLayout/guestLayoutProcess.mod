@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 18:08:29 ICT 2016]
+[>Created: Mon Nov 14 19:52:06 ICT 2016]
 1584C7EB23C34D85 3.18 #module
 >Proto >Proto Collection #zClass
 gs0 guestLayoutProcess Big #zClass
@@ -225,6 +225,8 @@ import service.OrderingService;
 OrderingService srv = new OrderingServiceImpl();
 in.saveResult = srv.saveOrder(in.restaurant.id, in.selectedFood.id,
 		in.optional, in.notice, ivy.session.getSessionUserName(), in.restaurant.outOfFood);
+in.optional = "";
+in.notice = "";
 RequestContext.getCurrentInstance().addCallbackParam("success",in.saveResult);
 
 
