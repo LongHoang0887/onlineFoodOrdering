@@ -31,7 +31,7 @@
 					    	<h:outputLabel style="font-weight: bold; font-size: 20px; float:left;">Odering Detail</h:outputLabel>
 							<p:commandButton value="Clone" actionListener="#{logic.Clone}" update="form" rendered="#{data.isOrderManager}"/>
 							<p:commandButton value="Delete" actionListener="#{logic.Delete}" update="form" rendered="#{data.isOrderManager}"/>
-							<p:button value="Purchase" rendered="#{data.isOrderManager}"/>
+							<p:commandButton value="Purchase" actionListener="#{logic.purchase}" update="form" rendered="#{data.isOrderManager}"/>
 							<p:commandButton value="Reject" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
 							<p:commandButton value="Approve" actionListener="#{logic.Delete}" update="form" rendered="#{data.isPurchaseManager}"/>
 						</div>
