@@ -35,6 +35,14 @@ public class OrderingServiceImpl implements OrderingService {
 			return false;
 		}
 		
+		// Check order exist
+		if (!getListOrderBySessionUser(personName)) {
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+					"You can't choose more than one food", "Invalid choice");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+			return false;
+		}
+		
 		Ordering order = new Ordering();
 		order.setRestaurantId(restaurantId);
 		order.setFoodId(foodId);
@@ -104,5 +112,21 @@ public class OrderingServiceImpl implements OrderingService {
 		query.setParameter("foodId", foodId);
 
 		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	private Boolean getListOrderBySessionUser(String personName) {
+
+		String sql = "FROM Ordering WHERE personName = :personName";
+		EntityManager entityManager = Ivy.persistence().get(PERSISTENCE_UNIT_NAME).createEntityManager();
+		Query query = entityManager.createQuery(sql);
+		query.setParameter("personName", personName);
+		
+		List<Ordering> list = query.getResultList();
+		if (list != null && list.size() > 0) {
+			return false;
+		}
+
+		return true;
 	}
 }

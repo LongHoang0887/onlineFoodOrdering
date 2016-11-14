@@ -15,27 +15,103 @@
 				<p:layoutUnit position="center">
 					<h:outputText value="#{data.roleName}"></h:outputText>
 					<div class="ui-grid guest-order-list">
-						<ui:repeat value="#{data.restaurantList}" var="restaurant" >
-							<div class="ui-grid-col-3">
-								<div class="order-item">
-									<span class="order-restaurant">#{restaurant.restaurantName}</span>
-						    		<h:outputText value="#{restaurant.createdDate}">
-						    			<f:convertDateTime pattern="dd/MM/yyyy" />
-						    		</h:outputText>
-						    		<br></br>
-						    		<h:outputText value="#{restaurant.createdDate}">
-						    			<f:convertDateTime pattern="HH:mm" />
-						    		</h:outputText>
-						    		<br></br>
-						    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
-		    							<p:button value="Order" />
-									</h:panelGroup>
-									<h:panelGroup rendered="#{restaurant.hasOrdered}">
-		    							#{restaurant.orderedFood.name}
-									</h:panelGroup>
+						<h:form id="resList">
+							<ui:repeat  value="#{data.restaurantList}" var="restaurant" >
+								<div class="ui-grid-col-3">
+									<div class="order-item">
+										<span class="order-restaurant">#{restaurant.restaurantName}</span>
+							    		<h:outputText value="#{restaurant.createdDate}">
+							    			<f:convertDateTime pattern="dd/MM/yyyy" />
+							    		</h:outputText>
+							    		<br></br>
+							    		<h:outputText value="#{restaurant.createdDate}">
+							    			<f:convertDateTime pattern="HH:mm" />
+							    		</h:outputText>
+							    		<br></br>
+							    		<h:panelGroup rendered="#{!restaurant.hasOrdered}">
+			    							<p:commandButton value="Order" 
+			    									actionListener="#{logic.openDialog(restaurant)}"  process="@this"
+			    									oncomplete="PF('dlg').show();"
+			    									update="@form" 
+			    									/>
+										</h:panelGroup>
+										<h:panelGroup rendered="#{restaurant.hasOrdered}">
+			    							#{restaurant.orderedFood.name}
+										</h:panelGroup>
+									</div>
 								</div>
-							</div>
-						</ui:repeat>
+							</ui:repeat>
+							
+							<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+							<p:dialog id="dialog" header="I'm hungry..." widgetVar="dlg"
+								closable="true" closeOnEscape="true" width="500px"
+								height="400px" resizable="false">
+								<h3>#{data.restaurant.restaurantName}</h3>
+								<h:outputLink>#{data.restaurant.website}</h:outputLink>
+								<p:messages id="messages" for="food"></p:messages>
+								<br />
+								<h:panelGrid columns="3" cellpadding="15">
+									<p:outputLabel for="food" value="I want to order" />
+									<p:selectOneMenu style="width:160px;" id="food"
+										value="#{data.selectedFood}" converter="foodConverter">
+										<f:selectItem itemLabel="Something" itemValue=""
+											noSelectionOption="true" />
+										<f:selectItems value="#{data.restaurant.foods}" var="food"
+											itemLabel="#{food.name}" itemValue="#{food}" />
+
+										<p:ajax event="change" update="price" />
+									</p:selectOneMenu>
+									<p:outputPanel id="price">
+										<p:outputLabel value="It price is "
+											rendered="#{data.selectedFood.price !=0}">
+											<h:outputLabel style="font-weight:bold !important;"
+												value="#{data.selectedFood.price == null ? 0 : data.selectedFood.price } vnd ">
+											</h:outputLabel>
+										</p:outputLabel>
+										<p:outputLabel style="font-weight:bold !important;"
+											value="Free for all"
+											rendered="#{data.selectedFood.price ==0}">
+										</p:outputLabel>
+									</p:outputPanel>
+
+									<p:outputLabel for="notice" value="and my notice is" />
+									<p:inputText style="width:198px;" id="notice"
+										value="#{data.notice}" label="notice"></p:inputText>
+
+								</h:panelGrid>
+								<br />
+								<p:panelGrid rendered="#{data.restaurant.outOfFood}"
+									id="optionalPanel" columns="1" layout="grid"
+									style="margin-top:20px;border-style: none !important;">
+									<p:row>
+										<p:column colspan="11" style="font-weight: bold;">Oops, if you don't have my need, please help me to order</p:column>
+									</p:row>
+
+									<p:row>
+										<p:column colspan="11" style="font-weight: bold;">
+											<p:inputText style="width:270px;" id="optional"
+												value="#{data.optional}" label="optional"></p:inputText> , thanks !^^
+							</p:column>
+									</p:row>
+								</p:panelGrid>
+
+								<br />
+								<br />
+
+								<p:commandButton value="Feed me plz!!!" update="growl"
+									actionListener="#{logic.saveOrder}" oncomplete="handleComplete(xhr, status, args)" />
+								
+							</p:dialog>
+						</h:form>
+						<script>
+							function handleComplete(xhr, status, args){
+								if(args.success){
+									PF('dlg').hide();
+									location.reload();
+								}
+							}
+						</script>
+
 					</div>
 				</p:layoutUnit>
 			</p:layout>

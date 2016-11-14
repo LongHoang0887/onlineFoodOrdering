@@ -4,3 +4,15 @@ restaurantList List<online.food.ordering.Restaurant> #field
 restaurantList PERSISTENT #fieldModifier
 roleName String #field
 roleName PERSISTENT #fieldModifier
+restaurantId Integer #field
+restaurantId PERSISTENT #fieldModifier
+restaurant online.food.ordering.Restaurant #field
+restaurant PERSISTENT #fieldModifier
+selectedFood online.food.ordering.Food #field
+selectedFood PERSISTENT #fieldModifier
+optional String #field
+optional PERSISTENT #fieldModifier
+notice String #field
+notice PERSISTENT #fieldModifier
+saveResult Boolean #field
+saveResult PERSISTENT #fieldModifier
