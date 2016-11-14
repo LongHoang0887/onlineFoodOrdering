@@ -7,7 +7,7 @@ package online.food.ordering.HeaderComponent;
 public class HeaderComponentData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 7765810833843110945L;
+  private static final long serialVersionUID = 2924147472350163651L;
 
   private java.lang.String roleName;
 
@@ -27,6 +27,26 @@ public class HeaderComponentData extends ch.ivyteam.ivy.scripting.objects.Compos
   public void setRoleName(java.lang.String _roleName)
   {
     roleName = _roleName;
+  }
+
+  private java.lang.String userName;
+
+  /**
+   * Gets the field userName.
+   * @return the value of the field userName; may be null.
+   */
+  public java.lang.String getUserName()
+  {
+    return userName;
+  }
+
+  /**
+   * Sets the field userName.
+   * @param _userName the new value of the field userName.
+   */
+  public void setUserName(java.lang.String _userName)
+  {
+    userName = _userName;
   }
 
 }

@@ -2,3 +2,5 @@ HeaderComponentData #class
 online.food.ordering.HeaderComponent #namespace
 roleName String #field
 roleName PERSISTENT #fieldModifier
+userName String #field
+userName PERSISTENT #fieldModifier
