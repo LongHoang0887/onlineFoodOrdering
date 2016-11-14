@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 14 18:41:11 ICT 2016]
+[>Created: Mon Nov 14 19:23:17 ICT 2016]
 158621C5C34330C2 3.18 #module
 >Proto >Proto Collection #zClass
 Hs0 HeaderComponentProcess Big #zClass
@@ -24,7 +24,7 @@ Hs0 @PushWFArc f5 '' #zField
 Hs0 @RichDialogProcessStart f6 '' #zField
 Hs0 @GridStep f8 '' #zField
 Hs0 @PushWFArc f9 '' #zField
-Hs0 @RichDialog f10 '' #zField
+Hs0 @GridStep f10 '' #zField
 Hs0 @PushWFArc f11 '' #zField
 Hs0 @PushWFArc f7 '' #zField
 >Proto Hs0 Hs0 HeaderComponentProcess #zField
@@ -109,38 +109,32 @@ Hs0 f8 @|StepIcon #fIcon
 Hs0 f9 expr out #txt
 Hs0 f9 109 192 168 192 #arcP
 Hs0 f9 0 0.689130405900086 0 0 #arcLabel
-Hs0 f10 targetWindow NEW:card: #txt
-Hs0 f10 targetDisplay TOP #txt
-Hs0 f10 richDialogId online.food.ordering.LoginForm #txt
-Hs0 f10 startMethod start() #txt
+Hs0 f10 actionDecl 'online.food.ordering.HeaderComponent.HeaderComponentData out;
+' #txt
+Hs0 f10 actionTable 'out=in;
+' #txt
+Hs0 f10 actionCode 'import javax.faces.context.FacesContext;
+String loginPageUrl = ivy.html.startref("Start Processes/LoginManagement/start.ivp");
+FacesContext.getCurrentInstance().getExternalContext().redirect(loginPageUrl);' #txt
 Hs0 f10 type online.food.ordering.HeaderComponent.HeaderComponentData #txt
-Hs0 f10 requestActionDecl '<> param;' #txt
-Hs0 f10 responseActionDecl 'online.food.ordering.HeaderComponent.HeaderComponentData out;
-' #txt
-Hs0 f10 responseMappingAction 'out=in;
-' #txt
-Hs0 f10 windowConfiguration '* ' #txt
-Hs0 f10 isAsynch false #txt
-Hs0 f10 isInnerRd true #txt
-Hs0 f10 userContext '* ' #txt
 Hs0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>Go to Login</name>
-        <nameStyle>11,7
+        <name>Redirect to LoginForm</name>
+        <nameStyle>21,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Hs0 f10 344 170 112 44 -31 -8 #rect
-Hs0 f10 @|RichDialogIcon #fIcon
+Hs0 f10 352 170 128 44 -61 -8 #rect
+Hs0 f10 @|StepIcon #fIcon
 Hs0 f11 expr out #txt
-Hs0 f11 280 192 344 192 #arcP
-Hs0 f11 0 0.689130405900086 0 0 #arcLabel
+Hs0 f11 280 192 352 192 #arcP
+Hs0 f11 0 0.7427518746473387 0 0 #arcLabel
 Hs0 f7 expr out #txt
-Hs0 f7 456 192 544 315 #arcP
+Hs0 f7 480 192 544 315 #arcP
 Hs0 f7 1 544 192 #addKink
-Hs0 f7 0 0.689130405900086 0 0 #arcLabel
+Hs0 f7 0 0.7427518746473387 0 0 #arcLabel
 >Proto Hs0 .type online.food.ordering.HeaderComponent.HeaderComponentData #txt
 >Proto Hs0 .processKind HTML_DIALOG #txt
 >Proto Hs0 -8 -8 16 16 16 26 #rect
