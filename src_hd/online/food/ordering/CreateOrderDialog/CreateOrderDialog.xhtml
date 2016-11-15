@@ -14,7 +14,9 @@
 				<p:layout style="width: 400px; height: 550px;" styleClass="create-order">
 					<p:layoutUnit position="center" header="Create Ordering Ticket">
 						<p:panelGrid styleClass="order-info-table">
-							<f:facet name="header"><p:messages></p:messages></f:facet>
+							<f:facet name="header">
+								<p:messages id="messages"></p:messages>
+							</f:facet>
 							<p:row>
 								<p:column styleClass="input-label">
 									<p:outputLabel value="Restaurant (*)" />		
@@ -59,7 +61,7 @@
 									<p:inputText value="#{data.name}" required="true" requiredMessage="Food name could not be blank"/>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText value="#{data.price}"/>
+									<p:inputText value="#{data.price}" type="number"/>
 								</div>
 								<div class="ui-grid-col-3"><p:commandButton actionListener="#{logic.add}" value="Add" update="form" style="float:right;"/></div>
 							</div>			
@@ -67,7 +69,7 @@
 								<p:dataTable var="food" value="#{data.foods}" >
 								    <p:column headerText="Food">
 								        <h:outputText value="#{food.name}" />
-								    </p:column>
+								    </p:column>	
 								    <p:column headerText="Price">
 								        <h:outputText value="#{food.price}" />
 								    </p:column>
