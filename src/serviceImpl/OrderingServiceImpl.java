@@ -35,14 +35,6 @@ public class OrderingServiceImpl implements OrderingService {
 			return false;
 		}
 		
-		// Check order exist
-		if (!getListOrderBySessionUser(personName)) {
-			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-					"You can't choose more than one food", "Invalid choice");
-			FacesContext.getCurrentInstance().addMessage(null, message);
-			return false;
-		}
-		
 		Ordering order = new Ordering();
 		order.setRestaurantId(restaurantId);
 		order.setFoodId(foodId);
