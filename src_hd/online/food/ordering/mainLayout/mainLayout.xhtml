@@ -93,7 +93,7 @@
 										<p:column>
 											<h:outputLabel value="Whose: ">
 												<ui:repeat var="order" value="#{item.lstOrdered}">
-													#{order.personName} 
+													#{order.personName} (#{order.optional}), 
 												</ui:repeat>
 											</h:outputLabel>
 										</p:column>
